@@ -1,0 +1,9 @@
+    <div id="header-content">
+            <div id="header-title">%title%</div>
+            <div id="header-subtext">
+               %firstline% <br>
+                %secondline%<br>
+                %thirdline%<br>
+	  %fourthline%
+            </div>
+        </div>

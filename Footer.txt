@@ -1,0 +1,26 @@
+             <table>   
+<tr>
+<td>
+                        <a href="Patch-Notes.html?dept=%curdept%" class="footerlinks">&nbsp; Version 3.6.0 &nbsp;</a>
+                    </td>
+                    <td>
+                        <a class="footerrest" href='Secret.html'> || &nbsp;</a>
+                    </td>
+                    <td>
+                        <a href="Thanks.html?dept=%curdept%" class="footerlinks">%thanks%</a>
+                    </td>
+                    <td>
+                        <a class="footerrest">&nbsp; || </a>
+                    </td>
+                    <td>
+                        <a class="footerlinks">&nbsp; %built%  </a>
+                        <a href="https://www.fxp.co.il/member.php?u=783379" class="footerlinks">%tal%</a>
+                        <a class="footersmiley"> :)</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="5" style="text-align:center">
+                        <a href='Secret.html'><img src="https://images.weserv.nl/?url=i.imgur.com%2FBP1U0yb.png" style="width:83%; right:-2%;position:relative"></a>
+                    </td>
+</tr>
+</table>
