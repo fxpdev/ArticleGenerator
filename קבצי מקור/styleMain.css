@@ -96,10 +96,17 @@ a { /*Remove underline from hyperlinks*/
 
 .relv {
     color: #1d3048;
-    font-weight: 600;
     font-size: 1.1em;
     float: right;
+    font-weight: 600;
     text-decoration: underline;
+}
+.relv2 {
+    color: #008b8b;
+    font-size: 1.1em;
+    float: right;
+    font-weight: 600;
+    /*text-decoration: underline;*/
 }
 
 .popup .popuptext::after {
@@ -523,7 +530,8 @@ body { /*Background*/
 
 .footerlinks {
     position: relative;
-    color: #33adff;
+    font-weight: bold;
+    color: #008b8b;
     top: 5%;
 }
 
@@ -1179,8 +1187,8 @@ i {
 .ArticleForum {
     font-size: 1.05em;
     font-weight: 700;
-    /*text-decoration: underline;
-    text-decoration-color: black;*/
+    text-decoration: underline;
+    text-decoration-color: black;
     font-family: 'Assistant', sans-serif;
 }
 
