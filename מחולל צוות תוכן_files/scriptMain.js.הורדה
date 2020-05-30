@@ -540,6 +540,7 @@ $(document).ready(function() {
     }),
     $("#final-article-copy").on("click", function() {
         copyArticle("final-article-textarea", "copy-a-popup")
+        open ('https://www.fxp.co.il/newthread.php?do=newthread&f=4598')
     }),
     $("#final-article-Relv-copy").on("click", function() {
         copyArticle("final-article-relv-textarea", "copy-a-popup-R")
