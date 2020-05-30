@@ -75,7 +75,7 @@ function resetform() {
     t.classList.remove("show"),
     n.classList.remove("show"),
     l.classList.remove("show"),
-    launch_toast("הנוסח אופס")
+    launch_toast("המחולל אופס")
 }
 function submitForm() {
     var e = $("#title").val().trim().length
