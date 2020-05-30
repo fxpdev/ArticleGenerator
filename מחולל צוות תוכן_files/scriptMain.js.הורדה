@@ -103,7 +103,7 @@ function submitForm() {
       , b = L.length
       , I = $("#link-5-desc").val().trim().length
       , E = i > 1 && r > 1;
-    e > 1 && n > 1 && l > 1 && o > 1 && c > 1 && s > 1 && m > 1 && u > 1 && g > 1 && v > 1 && h > 1 && w > 1 && k > 1 && b > 1 && I > 1 ? ValidURL(t) && ValidURL(a) && ValidURL(d) && ValidURL(p) && ValidURL(f) && ValidURL(y) && ValidURL(L) ? (E || showModal("שימו לב!", "<p>לא מילאתם את הקישור הרלוונטי ו/או התיאור המתאים.</p><p>חלק זה מוסיף הרבה לכתבה ומומלץ מאוד להשתמש בו.</p>", "גם אתה פשוש!"),
+    e > 1 && n > 1 && l > 1 && o > 1 && c > 1 && s > 1 && m > 1 && u > 1 && g > 1 && v > 1 && h > 1 && w > 1 && k > 1 && b > 1 && I > 1 ? ValidURL(t) && ValidURL(a) && ValidURL(d) && ValidURL(p) && ValidURL(f) && ValidURL(y) && ValidURL(L) ? (E || showModal("שימו לב!", "<p>לא מילאתם את הקישור הרלוונטי ו/או את התיאור המתאים.</p><p>חלק זה מוסיף הרבה לכתבה ומומלץ מאוד להשתמש בו.</p>", "גם אתה פשוש!"),
     $("#final-article").fadeIn("slow"),
     "gaming" == currentdept && $("#final-article-relv").fadeIn("slow"),
     "gaming" == currentdept && ($.get("template-gaming.txt", GenerateArticle, "text"),
@@ -112,7 +112,7 @@ function submitForm() {
     $.get("‏‏template-tech-relv.txt", GenerateArticleRelv, "text")),
     $("html,body").animate({
         scrollTop: $("#final-article").offset().top
-    }, "slow")) : showModal("אחד או יותר מהקישורים במחולל אינו תקין!", "<p>עברו על הקישורים שהכנסתם ובדקו שהם תקינים</p><p>זכרו! הקישור צריך להיות בתיבה השמאלית והתיאור בתיבה הימנית</p>", "לאחר שווידאתם שהקישורים תקינים, נסו שוב") : showModal("הנוסח לא מלא!", "<p>בחייאת פשוש, מלא את הנוסח</p><img src='https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Graceful_prinia.jpg/1200px-Graceful_prinia.jpg' style='height:100px; width:100px' />", "לאחר שווידאתם שהכל מלא, נסו שוב");
+    }, "slow")) : showModal("אחד או יותר מהקישורים במחולל אינו תקין!", "<p>עברו על הקישורים שהכנסתם ובדקו שהם תקינים</p><p>זכרו! הקישור צריך להיות בתיבה השמאלית והתיאור בתיבה הימנית</p>", "לאחר שווידאתם שהקישורים תקינים, נסו שוב") : showModal("הנוסח לא מלא!", "<p>בחייאת פשוש, מלא את הנוסח</p><img src='https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Graceful_prinia.jpg/1200px-Graceful_prinia.jpg' style='height:100px; width:100px' />", "לאחר שווידאתם שהכול מלא, נסו שוב");
     let C = new Date;
     SaveDraft("Auto Draft", C = C.toLocaleString())
 }
