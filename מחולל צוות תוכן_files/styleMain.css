@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Assistant:300,600,700');
 
 :root {
-    --deptColor: #daa520;
-    --deptSecondColor: #c8981e;
+    --deptColor: #008b8b;
+    --deptSecondColor: #006666;
     --modalColor: --deptColor;
     --modalAcceptColor: --deptColor;
     --modalHover: --deptSecondColor;
@@ -721,7 +721,7 @@ option {
     color: black;
     width: 1%;
     border: 0;
-    border-bottom: 2px solid #856514;
+    border-bottom: 2px solid #006666;
     border-radius: 4px;
     margin-top: 5px;
     /*unselectable*/
@@ -741,7 +741,7 @@ option {
     color: black;
     width: 5%;
     border: 0;
-    border-bottom: 2px solid #856514;
+    border-bottom: 2px solid #006666;
     border-radius: 4px;
     margin-top: 5px;
     margin-bottom: 5px;
@@ -759,7 +759,7 @@ option {
 
 .sizebutton {
     border: 0;
-    border-bottom: 2px solid #856514;
+    border-bottom: 2px solid #006666;
     border-radius: 4px;
     color: black;
     width: 33px;
