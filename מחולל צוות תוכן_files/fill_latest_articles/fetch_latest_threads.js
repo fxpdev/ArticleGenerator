@@ -1,7 +1,7 @@
 /// returns the latest `count` threads from forum at `url`
 /// the callback `onSuccess` will be given a list of json objects each corresponding to a thread.
 /// they are formed in the following way:
-/// { href: <href URL from the forum>, title: <title of thread from the forum> }
+/// { href: <href URL from the forum>, title: <title of thread from the forum>, url: <absolute URL to element> }
 /// the callback `onError` will receive a single error string in case an error happens.
 function fetchLatestThreads(url, count, onSuccess, onError) {
     var proxyURL = _fetchURLCORS(url);
@@ -15,6 +15,13 @@ function fetchLatestThreads(url, count, onSuccess, onError) {
 
             try {
                 parsed = _getLatest(threads, count);
+
+                // adds the `url` property
+                // TODO:: URL is not supported on IE so this will cause an error
+                parsed.forEach(function(thread) {
+                    var url = new URL(thread["href"], url);
+                    thread["url"] = url.href;
+                });
             } catch (e) {
                 onError(`Parsing error;\n${e}`)
                 return;
