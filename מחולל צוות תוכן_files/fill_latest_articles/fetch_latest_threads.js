@@ -8,6 +8,7 @@ function fetchLatestThreads(url, count, onSuccess, onError) {
     var req = jQuery.get(proxyURL);
 
     req.done(function(data) {
+        // NOTE:: dependent on the ID of the `ol` element in each forums that includes all forum unpinned threads
         var threads = jQuery(data).find("#threads");
 
         if (threads && threads.length > 0) {
@@ -17,7 +18,7 @@ function fetchLatestThreads(url, count, onSuccess, onError) {
                 parsed = _getLatest(threads, count);
 
                 // adds the `url` property
-                // TODO:: URL is not supported on IE so this will cause an error
+                // NOTE:: URL is not supported on IE so this will cause an error
                 parsed.forEach(function(thread) {
                     var url = new URL(thread["href"], url);
                     thread["url"] = url.href;
@@ -41,6 +42,7 @@ function fetchLatestThreads(url, count, onSuccess, onError) {
 /// This function returns a URL which can be queried in order to get around the cross origin denial of FXP
 function _fetchURLCORS(url) {
     // use jsonp.afeld.me as a proxy server
+    // NOTE:: if not working, we might have to use a different proxy server
     return "https://jsonp.afeld.me/?url=" + encodeURIComponent(url);
 }
 
@@ -56,9 +58,13 @@ const _lengthThreadPrefix = "thread_".length;
 function _parseThreadData(_, threadElement) {
     threadElement = jQuery(threadElement);
 
+    // NOTE:: dependent on the fact the `li` element of the thread has an attribute `id` containing
+    // the id of the thread
     var idAttr = threadElement.attr("id");
     var threadId = idAttr.substring(_lengthThreadPrefix);
 
+    // NOTE:: dependent on the fact a title of the thread has an ID #thread_title_<threadId>
+    // and that it is a link element (<a href="..."></a>)
     var linkElement = threadElement.find(`a#thread_title_${threadId}`);
 
     // might be unnecessary to get the url like this since we already got the thread id
