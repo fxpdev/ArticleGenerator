@@ -1,10 +1,10 @@
-/// returns the latest `count` threads from forum at `url`
+/// returns the latest `count` threads from forum at `forumURL`
 /// the callback `onSuccess` will be given a list of json objects each corresponding to a thread.
 /// they are formed in the following way:
 /// { href: <href URL from the forum>, title: <title of thread from the forum>, url: <absolute URL to element> }
 /// the callback `onError` will receive a single error string in case an error happens.
-function fetchLatestThreads(url, count, onSuccess, onError) {
-    var proxyURL = _fetchURLCORS(url);
+function fetchLatestThreads(forumURL, count, onSuccess, onError) {
+    var proxyURL = _fetchURLCORS(forumURL);
     var req = jQuery.get(proxyURL);
 
     req.done(function(data) {
@@ -20,8 +20,8 @@ function fetchLatestThreads(url, count, onSuccess, onError) {
                 // adds the `url` property
                 // NOTE:: URL is not supported on IE so this will cause an error
                 parsed.forEach(function(thread) {
-                    var url = new URL(thread["href"], url);
-                    thread["url"] = url.href;
+                    const threadUrl = new URL(thread["href"], forumURL);
+                    thread["url"] = threadUrl.href;
                 });
             } catch (e) {
                 onError(`Parsing error;\n${e}`)
