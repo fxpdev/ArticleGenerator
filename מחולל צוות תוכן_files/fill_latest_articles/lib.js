@@ -58,7 +58,7 @@ function fetchLatestThreads(forumURL, count, onSuccess, onError) {
 function _fetchURLCORS(url) {
     // use jsonp.afeld.me as a proxy server
     // NOTE:: if not working, we might have to use a different proxy server
-    return "https://jsonp.afeld.me/?url=" + encodeURIComponent(url);
+    return "https://scotism-sum.000webhostapp.com/?url=" + encodeURIComponent(url);
 }
 
 /// given the jQuery threads object, this function gets the latest `count` threads
