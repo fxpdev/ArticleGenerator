@@ -482,7 +482,7 @@ body { /*Background*/
     background-attachment: fixed;
     background-size: 100% 100%;
     /*background-color: #d9d9d9;*/
-    background: url('https://wallpapershome.com/images/pages/pic_h/20450.jpg');
+    background-image: url("https://wallpapershome.com/images/pages/pic_h/20450.jpg");
     overflow-x: hidden;
 }
 
