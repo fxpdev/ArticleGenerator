@@ -6,7 +6,7 @@
                                            <option value="128">סלולרי</option>
                                            <option value="713">גאדג'טים</option>
                                            <option value="4336">אביזרים ועזרים</option>
-                                           <option value="696">נגני מולטימדיה ואוזניות</option>
+                                           <option value="696">אביזרי שמע</option>
                                            <option value="3842">ייעוץ ברכישת מכשיר</option>
                                            <option value="163">טלוויזיות ומקרנים</option>
                                        </optgroup>
