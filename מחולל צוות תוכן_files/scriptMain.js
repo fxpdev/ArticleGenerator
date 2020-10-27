@@ -286,7 +286,7 @@ function itsGaming() {
 
 function loadAssets() {
     console.log("assetsDir " + assetsDir)
-    document.getElementById("header").innerHTML = $.get(assetsDir + "header.html")
+    document.getElementById("header").innerHTML = $.get(assetsDir + "header.html").responseText
     document.getElementById("dept-select").innerHTML = `
          <center>
             <img src="` + assetsDir + `logo.png" alt="מחלקת טכנולוגיה" id="dept-gaming">
@@ -306,7 +306,7 @@ function loadAssets() {
                     <tr class="title">
                         <td>
                             <ul class="rules">
-                            ` + $.get(assetsDir + "rules.html") + `
+                            ` + $.get(assetsDir + "rules.html").responseText + `
                             </ul>
                         </td>
                     </tr>
