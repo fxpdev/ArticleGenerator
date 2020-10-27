@@ -287,9 +287,12 @@ function itsGaming() {
 }
 
 function loadAssets() {
-    console.log("Loading assets dbg")
-    console.log($.get(assetsDir + "header.html"))
     document.getElementById("header").innerHTML = $.get(assetsDir + "header.html")
+    document.getElementById("dept-select").innerHTML = `
+         <center>
+            <img src="` + assetsDir + `logo.png" alt="מחלקת טכנולוגיה" id="dept-gaming">
+        </center>
+    `
 }
 
 function showModal(e, t, n) {
