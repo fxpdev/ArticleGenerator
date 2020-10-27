@@ -289,7 +289,7 @@ function loadAssets() {
     $.get(assetsDir + "header.html", function (data) {
         console.log("header.html")
         console.log(data)
-        document.getElementById("header").innerHTML = data
+        $.document.getElementById("header").innerHTML = data
     }).
 
     document.getElementById("dept-select").innerHTML = `
