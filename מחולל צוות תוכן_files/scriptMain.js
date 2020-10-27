@@ -303,13 +303,11 @@ function loadAssets() {
         </center>
     `
 
-    console.log("setting dept rules")
-    console.log($.get(assetsDir + "rules.html").responseText)
     $.get(assetsDir + "rules.html", function (data) {
         console.log("rules.html")
 
         console.log(data)
-        $("dept-rules").innerHTML = `
+        document.getElementById("dept-rules").innerHTML = `
                 <section class="section1">
                 <table class="detailstable">
                     <tbody><tr>
