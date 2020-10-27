@@ -293,9 +293,24 @@ function loadAssets() {
         </center>
     `
 
-    $("rules-insert").append($.get(assetsDir + "rules.html"))
-
-    //document.getElementsByClassName("rules").item(0).innerHTML = $.get(assetsDir + "rules.html")
+    document.getElementsByClassName("dept-rules").item(0).innerHTML = `
+                <section class="section1">
+                <table class="detailstable">
+                    <tbody><tr>
+                        <td>
+                            <a class="title">חוקים והערות לכתיבה:</a>
+                        </td>
+                    </tr>
+                    <tr class="title">
+                        <td>
+                            <ul class="rules">
+                            ` + $.get(assetsDir + "rules.html") + `
+                            </ul>
+                        </td>
+                    </tr>
+                </tbody></table>
+            </section>
+       `
 }
 
 function showModal(e, t, n) {
