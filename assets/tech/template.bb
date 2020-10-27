@@ -1,4 +1,4 @@
-﻿[CENTER][CENTER][COLOR=#333333][COLOR=#008b8b][U][B][SIZE=5][FONT=open sans hebrew]%ArticleTitle%[/FONT]
+[CENTER][CENTER][COLOR=#333333][COLOR=#008b8b][U][B][SIZE=5][FONT=open sans hebrew]%ArticleTitle%[/FONT]
 [/SIZE][/B][/U][/COLOR][/COLOR]
 [/CENTER]
 %ImageLink%
