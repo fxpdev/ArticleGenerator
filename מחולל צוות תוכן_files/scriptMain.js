@@ -301,8 +301,6 @@ function loadAssets() {
     })
 
     $.get(assetsDir + "relevant-forums.html", function (data) {
-        console.log("Loading relevant forums")
-        console.log(data)
         document.querySelector("#select-forum").innerHTML = data
     })
 
