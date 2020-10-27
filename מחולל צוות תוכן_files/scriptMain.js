@@ -268,6 +268,8 @@ function itsTech() {
     document.getElementById("updatesforums").innerHTML = ' מלאו את הכתבות האחרונות מאחד מפורומי העדכונים: ',
     $.get("SelectTech.txt", EmbedSelect, "text")
 
+    document.title = 'מחולל מחלקת טכנולוגיה'
+
     assetsDir = 'assets/tech/'
     loadAssets()
 
@@ -277,6 +279,8 @@ function itsGaming() {
     $.get("SelectGaming.txt", EmbedSelect, "text");
     document.getElementById("updatesforums").innerHTML = 'מלאו את הכתבות האחרונות המוצגות <a href="https://www.fxp.co.il/forumdisplay.php?f=5071" class="dept" id="gamingOnly2">בעדכוני גיימינג</a>:'
     document.body.style.backgroundImage = "url(" + BackgroundSource + ")"
+
+    document.title = 'מחולל מחלקת גיימינג'
 
     assetsDir = 'assets/gaming/'
     loadAssets()
