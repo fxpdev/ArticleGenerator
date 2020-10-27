@@ -299,7 +299,7 @@ function itsGaming() {
     document.body.style.backgroundImage = "url(" + BackgroundSource + ")"
 
     // Remove media description
-    document.querySelector("#img-desc").innerHTML = ""
+    document.querySelector("#img-desc").outerHTML = ""
 
     document.title = 'מחולל מחלקת גיימינג'
 
