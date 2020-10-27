@@ -1,5 +1,7 @@
 var deptColor, deptSecondColor, automation_wanted, BackgroundSource, toastLaunched, deptLogo, currentdept = ParseURLParameter("dept"), currentArticle = null;
 function GenerateArticle(e) {
+    console.log("Generating article")
+
     var t = $("#title").val().trim()
       , n = $("#img-address").val().trim()
       , l = $("#img-desc").val().trim()
@@ -60,6 +62,7 @@ function GenerateArticleRelv(e) {
     y = null != i && null != i && "" != i ? y.replace("%RelevantLink%", i).replace("%RelevantLink%", i) : y.replace("%RelevantLink%", "").replace("%RelevantLink%", "[F"),
     $("#final-article-relv-textarea").html(y)
 }
+
 function putInTemplate(e, t, n, l, o, i, r, a, c, d, s, m, p, u, g, f, v, h, y, w) {
     let k = e.replace("%ArticleTitle%", t).replace("%ImageLink%", n).replace("%ImageLinkDesc%", l).replace("%Content%", o).replace("%RelevantLinkDesc%", r).replace("%Source%", a).replace("%ForumID%", y).replace("%ForumName%", w).replace("%AdditionalLink1%", c).replace("%AdditionalLink1Desc%", d).replace("%AdditionalLink2%", s).replace("%AdditionalLink2Desc%", m).replace("%AdditionalLink3%", p).replace("%AdditionalLink3Desc%", u).replace("%AdditionalLink4%", g).replace("%AdditionalLink4Desc%", f).replace("%AdditionalLink5%", v).replace("%AdditionalLink5Desc%", h).replace("%deptColor%", deptColor).replace("%deptColor%", deptColor).replace("%deptColor%", deptColor).replace("%deptColor%", deptColor).replace("%deptImage%", deptLogo);
     return k = null != i && null != i && "" != i ? k.replace("%RelevantLink%", i).replace("%RelevantLink%", i) : k.replace("%RelevantLink%", "").replace("%RelevantLink%", "\b")
@@ -104,6 +107,7 @@ function submitForm() {
         , b = L.length
         , I = $("#link-5-desc").val().trim().length
         , E = i > 1 && r > 1;
+
     e > 1 && n > 1 && l > 1 && o > 1 && c > 1 && s > 1 && m > 1 && u > 1 && g > 1 && v > 1 && h > 1 && w > 1 && k > 1 && b > 1 && I > 1 ? ValidURL(t) && ValidURL(a) && ValidURL(d) && ValidURL(p) && ValidURL(f) && ValidURL(y) && ValidURL(L) ? (E || showModal("שימו לב!", "<p>לא מילאתם את הקישור הרלוונטי ו/או את התיאור המתאים.</p><p>חלק זה מוסיף הרבה לכתבה ומומלץ מאוד להשתמש בו.</p>", "גם אתה פשוש!"),
         $("#final-article").fadeIn("slow"),
     "gaming" == currentdept && $("#final-article-relv").fadeIn("slow"),
