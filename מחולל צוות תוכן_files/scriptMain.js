@@ -341,12 +341,16 @@ function loadAssets() {
                 </tbody></table>
             </section>
        `
-
     })
 
     $.getJSON(assetsDir + "update-forums.json", function( data ) {
         loadUpdateForums(data)
     });
+
+    $.getJSON(assetsDir + "config.json", function( data ) {
+        document.getElementById("Workspacelink").href = data.workspaceLink
+    });
+
 
     // //*[@id="select-forum"]
 
