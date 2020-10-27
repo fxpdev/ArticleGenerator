@@ -77,45 +77,47 @@ function resetform() {
     l.classList.remove("show"),
     launch_toast("המחולל אופס")
 }
+
 function submitForm() {
     var e = $("#title").val().trim().length
-      , t = $("#img-address").val().trim()
-      , n = t.length
-      , l = $("#img-desc").val().trim().length
-      , o = ($("#content").val().trim() + "\n").length
-      , i = $("#relevant-link").val().trim().length
-      , r = $("#relevant-link-desc").val().trim().length
-      , a = $("#source").val().trim()
-      , c = a.length
-      , d = $("#link-1").val().trim()
-      , s = d.length
-      , m = $("#link-1-desc").val().trim().length
-      , p = $("#link-2").val().trim()
-      , u = p.length
-      , g = $("#link-2-desc").val().trim().length
-      , f = $("#link-3").val().trim()
-      , v = f.length
-      , h = $("#link-3-desc").val().trim().length
-      , y = $("#link-4").val().trim()
-      , w = y.length
-      , k = $("#link-4-desc").val().trim().length
-      , L = $("#link-5").val().trim()
-      , b = L.length
-      , I = $("#link-5-desc").val().trim().length
-      , E = i > 1 && r > 1;
+        , t = $("#img-address").val().trim()
+        , n = t.length
+        , l = $("#img-desc").val().trim().length
+        , o = ($("#content").val().trim() + "\n").length
+        , i = $("#relevant-link").val().trim().length
+        , r = $("#relevant-link-desc").val().trim().length
+        , a = $("#source").val().trim()
+        , c = a.length
+        , d = $("#link-1").val().trim()
+        , s = d.length
+        , m = $("#link-1-desc").val().trim().length
+        , p = $("#link-2").val().trim()
+        , u = p.length
+        , g = $("#link-2-desc").val().trim().length
+        , f = $("#link-3").val().trim()
+        , v = f.length
+        , h = $("#link-3-desc").val().trim().length
+        , y = $("#link-4").val().trim()
+        , w = y.length
+        , k = $("#link-4-desc").val().trim().length
+        , L = $("#link-5").val().trim()
+        , b = L.length
+        , I = $("#link-5-desc").val().trim().length
+        , E = i > 1 && r > 1;
     e > 1 && n > 1 && l > 1 && o > 1 && c > 1 && s > 1 && m > 1 && u > 1 && g > 1 && v > 1 && h > 1 && w > 1 && k > 1 && b > 1 && I > 1 ? ValidURL(t) && ValidURL(a) && ValidURL(d) && ValidURL(p) && ValidURL(f) && ValidURL(y) && ValidURL(L) ? (E || showModal("שימו לב!", "<p>לא מילאתם את הקישור הרלוונטי ו/או את התיאור המתאים.</p><p>חלק זה מוסיף הרבה לכתבה ומומלץ מאוד להשתמש בו.</p>", "גם אתה פשוש!"),
-    $("#final-article").fadeIn("slow"),
+        $("#final-article").fadeIn("slow"),
     "gaming" == currentdept && $("#final-article-relv").fadeIn("slow"),
     "gaming" == currentdept && ($.get("template-gaming.txt", GenerateArticle, "text"),
-    $.get("‏‏template-gaming-relv.txt", GenerateArticleRelv, "text")),
+        $.get("‏‏template-gaming-relv.txt", GenerateArticleRelv, "text")),
     "tech" == currentdept && ($.get("template-tech.txt", GenerateArticle, "text"),
-    $.get("‏‏template-tech-relv.txt", GenerateArticleRelv, "text")),
-    $("html,body").animate({
-        scrollTop: $("#final-article").offset().top
-    }, "slow")) : showModal("אחד או יותר מהקישורים במחולל אינו תקין!", "<p>עברו על הקישורים שהכנסתם ובדקו שהם תקינים</p><p>זכרו! הקישור צריך להיות בתיבה השמאלית והתיאור בתיבה הימנית</p>", "לאחר שווידאתם שהקישורים תקינים, נסו שוב") : showModal("הנוסח לא מלא!", "<p>בחייאת פשוש, מלא את הנוסח</p><img src='https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Graceful_prinia.jpg/1200px-Graceful_prinia.jpg' style='height:100px; width:100px' />", "לאחר שווידאתם שהכול מלא, נסו שוב");
+        $.get("‏‏template-tech-relv.txt", GenerateArticleRelv, "text")),
+        $("html,body").animate({
+            scrollTop: $("#final-article").offset().top
+        }, "slow")) : showModal("אחד או יותר מהקישורים במחולל אינו תקין!", "<p>עברו על הקישורים שהכנסתם ובדקו שהם תקינים</p><p>זכרו! הקישור צריך להיות בתיבה השמאלית והתיאור בתיבה הימנית</p>", "לאחר שווידאתם שהקישורים תקינים, נסו שוב") : showModal("הנוסח לא מלא!", "<p>בחייאת פשוש, מלא את הנוסח</p><img src='https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Graceful_prinia.jpg/1200px-Graceful_prinia.jpg' style='height:100px; width:100px' />", "לאחר שווידאתם שהכול מלא, נסו שוב");
     let C = new Date;
     SaveDraft("Auto Draft", C = C.toLocaleString())
 }
+
 function copyArticle(e, t) {
     console.log(e),
     console.log(t),
