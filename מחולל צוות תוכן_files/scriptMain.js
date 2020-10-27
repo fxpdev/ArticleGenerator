@@ -285,7 +285,7 @@ function itsGaming() {
 }
 
 function loadAssets() {
-    console.log("assetsDir" + assetsDir)
+    console.log("assetsDir " + assetsDir)
     document.getElementById("header").innerHTML = $.get(assetsDir + "header.html")
     document.getElementById("dept-select").innerHTML = `
          <center>
@@ -293,7 +293,7 @@ function loadAssets() {
         </center>
     `
 
-    $("rules-insert").innerHTML = $.get(assetsDir + "rules.html")
+    $("rules-insert").append($.get(assetsDir + "rules.html"))
 
     //document.getElementsByClassName("rules").item(0).innerHTML = $.get(assetsDir + "rules.html")
 }
