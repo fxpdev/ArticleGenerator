@@ -294,7 +294,7 @@ function loadAssets() {
     `
 
     console.log("setting dept rules")
-    console.log($.get(assetsDir + "rules.html"))
+    console.log($.get(assetsDir + "rules.html").responseText)
     document.getElementsByClassName("dept-rules").innerHTML = `
                 <section class="section1">
                 <table class="detailstable">
