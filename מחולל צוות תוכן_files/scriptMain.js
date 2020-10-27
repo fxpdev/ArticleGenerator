@@ -293,6 +293,8 @@ function loadAssets() {
         </center>
     `
 
+    console.log("setting dept rules")
+    console.log($.get(assetsDir + "rules.html"))
     document.getElementsByClassName("dept-rules").item(0).innerHTML = `
                 <section class="section1">
                 <table class="detailstable">
