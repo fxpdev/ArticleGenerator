@@ -280,7 +280,6 @@ function itsTech() {
 
     document.title = 'מחולל מחלקת טכנולוגיה'
 
-
 }
 
 function itsGaming() {
@@ -299,6 +298,10 @@ function loadAssets() {
     $.get(assetsDir + "header.html", function (data) {
         document.getElementById("header").innerHTML = data
 
+    })
+
+    $.get(assetsDir + "relevant-forums.html", function (data) {
+        document.querySelector("#select-forum").innerHTML = data
     })
 
     document.getElementById("dept-select").innerHTML = `
@@ -332,6 +335,9 @@ function loadAssets() {
     $.getJSON(assetsDir + "update-forums.json", function( data ) {
         loadUpdateForums(data)
     });
+
+    // //*[@id="select-forum"]
+
 }
 
 function loadUpdateForums(updateForums) {
@@ -359,6 +365,7 @@ function showModal(e, t, n) {
         e.target == l && (l.style.display = "none")
     }
 }
+
 function showConfirmModal(e, t, n, l, o, i) {
     document.getElementById("confirmHeader").innerHTML = e,
     document.getElementById("confirmBody").innerHTML = t,
