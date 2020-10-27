@@ -238,6 +238,7 @@ function copyStringToClipboard(e) {
     document.execCommand("copy"),
     document.body.removeChild(t)
 }
+
 function detectmob() {
     var e, t = !1;
     return e = navigator.userAgent || navigator.vendor || window.opera,
@@ -245,9 +246,13 @@ function detectmob() {
     t && alert("שימו לב! המחולל אינו מותאם למובייל. היכנסו דרך המחשב כדי לכתוב כתבות."),
     t
 }
+
 function ValidURL(e) {
     return /^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/.test(e)
 }
+
+var assetsDir;
+
 function itsTech() {
     document.body.style.backgroundImage = "url(" + BackgroundSource + ")",
     $("#gamingOnly").hide(),
@@ -262,11 +267,27 @@ function itsTech() {
     document.getElementById("relvHelpBox").innerHTML = "קישור רלוונטי לכתבה, לדוגמה: אתר הנושא, קישור לקניית הפריט טכנולוגייה, בלוג על הנושא.<br />שימו לב שהמחולל מוסיף בעצמו נקודתיים בסוף התיאור!<br />בתיבה הימנית הכניסו את תיאור הכתבה ובתיבה השמאלית את הקישור עצמו.";
     document.getElementById("updatesforums").innerHTML = ' מלאו את הכתבות האחרונות מאחד מפורומי העדכונים: ',
     $.get("SelectTech.txt", EmbedSelect, "text")
+
+    assetsDir = 'assets/tech/'
+    loadAssets()
+
 }
+
 function itsGaming() {
     $.get("SelectGaming.txt", EmbedSelect, "text");
     document.getElementById("updatesforums").innerHTML = 'מלאו את הכתבות האחרונות המוצגות <a href="https://www.fxp.co.il/forumdisplay.php?f=5071" class="dept" id="gamingOnly2">בעדכוני גיימינג</a>:'
+    document.body.style.backgroundImage = "url(" + BackgroundSource + ")"
+
+    assetsDir = 'assets/gaming/'
+    loadAssets()
 }
+
+function loadAssets() {
+    console.log("Loading assets dbg")
+    console.log($.get(assetsDir + "header.html"))
+    document.getElementById("header").innerHTML = $.get(assetsDir + "header.html")
+}
+
 function showModal(e, t, n) {
     let l = document.getElementById("warningModal");
     document.getElementById("modalHeader").innerHTML = e,
