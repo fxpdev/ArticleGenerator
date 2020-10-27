@@ -261,8 +261,8 @@ function itsTech() {
     document.getElementById("Workspacelink").href = "https://www.fxp.co.il/forumdisplay.php?f=4598",
     document.getElementById("SaveArticle").href = "https://www.fxp.co.il/showthread.php?t=18835556",
     document.getElementById("beginnersGuide").href = "https://www.fxp.co.il/showthread.php?t=18512691",
-    document.getElementById("dept-gaming").src = "images/dept-tech.png",
-    document.getElementById("dept-gaming").alt = "מחלקת טכנלוגיה",
+    //document.getElementById("dept-gaming").src = "images/dept-tech.png",
+    //document.getElementById("dept-gaming").alt = "מחלקת טכנלוגיה",
     document.getElementById("sourceArticle").innerHTML = " יש לפרסם כתבות הקשורות לעולם הטכנולוגיה בלבד. ";
     document.getElementById("relvHelpBox").innerHTML = "קישור רלוונטי לכתבה, לדוגמה: אתר הנושא, קישור לקניית הפריט טכנולוגייה, בלוג על הנושא.<br />שימו לב שהמחולל מוסיף בעצמו נקודתיים בסוף התיאור!<br />בתיבה הימנית הכניסו את תיאור הכתבה ובתיבה השמאלית את הקישור עצמו.";
     document.getElementById("updatesforums").innerHTML = ' מלאו את הכתבות האחרונות מאחד מפורומי העדכונים: ',
@@ -276,7 +276,8 @@ function itsTech() {
 }
 
 function itsGaming() {
-    $.get("SelectGaming.txt", EmbedSelect, "text");
+    //$.get("SelectGaming.txt", EmbedSelect, "text");
+    console.log("Loading gaming dept")
     document.getElementById("updatesforums").innerHTML = 'מלאו את הכתבות האחרונות המוצגות <a href="https://www.fxp.co.il/forumdisplay.php?f=5071" class="dept" id="gamingOnly2">בעדכוני גיימינג</a>:'
     document.body.style.backgroundImage = "url(" + BackgroundSource + ")"
 
