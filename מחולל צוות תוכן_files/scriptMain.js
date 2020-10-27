@@ -87,7 +87,7 @@ function submitForm() {
     var e = $("#title").val().trim().length
         , t = $("#img-address").val().trim()
         , n = t.length
-        , l = $("#img-desc").val().trim().length
+        , l = 'tech' == currentdept ? $("#img-desc").val().trim().length : 5
         , o = ($("#content").val().trim() + "\n").length
         , i = $("#relevant-link").val().trim().length
         , r = $("#relevant-link-desc").val().trim().length
