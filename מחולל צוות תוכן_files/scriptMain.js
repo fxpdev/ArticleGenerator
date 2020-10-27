@@ -252,6 +252,7 @@ function ValidURL(e) {
 }
 
 var assetsDir;
+var updateForums;
 
 function itsTech() {
     assetsDir = 'assets/tech/'
@@ -333,6 +334,23 @@ function loadAssets() {
        `
 
     })
+
+    updateForums = JSON.parse($.get(assetsDir + "update-forums.json"))
+
+    loadUpdateForums()
+
+}
+
+function loadUpdateForums() {
+    jQuery(document).ready(function() {
+        const selectUpdates = jQuery("#select-update-forum");
+        const loadArticles = jQuery("#load-articles-button");
+
+        initializeUpdateForumSelection(selectUpdates, updateForums);
+        initializeInsertArticlesButton(loadArticles, selectUpdates);
+
+    });
+
 }
 
 function showModal(e, t, n) {

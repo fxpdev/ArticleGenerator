@@ -6,13 +6,6 @@
 // it is desired to work with some automatic tool which will do it if the amount or size of files grow,
 // but for now with just 3 short files there's no reason to
 
-const technologyUpdates = [
-    { "name" : "עדכוני מולטימדיה", "url": "https://www.fxp.co.il/forumdisplay.php?f=4607"},
-    { "name" : "עדכוני אנדרואיד", "url": "https://www.fxp.co.il/forumdisplay.php?f=4603"},
-    { "name" : "עדכוני Apple", "url": "https://www.fxp.co.il/forumdisplay.php?f=4602"},
-    { "name" : "עדכוני מחשבים וחומרה", "url": "https://www.fxp.co.il/forumdisplay.php?f=5073"},
-];
-
 /// returns the latest `count` threads from forum at `forumURL`
 /// the callback `onSuccess` will be given a list of json objects each corresponding to a thread.
 /// they are formed in the following way:

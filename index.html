@@ -22,11 +22,10 @@
     <!-- this script initializes the `insert latest articles` button and select -->
     <script>
         jQuery(document).ready(function() {
-            console.log("ready");
             const selectUpdates = jQuery("#select-update-forum");
             const loadArticles = jQuery("#load-articles-button");
 
-            initializeUpdateForumSelection(selectUpdates, technologyUpdates);
+            initializeUpdateForumSelection(selectUpdates, updateForums);
             initializeInsertArticlesButton(loadArticles, selectUpdates);
         });
     </script>
