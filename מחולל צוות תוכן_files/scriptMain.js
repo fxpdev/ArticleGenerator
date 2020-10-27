@@ -334,7 +334,7 @@ function loadAssets() {
 
     })
 
-    const updateForums = JSON.parse($.get(assetsDir + "update-forums.json"))
+    const updateForums = $.get(assetsDir + "update-forums.json").json()
 
     loadUpdateForums(updateForums)
 
