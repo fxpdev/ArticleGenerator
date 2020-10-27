@@ -287,6 +287,7 @@ function itsGaming() {
 function loadAssets() {
     console.log("assetsDir " + assetsDir)
     $.get(assetsDir + "header.html", function (data) {
+        console.log("header.html")
         console.log(data)
         document.getElementById("header").innerHTML = data
     }).
@@ -300,6 +301,8 @@ function loadAssets() {
     console.log("setting dept rules")
     console.log($.get(assetsDir + "rules.html").responseText)
     $.get(assetsDir + "rules.html", function (data) {
+        console.log("rules.html")
+
         console.log(data)
         document.getElementById("dept-rules").innerHTML = `
                 <section class="section1">
