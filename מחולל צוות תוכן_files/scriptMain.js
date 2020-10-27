@@ -334,11 +334,11 @@ function loadAssets() {
 
     })
 
-    const updateForums = $.get(assetsDir + "update-forums.json")
-    console.log(updateForums)
+    $.getJSON(assetsDir + "update-forums.json", function( data ) {
+        console.log(data)
+        loadUpdateForums(data)
 
-    loadUpdateForums(updateForums)
-
+    });
 }
 
 function loadUpdateForums(updateForums) {
