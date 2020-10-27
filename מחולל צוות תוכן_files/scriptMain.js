@@ -297,8 +297,6 @@ function itsGaming() {
 function loadAssets() {
 
     $.get(assetsDir + "header.html", function (data) {
-        console.log("header.html")
-        console.log(data)
         document.getElementById("header").innerHTML = data
 
     })
@@ -310,9 +308,6 @@ function loadAssets() {
     `
 
     $.get(assetsDir + "rules.html", function (data) {
-        console.log("rules.html")
-
-        console.log(data)
         document.getElementById("wrapper").children[0].innerHTML = `
                 <section class="section1">
                 <table class="detailstable">
@@ -335,9 +330,7 @@ function loadAssets() {
     })
 
     $.getJSON(assetsDir + "update-forums.json", function( data ) {
-        console.log("update forums " + data)
         loadUpdateForums(data)
-
     });
 }
 
