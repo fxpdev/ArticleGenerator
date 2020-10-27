@@ -291,7 +291,9 @@ function loadAssets() {
             <img src="` + assetsDir + `logo.png" alt="מחלקת טכנולוגיה" id="dept-gaming">
         </center>
     `
-    document.getElementsByClassName("rules").item(0).innerHTML = $.get(assetsDir + "rules.html")
+
+    $("rules-insert").innerHTML = $.get(assetsDir + "rules.html")
+    //document.getElementsByClassName("rules").item(0).innerHTML = $.get(assetsDir + "rules.html")
 }
 
 function showModal(e, t, n) {
