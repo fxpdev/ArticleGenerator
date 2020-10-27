@@ -286,11 +286,16 @@ function itsGaming() {
 
 function loadAssets() {
     console.log("assetsDir " + assetsDir)
+
+    //document.getElementById("header").innerHTML = $.get(assetsDir + "header.html")
+
+
     $.get(assetsDir + "header.html", function (data) {
         console.log("header.html")
         console.log(data)
         $.document.getElementById("header").innerHTML = data
-    }).
+
+    })
 
     document.getElementById("dept-select").innerHTML = `
          <center>
