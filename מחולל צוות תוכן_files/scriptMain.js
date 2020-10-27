@@ -252,7 +252,6 @@ function ValidURL(e) {
 }
 
 var assetsDir;
-var updateForums;
 
 function itsTech() {
     assetsDir = 'assets/tech/'
@@ -314,7 +313,7 @@ function loadAssets() {
         console.log("rules.html")
 
         console.log(data)
-        document.getElementById("wrapper").getElementById("dept-rules").innerHTML = `
+        document.getElementById("wrapper").children[0].innerHTML = `
                 <section class="section1">
                 <table class="detailstable">
                     <tbody><tr>
@@ -335,13 +334,13 @@ function loadAssets() {
 
     })
 
-    updateForums = JSON.parse($.get(assetsDir + "update-forums.json"))
+    const updateForums = JSON.parse($.get(assetsDir + "update-forums.json"))
 
-    loadUpdateForums()
+    loadUpdateForums(updateForums)
 
 }
 
-function loadUpdateForums() {
+function loadUpdateForums(updateForums) {
     jQuery(document).ready(function() {
         const selectUpdates = jQuery("#select-update-forum");
         const loadArticles = jQuery("#load-articles-button");
