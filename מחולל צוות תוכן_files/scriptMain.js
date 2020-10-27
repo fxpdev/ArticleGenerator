@@ -82,6 +82,7 @@ function resetform() {
 }
 
 function submitForm() {
+    console.log("submitForm")
     var e = $("#title").val().trim().length
         , t = $("#img-address").val().trim()
         , n = t.length
@@ -108,6 +109,7 @@ function submitForm() {
         , I = $("#link-5-desc").val().trim().length
         , E = i > 1 && r > 1;
 
+    console.log("Current department is " + currentdept)
     e > 1 && n > 1 && l > 1 && o > 1 && c > 1 && s > 1 && m > 1 && u > 1 && g > 1 && v > 1 && h > 1 && w > 1 && k > 1 && b > 1 && I > 1 ? ValidURL(t) && ValidURL(a) && ValidURL(d) && ValidURL(p) && ValidURL(f) && ValidURL(y) && ValidURL(L) ? (E || showModal("שימו לב!", "<p>לא מילאתם את הקישור הרלוונטי ו/או את התיאור המתאים.</p><p>חלק זה מוסיף הרבה לכתבה ומומלץ מאוד להשתמש בו.</p>", "גם אתה פשוש!"),
         $("#final-article").fadeIn("slow"),
     "gaming" == currentdept && $("#final-article-relv").fadeIn("slow"),
