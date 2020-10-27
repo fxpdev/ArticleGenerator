@@ -307,7 +307,7 @@ function loadAssets() {
         console.log("rules.html")
 
         console.log(data)
-        document.getElementById("dept-rules").innerHTML = `
+        document.getElementById("wrapper").getElementById("dept-rules").innerHTML = `
                 <section class="section1">
                 <table class="detailstable">
                     <tbody><tr>
