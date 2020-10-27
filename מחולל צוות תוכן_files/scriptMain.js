@@ -286,7 +286,11 @@ function itsGaming() {
 
 function loadAssets() {
     console.log("assetsDir " + assetsDir)
-    document.getElementById("header").innerHTML = $.get(assetsDir + "header.html").responseText
+    $.get(assetsDir + "header.html", function (data) {
+        console.log(data)
+        document.getElementById("header").innerHTML = data
+    }).
+
     document.getElementById("dept-select").innerHTML = `
          <center>
             <img src="` + assetsDir + `logo.png" alt="מחלקת טכנולוגיה" id="dept-gaming">
@@ -295,7 +299,9 @@ function loadAssets() {
 
     console.log("setting dept rules")
     console.log($.get(assetsDir + "rules.html").responseText)
-    document.getElementById("dept-rules").innerHTML = `
+    $.get(assetsDir + "rules.html", function (data) {
+        console.log(data)
+        document.getElementById("dept-rules").innerHTML = `
                 <section class="section1">
                 <table class="detailstable">
                     <tbody><tr>
@@ -306,13 +312,15 @@ function loadAssets() {
                     <tr class="title">
                         <td>
                             <ul class="rules">
-                            ` + $.get(assetsDir + "rules.html").responseText + `
+                            ` + data + `
                             </ul>
                         </td>
                     </tr>
                 </tbody></table>
             </section>
        `
+
+    })
 }
 
 function showModal(e, t, n) {
