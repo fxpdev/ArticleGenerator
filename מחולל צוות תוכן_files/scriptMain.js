@@ -1,4 +1,5 @@
-var deptColor, deptSecondColor, automation_wanted, BackgroundSource, toastLaunched, deptLogo, currentdept = ParseURLParameter("dept"), currentArticle = null;
+var deptColor, deptSecondColor, automation_wanted, BackgroundSource, toastLaunched, deptLogo, currentdept = ParseURLParameter("dept"), currentArticle = null, workspaceId = 0;
+
 
 function GenerateArticle(e) {
     console.log("Generating article")
@@ -348,7 +349,8 @@ function loadAssets() {
     });
 
     $.getJSON(assetsDir + "config.json", function( data ) {
-        document.getElementById("Workspacelink").href = data.workspaceLink
+        workspaceId = data.workspaceId
+        document.getElementById("Workspacelink").href = "https://www.fxp.co.il/forumdisplay.php?f=" + workspaceId
     });
 
 
@@ -642,7 +644,7 @@ $(document).ready(function() {
     }),
     $("#final-article-copy").on("click", function() {
         copyArticle("final-article-textarea", "copy-a-popup")
-        open ('https://www.fxp.co.il/newthread.php?do=newthread&f=4598')
+        open ('https://www.fxp.co.il/newthread.php?do=newthread&f=' + workspaceId)
     }),
     $("#final-article-Relv-copy").on("click", function() {
         copyArticle("final-article-relv-textarea", "copy-a-popup-R")
