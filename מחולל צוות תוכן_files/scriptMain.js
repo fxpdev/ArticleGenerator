@@ -335,7 +335,7 @@ function loadAssets() {
     })
 
     $.getJSON(assetsDir + "update-forums.json", function( data ) {
-        console.log(data)
+        console.log("update forums " + data)
         loadUpdateForums(data)
 
     });
