@@ -254,6 +254,9 @@ function ValidURL(e) {
 var assetsDir;
 
 function itsTech() {
+    assetsDir = 'assets/tech/'
+    loadAssets()
+
     document.body.style.backgroundImage = "url(" + BackgroundSource + ")",
     $("#gamingOnly").hide(),
     $("#gamingOnly2").hide(),
@@ -270,21 +273,18 @@ function itsTech() {
 
     document.title = 'מחולל מחלקת טכנולוגיה'
 
-    assetsDir = 'assets/tech/'
-    loadAssets()
 
 }
 
 function itsGaming() {
-    //$.get("SelectGaming.txt", EmbedSelect, "text");
-    console.log("Loading gaming dept")
+    assetsDir = 'assets/gaming/'
+    loadAssets()
+
     document.getElementById("updatesforums").innerHTML = 'מלאו את הכתבות האחרונות המוצגות <a href="https://www.fxp.co.il/forumdisplay.php?f=5071" class="dept" id="gamingOnly2">בעדכוני גיימינג</a>:'
     document.body.style.backgroundImage = "url(" + BackgroundSource + ")"
 
     document.title = 'מחולל מחלקת גיימינג'
 
-    assetsDir = 'assets/gaming/'
-    loadAssets()
 }
 
 function loadAssets() {
