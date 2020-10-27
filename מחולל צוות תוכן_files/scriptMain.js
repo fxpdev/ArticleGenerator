@@ -1,10 +1,11 @@
 var deptColor, deptSecondColor, automation_wanted, BackgroundSource, toastLaunched, deptLogo, currentdept = ParseURLParameter("dept"), currentArticle = null;
+
 function GenerateArticle(e) {
     console.log("Generating article")
 
     var t = $("#title").val().trim()
       , n = $("#img-address").val().trim()
-      , l = $("#img-desc").val().trim()
+      , l = 'tech' == currentdept ? $("#img-desc").val().trim() : ""
       , o = $("#select-forum").val()
       , i = $("#select-forum option[value='" + o + "']").text()
       , r = $("#content").val().trim() + "\n"
@@ -296,6 +297,9 @@ function itsGaming() {
 
     document.getElementById("updatesforums").innerHTML = 'מלאו את הכתבות האחרונות המוצגות <a href="https://www.fxp.co.il/forumdisplay.php?f=5071" class="dept" id="gamingOnly2">בעדכוני גיימינג</a>:'
     document.body.style.backgroundImage = "url(" + BackgroundSource + ")"
+
+    // Remove media description
+    document.querySelector("#img-desc").innerHTML = ""
 
     document.title = 'מחולל מחלקת גיימינג'
 

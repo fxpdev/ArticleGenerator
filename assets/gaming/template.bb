@@ -1,7 +1,8 @@
 [CENTER][U][B][COLOR=#daa520][FONT=open sans hebrew][SIZE=5]%ArticleTitle%
 [/SIZE][/FONT][/COLOR][/B][/U][COLOR=#000000][SIZE=2][FONT=open sans hebrew]
 %ImageLink%[/FONT][/SIZE][U][B][FONT=open sans hebrew][SIZE=5]
-[/SIZE][/FONT][/B][/U][/COLOR][B][FONT=open sans hebrew][SIZE=5][SIZE=2][COLOR=#000000]%ImageLinkDesc%[/COLOR]
+[/SIZE][/FONT][/B][/U][/COLOR]
+[B][FONT=open sans hebrew][SIZE=5][SIZE=2]
 
 [/SIZE][/SIZE][/FONT][/B][FONT=open sans hebrew][SIZE=5][SIZE=2][SIZE=3]%Content%
 
