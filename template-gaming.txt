@@ -7,10 +7,10 @@
 
 %Credits%
 [/SIZE][/SIZE][/SIZE][/FONT][IMG]https://images.weserv.nl/?url=i.imgur.com%2FBP1U0yb.png[/IMG]
-[SIZE=2][COLOR=#daa520][B][FONT=open sans hebrew]×™×© ×œ×›× ×©××œ×•×ª? ×¨×•×¦×™× ×œ×“×¢×ª ×¢×•×“? ×”×™×›× ×¡×• ×œ×¤×•×¨×•×
+[SIZE=2][COLOR=#daa520][B][FONT=open sans hebrew]יש לכם שאלות? רוצים לדעת עוד? היכנסו לפורום
 [/FONT][/B][/COLOR][B][FONT=open sans hebrew][URL="https://www.fxp.co.il/forumdisplay.php?f=%ForumID%"][COLOR=#daa520][U][SIZE=3]%ForumName%[/SIZE][/U][/COLOR][/URL]
 
-[COLOR=#daa520][SIZE=3]××•×œ×™ ×™×¢× ×™×™×Ÿ ××•×ª×š ×’×:[/SIZE][/COLOR]
+[COLOR=#daa520][SIZE=3]אולי יעניין אותך גם:[/SIZE][/COLOR]
 [U][URL="%AdditionalLink1%"][COLOR=#0000cd]%AdditionalLink1Desc%[/COLOR][/URL][COLOR=#0000cd]
 [/COLOR][URL="%AdditionalLink2%"][COLOR=#0000cd]%AdditionalLink2Desc%[/COLOR][/URL][COLOR=#0000cd]
 [/COLOR][URL="%AdditionalLink3%"][COLOR=#0000cd]%AdditionalLink3Desc%[/COLOR][/URL][COLOR=#0000cd]
@@ -18,5 +18,5 @@
 [/COLOR][URL="%AdditionalLink5%"][COLOR=#0000cd]%AdditionalLink5Desc%[/COLOR][/URL][/U][COLOR=#0000cd]
 [/COLOR][/FONT][/B][/SIZE][IMG]https://images.weserv.nl/?url=i.imgur.com%2FBP1U0yb.png[/IMG]
 [URL="https://www.fxp.co.il/showthread.php?t=726358&p=101038695#post101038695"][IMG]https://images.weserv.nl/?url=i.imgur.com%2FAR1nKCC.png[/IMG][/URL]
-[FONT=open sans hebrew][URL="https://www.fxp.co.il/showthread.php?t=726358&p=101038695#post101038695"][COLOR=#33ccff][U][B]×ª×•×“×” ×œ×ž×—×œ×§×ª ×”×’×”×” ×¢×œ ×”×’×”×ª ×”×›×ª×‘×”[/B][/U][/COLOR][/URL]
-[URL="https://www.fxp.co.il/private.php?do=newpm&u=228002"][COLOR=#000000][U][B]×ž×¦××ª× ×˜×¢×•×ª ×‘×›×ª×‘×”? ×¡×¤×¨×• ×œ× ×• ×•× ×ª×§×Ÿ ×‘×”×§×“×[/B][/U][/COLOR][/URL][/FONT][/CENTER]
+[FONT=open sans hebrew][URL="https://www.fxp.co.il/showthread.php?t=726358&p=101038695#post101038695"][COLOR=#33ccff][U][B]תודה למחלקת הגהה על הגהת הכתבה[/B][/U][/COLOR][/URL]
+[URL="https://www.fxp.co.il/private.php?do=newpm&u=228002"][COLOR=#000000][U][B]מצאתם טעות בכתבה? ספרו לנו ונתקן בהקדם[/B][/U][/COLOR][/URL][/FONT][/CENTER] scriptMain.js:1:1156
