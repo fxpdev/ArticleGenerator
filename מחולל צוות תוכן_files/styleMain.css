@@ -335,7 +335,7 @@ a { /*Remove underline from hyperlinks*/
     outline: none;
     border-bottom: 4px solid var(--deptSecondColor);
     border-radius: 10px;
-    /*margin-top: 30px;*/     
+    margin-top: 10px;     
 }
     
     #load-articles-button:hover {
