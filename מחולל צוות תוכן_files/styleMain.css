@@ -308,7 +308,7 @@ a { /*Remove underline from hyperlinks*/
     color: #ffffff;
     background: var(--deptColor);
     width: 125px;
-    height: 40px;
+    height: 30px;
     border: 0;
     outline: none;
     border-bottom: 4px solid var(--deptSecondColor);
