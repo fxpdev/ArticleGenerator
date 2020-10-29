@@ -347,7 +347,7 @@ function RestorePrompt(e) {
     let t = GetDraft(e);
     if (null != t) {
         let e = t[18].split(",");
-        showConfirmModal("שחזור טיוטה", "<p>שחזור הטיוטא השמורה מהתאריך ה־<span id='date'></span> יגרוס את נוסח הכתבה הנוכחי.</p><p>האם הינך בטוח/ה שאת/ה מעוניינ/ת לעשות זאת?</p>", deptColor, deptColor, deptSecondColor, acceptConfirm),
+        showConfirmModal("שחזור טיוטה", "<p>שחזור הטיוטה השמורה מתאריך <span id='date'></span> יגרוס את נוסח הכתבה הנוכחי.</p><p>האם את/ה בטוח/ה שאת/ה מעוניינ/ת לעשות זאת?</p>", deptColor, deptColor, deptSecondColor, acceptConfirm),
         document.getElementById("date").innerHTML = "<span class='restoreDate'>" + e[0] + "</span>, בשעה <span class='restoreDate'>" + e[1] + "</span>"
     } else
         alert("404 Data not found")
