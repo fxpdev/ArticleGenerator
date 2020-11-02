@@ -300,9 +300,6 @@ function itsGaming() {
     document.getElementById("updatesforums").innerHTML = 'מלאו את הכתבות האחרונות המוצגות <a href="https://www.fxp.co.il/forumdisplay.php?f=5071" class="dept" id="gamingOnly2">בעדכוני גיימינג</a>:'
     document.body.style.backgroundImage = "url(" + BackgroundSource + ")"
 
-    // Remove media description
-    document.querySelector("#img-desc").outerHTML = ""
-
     document.title = 'מחולל מחלקת גיימינג'
 
 }
@@ -354,6 +351,10 @@ function loadAssets() {
         document.getElementById("Workspacelink").href = "https://www.fxp.co.il/forumdisplay.php?f=" + workspaceId
     });
 
+
+    // Remove media description
+    if (!enableMediaDescription)
+        document.querySelector("#img-desc").outerHTML = ""
 
     // //*[@id="select-forum"]
 
