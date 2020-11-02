@@ -1,12 +1,13 @@
 var deptColor, deptSecondColor, automation_wanted, BackgroundSource, toastLaunched, deptLogo, currentdept = ParseURLParameter("dept"), currentArticle = null, workspaceId = 0;
 
+const enableMediaDescription = false
 
 function GenerateArticle(e) {
     console.log("Generating article")
 
     var t = $("#title").val().trim()
       , n = $("#img-address").val().trim()
-      , l = 'tech' == currentdept ? $("#img-desc").val().trim() : ""
+      , l = enableMediaDescription ? $("#img-desc").val().trim() : ""
       , o = $("#select-forum").val()
       , i = $("#select-forum option[value='" + o + "']").text()
       , r = $("#content").val().trim() + "\n"
@@ -88,7 +89,7 @@ function submitForm() {
     var e = $("#title").val().trim().length
         , t = $("#img-address").val().trim()
         , n = t.length
-        , l = 'tech' == currentdept ? $("#img-desc").val().trim().length : 5
+        , l = enableMediaDescription ? $("#img-desc").val().trim().length : 5
         , o = ($("#content").val().trim() + "\n").length
         , i = $("#relevant-link").val().trim().length
         , r = $("#relevant-link-desc").val().trim().length
