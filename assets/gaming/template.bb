@@ -8,6 +8,8 @@
 [/FONT][B][FONT=open sans hebrew][COLOR=#333333]
 [/COLOR][/FONT][/B][/SIZE][COLOR=#a9a9a9][SIZE=1][FONT=open sans hebrew][B]%RelevantLinkDesc%
 [/B][/SIZE][/COLOR][U][B][SIZE=1][URL="%RelevantLink%"][COLOR=#a9a9a9]%RelevantLink%[/COLOR][/URL][/SIZE][/B][/U][/FONT]
+
+
 [FONT=open sans hebrew][SIZE=1][B][URL="%Source%"][COLOR=#a9a9a9]מקור[/COLOR][/URL][/B][/SIZE][/FONT]
 [IMG]https://images.weserv.nl/?url=i.imgur.com%2FBP1U0yb.png[/IMG]
 [FONT=open sans hebrew][B][COLOR=#daa520]יש לכם שאלות? רוצים לדעת עוד? היכנסו לפורום
