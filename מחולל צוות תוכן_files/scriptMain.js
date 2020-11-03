@@ -355,7 +355,7 @@ function loadAssets() {
     // Remove media description
     if (!enableMediaDescription) {
         //document.querySelector("#img-desc").outerHTML = ""
-        document.querySelector("#img-address").className = "wholeline"
+        //document.querySelector("#img-address").className = "wholeline"
 
     }
 
