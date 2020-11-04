@@ -7,8 +7,7 @@
                                            <option value="713">גאדג'טים</option>
                                            <option value="4336">אביזרים ועזרים</option>
                                            <option value="696">אביזרי שמע</option>
-                                           <option value="3842">ייעוץ ברכישת מכשיר</option>
-                                           <option value="163">טלוויזיות ומקרנים</option>
+                                           <option value="163">טלוויזיות ומסכים</option>
                                        </optgroup>
 									   <optgroup label="אנדרואיד">
                                            <option value="2716">אנדרואיד – כללי</option>
@@ -31,27 +30,19 @@
                                            <option value="2946">iPad</option>
                                            <option value="3622">JailBreak/Cydia</option>
                                            <option value="1420">אפליקציות - Apple</option>
-                                           <option value="3852">תמיכה טכנית – Apple</option>
                                        </optgroup>
 									   <optgroup label="מחשבים ואינטרנט">
                                            <option value="4475">eBay וקניות ברשת</option>
-                                           <option value="16">תמיכה טכנית – מחשבים</option>
                                            <option value="1250">עולם התוכנה</option>
-                                           <option value="214">תמיכה בתוכנות</option>
                                            <option value="402">WhatsApp ומסרים מידיים</option>
                                            <option value="9696">Windows</option>
-                                           <option value="45">תוכנות להורדה</option>
-                                           <option value="464">בקשת תוכנות</option>
                                            <option value="1310">סחר ברשת</option>
-                                           <option value="17">מדריכים - מחשבים</option>
                                            <option value="438">דרייברים</option>
                                            <option value="27">אבטחת מידע</option>
-                                           <option value="160">רקעים למחשב</option>
                                            <option value="940">Linux</option>
                                        </optgroup>
 									   <optgroup label="חומרה">
                                            <option value="218">חומרה – כללי </option>
-                                           <option value="2114">תמיכה טכנית – חומרה</option>
                                            <option value="1535">מעבדים ולוחות אם</option>
                                            <option value="4070">זכרונות RAM, כוננים קשיחים ו־SSD</option>
                                            <option value="1305">כרטיסי מסך</option>
@@ -71,21 +62,9 @@
                                            <option value="9639">Spotify</option>
                                        </optgroup>
                                        <optgroup label="השכלה ולימודים">
-                                           <option value="38">לימודים ובית ספר</option>
-                                           <option value="4346">השפה העברית</option>
-                                           <option value="9645">אנגלית</option>
-                                           <option value="524">שפות ומדינות</option>
-                                           <option value="1723">מתמטיקה</option>
                                            <option value="9532">פיזיקה</option>
                                            <option value="2437">ביולוגיה ומדעי הרפואה</option>
                                            <option value="9644">כימיה</option>
                                            <option value="8747">מדעי המחשב ואלקטרוניקה</option>
                                            <option value="1590">חלל ואסטרונומיה</option>
-                                           <option value="3635">פסיכומטרי</option>
-                                           <option value="342">השכלה גבוהה</option>
-                                           <option value="8746">כלכלה ועסקים</option>
-                                           <option value="2545">מדעי החברה והרוח</option>
-                                           <option value="528">מדע ועובדות</option>
-                                           <option value="1018">משחקי חשיבה והיגיון</option>
-                                           <option value="181">לימודי נהיגה ותיאוריה</option>
                                        </optgroup>
