@@ -1,8 +1,13 @@
-var deptColor, deptSecondColor, automation_wanted, BackgroundSource, toastLaunched, deptLogo, currentdept = ParseURLParameter("dept"), currentArticle = null;
+var deptColor, deptSecondColor, automation_wanted, BackgroundSource, toastLaunched, deptLogo, currentdept = ParseURLParameter("dept"), currentArticle = null, workspaceId = 0;
+
+const enableMediaDescription = false
+
 function GenerateArticle(e) {
+    console.log("Generating article")
+
     var t = $("#title").val().trim()
       , n = $("#img-address").val().trim()
-      , l = $("#img-desc").val().trim()
+      , l = enableMediaDescription ? $("#img-desc").val().trim() : ""
       , o = $("#select-forum").val()
       , i = $("#select-forum option[value='" + o + "']").text()
       , r = $("#content").val().trim() + "\n"
@@ -60,6 +65,7 @@ function GenerateArticleRelv(e) {
     y = null != i && null != i && "" != i ? y.replace("%RelevantLink%", i).replace("%RelevantLink%", i) : y.replace("%RelevantLink%", "").replace("%RelevantLink%", "[F"),
     $("#final-article-relv-textarea").html(y)
 }
+
 function putInTemplate(e, t, n, l, o, i, r, a, c, d, s, m, p, u, g, f, v, h, y, w) {
     let k = e.replace("%ArticleTitle%", t).replace("%ImageLink%", n).replace("%ImageLinkDesc%", l).replace("%Content%", o).replace("%RelevantLinkDesc%", r).replace("%Source%", a).replace("%ForumID%", y).replace("%ForumName%", w).replace("%AdditionalLink1%", c).replace("%AdditionalLink1Desc%", d).replace("%AdditionalLink2%", s).replace("%AdditionalLink2Desc%", m).replace("%AdditionalLink3%", p).replace("%AdditionalLink3Desc%", u).replace("%AdditionalLink4%", g).replace("%AdditionalLink4Desc%", f).replace("%AdditionalLink5%", v).replace("%AdditionalLink5Desc%", h).replace("%deptColor%", deptColor).replace("%deptColor%", deptColor).replace("%deptColor%", deptColor).replace("%deptColor%", deptColor).replace("%deptImage%", deptLogo);
     return k = null != i && null != i && "" != i ? k.replace("%RelevantLink%", i).replace("%RelevantLink%", i) : k.replace("%RelevantLink%", "").replace("%RelevantLink%", "\b")
@@ -77,45 +83,50 @@ function resetform() {
     l.classList.remove("show"),
     launch_toast("המחולל אופס")
 }
+
 function submitForm() {
+    console.log("submitForm")
     var e = $("#title").val().trim().length
-      , t = $("#img-address").val().trim()
-      , n = t.length
-      , l = $("#img-desc").val().trim().length
-      , o = ($("#content").val().trim() + "\n").length
-      , i = $("#relevant-link").val().trim().length
-      , r = $("#relevant-link-desc").val().trim().length
-      , a = $("#source").val().trim()
-      , c = a.length
-      , d = $("#link-1").val().trim()
-      , s = d.length
-      , m = $("#link-1-desc").val().trim().length
-      , p = $("#link-2").val().trim()
-      , u = p.length
-      , g = $("#link-2-desc").val().trim().length
-      , f = $("#link-3").val().trim()
-      , v = f.length
-      , h = $("#link-3-desc").val().trim().length
-      , y = $("#link-4").val().trim()
-      , w = y.length
-      , k = $("#link-4-desc").val().trim().length
-      , L = $("#link-5").val().trim()
-      , b = L.length
-      , I = $("#link-5-desc").val().trim().length
-      , E = i > 1 && r > 1;
+        , t = $("#img-address").val().trim()
+        , n = t.length
+        , l = enableMediaDescription ? $("#img-desc").val().trim().length : 5
+        , o = ($("#content").val().trim() + "\n").length
+        , i = $("#relevant-link").val().trim().length
+        , r = $("#relevant-link-desc").val().trim().length
+        , a = $("#source").val().trim()
+        , c = a.length
+        , d = $("#link-1").val().trim()
+        , s = d.length
+        , m = $("#link-1-desc").val().trim().length
+        , p = $("#link-2").val().trim()
+        , u = p.length
+        , g = $("#link-2-desc").val().trim().length
+        , f = $("#link-3").val().trim()
+        , v = f.length
+        , h = $("#link-3-desc").val().trim().length
+        , y = $("#link-4").val().trim()
+        , w = y.length
+        , k = $("#link-4-desc").val().trim().length
+        , L = $("#link-5").val().trim()
+        , b = L.length
+        , I = $("#link-5-desc").val().trim().length
+        , E = i > 1 && r > 1;
+
+    console.log("Current department is " + currentdept)
     e > 1 && n > 1 && l > 1 && o > 1 && c > 1 && s > 1 && m > 1 && u > 1 && g > 1 && v > 1 && h > 1 && w > 1 && k > 1 && b > 1 && I > 1 ? ValidURL(t) && ValidURL(a) && ValidURL(d) && ValidURL(p) && ValidURL(f) && ValidURL(y) && ValidURL(L) ? (E || showModal("שימו לב!", "<p>לא מילאתם את הקישור הרלוונטי ו/או את התיאור המתאים.</p><p>חלק זה מוסיף הרבה לכתבה ומומלץ מאוד להשתמש בו.</p>", "גם אתה פשוש!"),
-    $("#final-article").fadeIn("slow"),
+        $("#final-article").fadeIn("slow"),
     "gaming" == currentdept && $("#final-article-relv").fadeIn("slow"),
-    "gaming" == currentdept && ($.get("template-gaming.txt", GenerateArticle, "text"),
-    $.get("‏‏template-gaming-relv.txt", GenerateArticleRelv, "text")),
-    "tech" == currentdept && ($.get("template-tech.txt", GenerateArticle, "text"),
-    $.get("‏‏template-tech-relv.txt", GenerateArticleRelv, "text")),
-    $("html,body").animate({
-        scrollTop: $("#final-article").offset().top
-    }, "slow")) : showModal("אחד או יותר מהקישורים במחולל אינו תקין!", "<p>עברו על הקישורים שהכנסתם ובדקו שהם תקינים</p><p>זכרו! הקישור צריך להיות בתיבה השמאלית והתיאור בתיבה הימנית</p>", "לאחר שווידאתם שהקישורים תקינים, נסו שוב") : showModal("הנוסח לא מלא!", "<p>בחייאת פשוש, מלא את הנוסח</p><img src='https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Graceful_prinia.jpg/1200px-Graceful_prinia.jpg' style='height:100px; width:100px' />", "לאחר שווידאתם שהכול מלא, נסו שוב");
+    "gaming" == currentdept && ($.get("assets/gaming/template00.bb", GenerateArticle, "text"),
+        $.get("‏‏template-gaming-relv.txt", GenerateArticleRelv, "text")),
+    "tech" == currentdept && ($.get("assets/tech/template00.bb", GenerateArticle, "text"),
+        $.get("‏‏template-tech-relv.txt", GenerateArticleRelv, "text")),
+        $("html,body").animate({
+            scrollTop: $("#final-article").offset().top
+        }, "slow")) : showModal("אחד או יותר מהקישורים במחולל אינו תקין!", "<p>עברו על הקישורים שהכנסתם ובדקו שהם תקינים</p><p>זכרו! הקישור צריך להיות בתיבה השמאלית והתיאור בתיבה הימנית</p>", "לאחר שווידאתם שהקישורים תקינים, נסו שוב") : showModal("הנוסח לא מלא!", "<p>בחייאת פשוש, מלא את הנוסח</p><img src='https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Graceful_prinia.jpg/1200px-Graceful_prinia.jpg' style='height:100px; width:100px' />", "לאחר שווידאתם שהכול מלא, נסו שוב");
     let C = new Date;
     SaveDraft("Auto Draft", C = C.toLocaleString())
 }
+
 function copyArticle(e, t) {
     console.log(e),
     console.log(t),
@@ -238,6 +249,7 @@ function copyStringToClipboard(e) {
     document.execCommand("copy"),
     document.body.removeChild(t)
 }
+
 function detectmob() {
     var e, t = !1;
     return e = navigator.userAgent || navigator.vendor || window.opera,
@@ -245,28 +257,124 @@ function detectmob() {
     t && alert("שימו לב! המחולל אינו מותאם למובייל. היכנסו דרך המחשב כדי לכתוב כתבות."),
     t
 }
+
 function ValidURL(e) {
     return /^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/.test(e)
 }
+
+var assetsDir;
+
 function itsTech() {
+    assetsDir = 'assets/tech/'
+    loadAssets()
+
     document.body.style.backgroundImage = "url(" + BackgroundSource + ")",
-    $("#gamingOnly").hide(),
-    $("#gamingOnly2").hide(),
-    $("#onlygaming3").hide(),
-    document.getElementById("Workspacelink").href = "https://www.fxp.co.il/forumdisplay.php?f=4598",
-    document.getElementById("SaveArticle").href = "https://www.fxp.co.il/showthread.php?t=18835556",
-    document.getElementById("beginnersGuide").href = "https://www.fxp.co.il/showthread.php?t=18512691",
-    document.getElementById("dept-gaming").src = "images/dept-tech.png",
-    document.getElementById("dept-gaming").alt = "מחלקת טכנלוגיה",
-    document.getElementById("sourceArticle").innerHTML = " יש לפרסם כתבות הקשורות לעולם הטכנולוגיה בלבד. ";
-    document.getElementById("relvHelpBox").innerHTML = "קישור רלוונטי לכתבה, לדוגמה: אתר הנושא, קישור לקניית הפריט טכנולוגייה, בלוג על הנושא.<br />שימו לב שהמחולל מוסיף בעצמו נקודתיים בסוף התיאור!<br />בתיבה הימנית הכניסו את תיאור הכתבה ובתיבה השמאלית את הקישור עצמו.";
-    document.getElementById("updatesforums").innerHTML = ' מלאו את הכתבות האחרונות מאחד מפורומי העדכונים: ',
-    $.get("SelectTech.txt", EmbedSelect, "text")
+        $("#gamingOnly").hide(),
+        $("#gamingOnly2").hide(),
+        $("#onlygaming3").hide(),
+        document.getElementById("relvHelpBox").innerHTML = "קישור רלוונטי לכתבה, לדוגמה: אתר הנושא, קישור לקניית הפריט טכנולוגייה, בלוג על הנושא.<br />שימו לב שהמחולל מוסיף בעצמו נקודתיים בסוף התיאור!<br />בתיבה הימנית הכניסו את תיאור הכתבה ובתיבה השמאלית את הקישור עצמו.";
+
+    /*document.getElementById("updatesforums").innerHTML = ' מלאו את הכתבות האחרונות מאחד מפורומי העדכונים: ',
+        $.get("SelectTech.txt", EmbedSelect, "text")*/
+
+    document.getElementById("updatesforums2").innerHTML = `
+                                            <a href="https://www.fxp.co.il/forumdisplay.php?f=4607" class="dept">עדכוני
+                                        מולטימדיה,</a> <a href="https://www.fxp.co.il/forumdisplay.php?f=4603"
+                                                          class="dept">עדכוני
+                                        אנדרואיד,</a> <a href="https://www.fxp.co.il/forumdisplay.php?f=4602"
+                                                         class="dept">עדכוני
+                                        Apple,</a> <a href="https://www.fxp.co.il/forumdisplay.php?f=5073" class="dept">עדכוני
+                                        מחשבים וחומרה</a>:
+`
+    //document.getElementById("dept-gaming").src = "images/dept-tech.png",
+    //document.getElementById("dept-gaming").alt = "מחלקת טכנלוגיה",
+
+    document.title = 'מחולל מחלקת טכנולוגיה'
+
 }
+
 function itsGaming() {
-    $.get("SelectGaming.txt", EmbedSelect, "text");
+    assetsDir = 'assets/gaming/'
+    loadAssets()
+
     document.getElementById("updatesforums").innerHTML = 'מלאו את הכתבות האחרונות המוצגות <a href="https://www.fxp.co.il/forumdisplay.php?f=5071" class="dept" id="gamingOnly2">בעדכוני גיימינג</a>:'
+    document.body.style.backgroundImage = "url(" + BackgroundSource + ")"
+
+    document.title = 'מחולל מחלקת גיימינג'
+
 }
+
+function loadAssets() {
+
+    $.get(assetsDir + "header.html", function (data) {
+        document.getElementById("header").innerHTML = data
+
+    })
+
+    $.get(assetsDir + "relevant-forums.html", function (data) {
+        document.querySelector("#select-forum").innerHTML = data
+    })
+
+    document.getElementById("dept-select").innerHTML = `
+         <center>
+            <img src="` + assetsDir + `logo.png" alt="מחלקת טכנולוגיה" id="dept-gaming">
+        </center>
+    `
+
+    $.get(assetsDir + "rules.html", function (data) {
+        document.getElementById("wrapper").children[0].innerHTML = `
+                <section class="section1">
+                <table class="detailstable">
+                    <tbody><tr>
+                        <td>
+                            <a class="title">חוקים והערות לכתיבה:</a>
+                        </td>
+                    </tr>
+                    <tr class="title">
+                        <td>
+                            <ul class="rules">
+                            ` + data + `
+                            </ul>
+                        </td>
+                    </tr>
+                </tbody></table>
+            </section>
+       `
+    })
+
+    $.getJSON(assetsDir + "update-forums.json", function( data ) {
+        loadUpdateForums(data)
+    });
+
+    $.getJSON(assetsDir + "config.json", function( data ) {
+        workspaceId = data.workspaceId
+        document.getElementById("Workspacelink").href = "https://www.fxp.co.il/forumdisplay.php?f=" + workspaceId
+    });
+
+
+    // Remove media description
+    if (!enableMediaDescription) {
+        document.querySelector("#img-desc").outerHTML = ""
+        document.querySelector("#img-address").className = "wholeline"
+
+    }
+
+    // //*[@id="select-forum"]
+
+}
+
+function loadUpdateForums(updateForums) {
+    jQuery(document).ready(function() {
+        const selectUpdates = jQuery("#select-update-forum");
+        const loadArticles = jQuery("#load-articles-button");
+
+        initializeUpdateForumSelection(selectUpdates, updateForums);
+        initializeInsertArticlesButton(loadArticles, selectUpdates);
+
+    });
+
+}
+
 function showModal(e, t, n) {
     let l = document.getElementById("warningModal");
     document.getElementById("modalHeader").innerHTML = e,
@@ -280,6 +388,7 @@ function showModal(e, t, n) {
         e.target == l && (l.style.display = "none")
     }
 }
+
 function showConfirmModal(e, t, n, l, o, i) {
     document.getElementById("confirmHeader").innerHTML = e,
     document.getElementById("confirmBody").innerHTML = t,
@@ -540,7 +649,7 @@ $(document).ready(function() {
     }),
     $("#final-article-copy").on("click", function() {
         copyArticle("final-article-textarea", "copy-a-popup")
-        open ('https://www.fxp.co.il/newthread.php?do=newthread&f=4598')
+        open ('https://www.fxp.co.il/newthread.php?do=newthread&f=' + workspaceId)
     }),
     $("#final-article-Relv-copy").on("click", function() {
         copyArticle("final-article-relv-textarea", "copy-a-popup-R")

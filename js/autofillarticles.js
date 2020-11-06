@@ -1,3 +1,11 @@
+// it is better for programming purposes to have multiple files with separation of concepts
+// however, when loading a webpage, you should minimize the amount of different files in order to minimize
+// the amount of HTTP requests
+// therefore, all the 3 files in this folder have been concatenated into this file
+
+// it is desired to work with some automatic tool which will do it if the amount or size of files grow,
+// but for now with just 3 short files there's no reason to
+
 /// returns the latest `count` threads from forum at `forumURL`
 /// the callback `onSuccess` will be given a list of json objects each corresponding to a thread.
 /// they are formed in the following way:
@@ -85,3 +93,59 @@ function _parseThreadData(_, threadElement) {
 //     // tests `fetchLatest` error handling when there is no element with the ID `threads`
 //     fetchLatest("https://www.fxp.co.il/about.php", 5, console.log, window.alert);
 // }
+
+function _insertArticles(threads) {
+    threads.forEach(function(threadInfo, index) {
+        // the element indices start from 1 and not from 0
+        var elementIndex = index + 1;
+
+        // NOTE:: dependent on the following ids in the ArticleGenerator:
+        var title = jQuery(`#link-${elementIndex}-desc`);
+        var link = jQuery(`#link-${elementIndex}`);
+
+        title.val(threadInfo["title"]);
+        link.val(threadInfo["url"]);
+    });
+}
+
+function _fillArticles(forumURL, count) {
+    fetchLatestThreads(forumURL, count, _insertArticles, window.alert);
+}
+
+function _optionFromEntry(entry) {
+    const forumName = entry["name"];
+    const forumURL = entry["url"];
+
+    return `<option value="${forumURL}">${forumName}</option>`;
+}
+
+function initializeUpdateForumSelection(selectElem, updateForums) {
+    console.log(updateForums);
+
+    selectElem = jQuery(selectElem);
+
+    const optionsHTML = updateForums.map(_optionFromEntry).join("");
+    console.log(optionsHTML);
+
+    selectElem.html(optionsHTML);
+}
+
+function initializeInsertArticlesButton(button, selectElem) {
+    button = jQuery(button);
+    selectElem = jQuery(selectElem);
+
+    button.click(function(e) {
+        e.preventDefault();
+        const forumURL = selectElem.val();
+
+        console.log(forumURL);
+
+        if (forumURL) {
+            // insert 5 latest articles into the form
+            _fillArticles(forumURL, 5);
+        } else {
+            window.alert("No forum selected");
+        }
+    });
+}
+
