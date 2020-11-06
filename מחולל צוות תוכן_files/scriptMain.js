@@ -7,7 +7,7 @@ function GenerateArticle(e) {
 
     var t = $("#title").val().trim()
       , n = $("#img-address").val().trim()
-      , l = enableMediaDescription ? $("#img-desc").val().trim() : ""
+      //, l = enableMediaDescription ? $("#img-desc").val().trim() : ""
       , o = $("#select-forum").val()
       , i = $("#select-forum option[value='" + o + "']").text()
       , r = $("#content").val().trim() + "\n"
