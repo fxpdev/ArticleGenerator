@@ -38,7 +38,7 @@ function GenerateArticle(e) {
         mLinks: [s, p, g, v, y],
         mLinksDesc: [m, u, f, h, w]
     };
-    var k = putInTemplate(e, t, n, l, r, a, c, d, s, m, p, u, g, f, v, h, y, w, o, i);
+    var k = putInTemplate(e, t, n/*, l*/, r, a, c, d, s, m, p, u, g, f, v, h, y, w, o, i);
     $("#final-article-textarea").html(k),
     document.getElementById("relvF").innerHTML = "<a class='dept' href='https://www.fxp.co.il/forumdisplay.php?f=" + o + "'>" + i + "</a>"
 }
