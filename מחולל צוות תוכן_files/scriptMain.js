@@ -7,7 +7,7 @@ function GenerateArticle(e) {
 
     var t = $("#title").val().trim()
       , n = $("#img-address").val().trim()
-      , l = enableMediaDescription ? $("#img-desc").val().trim() : ""
+      , //l = enableMediaDescription ? $("#img-desc").val().trim() : ""
       , o = $("#select-forum").val()
       , i = $("#select-forum option[value='" + o + "']").text()
       , r = $("#content").val().trim() + "\n"
@@ -45,7 +45,7 @@ function GenerateArticle(e) {
 function GenerateArticleRelv(e) {
     var t = $("#title").val().trim()
       , n = $("#img-address").val().trim()
-      , l = $("#img-desc").val().trim()
+      , //l = $("#img-desc").val().trim()
       , o = $("#content").val().trim() + "\n"
       , i = $("#relevant-link").val().trim()
       , r = $("#relevant-link-desc").val().trim();
@@ -89,7 +89,7 @@ function submitForm() {
     var e = $("#title").val().trim().length
         , t = $("#img-address").val().trim()
         , n = t.length
-        , l = enableMediaDescription ? $("#img-desc").val().trim().length : 5
+        , //l = enableMediaDescription ? $("#img-desc").val().trim().length : 5
         , o = ($("#content").val().trim() + "\n").length
         , i = $("#relevant-link").val().trim().length
         , r = $("#relevant-link-desc").val().trim().length
