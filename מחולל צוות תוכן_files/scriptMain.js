@@ -284,7 +284,7 @@ function itsTech() {
                                         אנדרואיד,</a> <a href="https://www.fxp.co.il/forumdisplay.php?f=4602"
                                                          class="dept">עדכוני
                                         Apple,</a> <a href="https://www.fxp.co.il/forumdisplay.php?f=5073" class="dept">עדכוני
-                                        מחשבים וחומרה</a>:
+                                        מחשבים וחומרה</a>
 `
     //document.getElementById("dept-gaming").src = "images/dept-tech.png",
     //document.getElementById("dept-gaming").alt = "מחלקת טכנלוגיה",
@@ -297,7 +297,7 @@ function itsGaming() {
     assetsDir = 'assets/gaming/'
     loadAssets()
 
-    document.getElementById("updatesforums").innerHTML = 'מלאו את הכתבות האחרונות המוצגות <a href="https://www.fxp.co.il/forumdisplay.php?f=5071" class="dept" id="gamingOnly2">בעדכוני גיימינג</a>:'
+    document.getElementById("updatesforums").innerHTML = 'מלאו ידנית את הכתבות האחרונות המוצגות ב<a target="_blank" rel="noopener noreferrer" href="https://www.fxp.co.il/forumdisplay.php?f=5071" class="dept" id="gamingOnly2">עדכוני גיימינג</a>:'
     document.body.style.backgroundImage = "url(" + BackgroundSource + ")"
 
     document.title = 'מחולל מחלקת גיימינג'
