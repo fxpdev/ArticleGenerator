@@ -232,6 +232,16 @@ a { /*Remove underline from hyperlinks*/
     display: table;
 }
 
+.madiaDesc {
+    border-radius: 5px;
+    width: 198.5%;
+    padding: 6px;
+    background: #eaeaea;
+    border: 1px solid #c7c7c7;
+    margin-top: 15px;
+    display: table;
+}
+
 .halfline {
     border-radius: 5px;
     width: 97%;
@@ -269,7 +279,7 @@ a { /*Remove underline from hyperlinks*/
 
 .select {
     border-radius: 5px;
-    width: 50%;
+    /*width: 50%;*/
     padding: 6px;
     background: #eaeaea;
     border: 1px solid #c7c7c7;
@@ -288,7 +298,7 @@ a { /*Remove underline from hyperlinks*/
 }
 
 #form select {
-    width: 100%;
+    width: 98.5%;
 }
 
     #form select:hover {
@@ -298,7 +308,7 @@ a { /*Remove underline from hyperlinks*/
 
 
 #select-tech {
-    border-color: #008B8B;
+    border-color: var(--deptColor);
 }
 
 #select-forum {
