@@ -2,6 +2,7 @@
 
 :root {
     --deptColor: #008b8b;
+    --gamingColor: #daa520
     --deptSecondColor: #006666;
     --modalColor: --deptColor;
     --modalAcceptColor: --deptColor;
@@ -724,7 +725,7 @@ body { /*Background*/
 }
 /*option groups colors*/
 optgroup[label = "משחקים"], optgroup[label="משחקי פעולה"], optgroup[label="משחקי תפקידים"], optgroup[label="משחקי אסטרטגיה"], optgroup[label="משחקי אפליקציות ודפדפן"], optgroup[label="GTA"], optgroup[label="Counter Strike"], optgroup[label="קונסולות"], optgroup[label="Maple Story"] {
-    color: var(--deptColor);
+    color: var(--gamingColor);
 }
 
 option {
