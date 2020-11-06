@@ -28,7 +28,7 @@ function GenerateArticle(e) {
     currentArticle = {
         mTitle: t,
         mImgAdress: n,
-        mImgDesc: l,
+        //mImgDesc: l,
         mForumID: o,
         mForumName: i,
         mContent: r,
