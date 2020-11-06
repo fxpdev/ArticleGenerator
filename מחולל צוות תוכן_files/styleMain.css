@@ -326,6 +326,28 @@ a { /*Remove underline from hyperlinks*/
         transform: translateY(2px);
     }
 
+    #load-articles-button{
+    color: #ffffff;
+    background: var(--deptColor);
+    width: 125px;
+    height: 40px;
+    border: 0;
+    outline: none;
+    border-bottom: 4px solid var(--deptSecondColor);
+    border-radius: 10px;
+    margin-top: 10px;     
+}
+    
+    #load-articles-button:hover {
+        background: var(--deptSecondColor);
+        cursor: pointer;
+    }
+
+    #load-articles-button:active {
+        background: var(--deptSecondColor);
+        transform: translateY(2px);
+    }
+
 #reset-button {
     color: #ffffff;
     background: #e60000;
