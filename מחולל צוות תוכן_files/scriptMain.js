@@ -45,7 +45,7 @@ function GenerateArticle(e) {
 function GenerateArticleRelv(e) {
     var t = $("#title").val().trim()
       , n = $("#img-address").val().trim()
-      , l = $("#img-desc").val().trim()
+      //, l = $("#img-desc").val().trim()
       , o = $("#content").val().trim() + "\n"
       , i = $("#relevant-link").val().trim()
       , r = $("#relevant-link-desc").val().trim();
@@ -61,13 +61,13 @@ function GenerateArticleRelv(e) {
       , f = $("#link-4-desc").val().trim()
       , v = $("#link-5").val().trim()
       , h = $("#link-5-desc").val().trim()
-      , y = e.replace("%ArticleTitle%", t).replace("%ImageLink%", n).replace("%ImageLinkDesc%", l).replace("%Content%", o).replace("%RelevantLinkDesc%", r).replace("%Source%", a).replace("%AdditionalLink1%", c).replace("%AdditionalLink1Desc%", d).replace("%AdditionalLink2%", s).replace("%AdditionalLink2Desc%", m).replace("%AdditionalLink3%", p).replace("%AdditionalLink3Desc%", u).replace("%AdditionalLink4%", g).replace("%AdditionalLink4Desc%", f).replace("%AdditionalLink5%", v).replace("%AdditionalLink5Desc%", h);
+      , y = e.replace("%ArticleTitle%", t).replace("%ImageLink%", n)/*.replace("%ImageLinkDesc%", l)*/.replace("%Content%", o).replace("%RelevantLinkDesc%", r).replace("%Source%", a).replace("%AdditionalLink1%", c).replace("%AdditionalLink1Desc%", d).replace("%AdditionalLink2%", s).replace("%AdditionalLink2Desc%", m).replace("%AdditionalLink3%", p).replace("%AdditionalLink3Desc%", u).replace("%AdditionalLink4%", g).replace("%AdditionalLink4Desc%", f).replace("%AdditionalLink5%", v).replace("%AdditionalLink5Desc%", h);
     y = null != i && null != i && "" != i ? y.replace("%RelevantLink%", i).replace("%RelevantLink%", i) : y.replace("%RelevantLink%", "").replace("%RelevantLink%", "[F"),
     $("#final-article-relv-textarea").html(y)
 }
 
-function putInTemplate(e, t, n, l, o, i, r, a, c, d, s, m, p, u, g, f, v, h, y, w) {
-    let k = e.replace("%ArticleTitle%", t).replace("%ImageLink%", n).replace("%ImageLinkDesc%", l).replace("%Content%", o).replace("%RelevantLinkDesc%", r).replace("%Source%", a).replace("%ForumID%", y).replace("%ForumName%", w).replace("%AdditionalLink1%", c).replace("%AdditionalLink1Desc%", d).replace("%AdditionalLink2%", s).replace("%AdditionalLink2Desc%", m).replace("%AdditionalLink3%", p).replace("%AdditionalLink3Desc%", u).replace("%AdditionalLink4%", g).replace("%AdditionalLink4Desc%", f).replace("%AdditionalLink5%", v).replace("%AdditionalLink5Desc%", h).replace("%deptColor%", deptColor).replace("%deptColor%", deptColor).replace("%deptColor%", deptColor).replace("%deptColor%", deptColor).replace("%deptImage%", deptLogo);
+function putInTemplate(e, t, n/*, l*/, o, i, r, a, c, d, s, m, p, u, g, f, v, h, y, w) {
+    let k = e.replace("%ArticleTitle%", t).replace("%ImageLink%", n)/*.replace("%ImageLinkDesc%", l)*/.replace("%Content%", o).replace("%RelevantLinkDesc%", r).replace("%Source%", a).replace("%ForumID%", y).replace("%ForumName%", w).replace("%AdditionalLink1%", c).replace("%AdditionalLink1Desc%", d).replace("%AdditionalLink2%", s).replace("%AdditionalLink2Desc%", m).replace("%AdditionalLink3%", p).replace("%AdditionalLink3Desc%", u).replace("%AdditionalLink4%", g).replace("%AdditionalLink4Desc%", f).replace("%AdditionalLink5%", v).replace("%AdditionalLink5Desc%", h).replace("%deptColor%", deptColor).replace("%deptColor%", deptColor).replace("%deptColor%", deptColor).replace("%deptColor%", deptColor).replace("%deptImage%", deptLogo);
     return k = null != i && null != i && "" != i ? k.replace("%RelevantLink%", i).replace("%RelevantLink%", i) : k.replace("%RelevantLink%", "").replace("%RelevantLink%", "\b")
 }
 function resetform() {
