@@ -2,6 +2,7 @@
 
 :root {
     --deptColor: #008b8b;
+    --gamingColor: #daa520
     --deptSecondColor: #006666;
     --modalColor: --deptColor;
     --modalAcceptColor: --deptColor;
@@ -231,6 +232,16 @@ a { /*Remove underline from hyperlinks*/
     display: table;
 }
 
+.madiaDesc {
+    border-radius: 5px;
+    width: 199%;
+    padding: 6px;
+    background: #eaeaea;
+    border: 1px solid #c7c7c7;
+    margin-top: 15px;
+    display: table;
+}
+
 .halfline {
     border-radius: 5px;
     width: 97%;
@@ -268,7 +279,7 @@ a { /*Remove underline from hyperlinks*/
 
 .select {
     border-radius: 5px;
-    width: 50%;
+    /*width: 50%;*/
     padding: 6px;
     background: #eaeaea;
     border: 1px solid #c7c7c7;
@@ -287,7 +298,7 @@ a { /*Remove underline from hyperlinks*/
 }
 
 #form select {
-    width: 100%;
+    width: 98.5%;
 }
 
     #form select:hover {
@@ -297,7 +308,7 @@ a { /*Remove underline from hyperlinks*/
 
 
 #select-tech {
-    border-color: #008B8B;
+    border-color: var(--deptColor);
 }
 
 #select-forum {
@@ -322,6 +333,28 @@ a { /*Remove underline from hyperlinks*/
     }
 
     #submit-button:active {
+        background: var(--deptSecondColor);
+        transform: translateY(2px);
+    }
+
+    #load-articles-button{
+    color: #ffffff;
+    background: var(--deptColor);
+    width: 125px;
+    height: 40px;
+    border: 0;
+    outline: none;
+    border-bottom: 4px solid var(--deptSecondColor);
+    border-radius: 10px;
+    margin-top: 10px;     
+}
+    
+    #load-articles-button:hover {
+        background: var(--deptSecondColor);
+        cursor: pointer;
+    }
+
+    #load-articles-button:active {
         background: var(--deptSecondColor);
         transform: translateY(2px);
     }
@@ -482,7 +515,7 @@ body { /*Background*/
     background-attachment: fixed;
     background-size: 100% 100%;
     background-color: #d9d9d9;
-    background-image: url("https://wallpapershome.com/images/pages/pic_h/20450.jpg");
+    /*background-image: url("https://wallpapershome.com/images/pages/pic_h/20450.jpg");*/
     overflow-x: hidden;
 }
 
@@ -702,7 +735,7 @@ body { /*Background*/
 }
 /*option groups colors*/
 optgroup[label = "משחקים"], optgroup[label="משחקי פעולה"], optgroup[label="משחקי תפקידים"], optgroup[label="משחקי אסטרטגיה"], optgroup[label="משחקי אפליקציות ודפדפן"], optgroup[label="GTA"], optgroup[label="Counter Strike"], optgroup[label="קונסולות"], optgroup[label="Maple Story"] {
-    color: var(--deptColor);
+    color: var(--gamingColor);
 }
 
 option {

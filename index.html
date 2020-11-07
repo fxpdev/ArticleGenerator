@@ -1,6 +1,5 @@
 
 <!DOCTYPE html>
-<!-- saved from url=(0075)https://fxpcontentgenerator.000webhostapp.com/MainGenerators.html?dept=tech -->
 <html dir="rtl" lang="he" style="--deptColor:#008080; --deptSecondColor:#006666; -- class=" js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface no-generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -125,17 +124,17 @@
                                             <span>
                                                 מדיה הקשורה לכתבה שלכם כגון: סרטון מיוטיוב, ציוץ מטוויטר, תמונה מאינסטגרם ועוד.
                                                 <br>
-                                                בתיבה הימנית הכניסו את תיאור המדיה ובתיבה השמאלית הכניסו את הקישור למדיה.
+                                               	הכניסו את הקישור למדיה.
                                             </span>
                                         </div>
                                     </section>
                                 </td>
-                                <!--<td>
-                                     <input type="text" id="img-desc" placeholder="תיאור מדיה קשורה" class="halfline">
-                                </td>  -->
-                                <td style="width:3px;"></td>
-                                <td colspan="3">
-                                    <input type="text" id="img-address" placeholder="קישור למדיה קשורה" class="wholeline" maxlength="75">
+                                <!-- <td>
+                                    <input type="text" id="img-desc" placeholder="תיאור מדיה קשורה" class="halfline">
+                                </td> 
+                                <td style="width:3px;"></td> -->
+                                <td>
+                                    <input type="text" id="img-address" placeholder="קישור למדיה קשורה" class="madiaDesc">
                                 </td>
                             </tr>
                             <tr class="tr">
@@ -162,7 +161,7 @@
                                        <!-- <button type="button" id="resetColor" style="width:70px" class="stylebuttons">אפס צבע</button> -->
                                         <script src="./מחולל צוות תוכן_files/jscolor.js.הורדה"></script>
                                         <!-- IM TO LAZY TO CHANGE LIBRARY -->
-                                        <input class="jscolor" value="ffffff" maxlength="6" id="color" style="text-align: center; color: rgb(0, 0, 0); width: 70px; border-width: 0px 0px 2px; border-top-style: initial; border-right-style: initial; border-left-style: initial; border-top-color: initial; border-right-color: initial; border-left-color: initial; border-image: initial; border-bottom-style: solid; border-bottom-color: rgb(133, 101, 20); border-radius: 4px; margin-top: 5px; margin-bottom: 5px; background-image: none; background-color: rgb(255, 255, 255);" autocomplete="off">
+                                        <input class="jscolor" value="ffffff" maxlength="6" id="color" style="text-align: center; color: rgb(0, 0, 0); width: 70px; border-width: 0px 0px 2px; border-top-style: initial; border-right-style: initial; border-left-style: initial; border-top-color: initial; border-right-color: initial; border-left-color: initial; border-image: initial; border-bottom-style: solid; border-bottom-color: #008080; border-radius: 4px; margin-top: 5px; margin-bottom: 5px; background-image: none; background-color: rgb(255, 255, 255);" autocomplete="off">
                                         <button type="button" id="ChangeC" style="width:70px" class="stylebuttons">שנה צבע</button>
                                         ||
                                         <button type="button" id="resetSize" style="width:70px" class="stylebuttons">אפס גודל</button>
@@ -202,7 +201,7 @@
                                     </section>
                                 </td>
                                 <td>
-                                    <input type="text" id="relevant-link-desc" placeholder="תיאור קישור רלוונטי (המחולל מוסיף נקודתיים לבד!)" class="halfline">
+                                    <input type="text" id="relevant-link-desc" placeholder="תיאור קישור רלוונטי (המחולל מוסיף נקודתיים לבד)" class="halfline">
                                     <!--<input type="text" disabled style="width: 1%; text-align: center; font-weight: bold; color: red;" placeholder=":">-->
                                 </td>
                                 <td style="width:3px;"></td>
@@ -249,7 +248,7 @@
                             </tr>
                             <tr>
                                 <td colspan="4">
-                                    <div class="relv" id="updatesforums"> מלאו את הכתבות האחרונות מאחד מפורומי העדכונים:  </div>
+                                    <div class="relv" id="updatesforums"> מלאו ידנית את הכתבות האחרונות מאחד מפורומי העדכונים:  </div>
                                 </td>
                             </tr>
                             <tr>
@@ -261,7 +260,7 @@
                             </tr>
                             <tr>
                         <td colspan="4">
-                            <div class="relv">או לחלופין בחרו פורום עדכונים:</div>
+                            <div class="relv">או לחלופין – בחרו פורום עדכונים להשלמה אוטומטית:</div>
                         </td>
                     </tr>
 
@@ -411,7 +410,7 @@
                             </tr>
                             <tr>
                                 <td style="position:absolute" colspan="3">
-                                    *שימו לב שזוהי גרסה ראשנית. ייתכנו שינויים בין התצוגה הזו לאתר.
+                                    *שימו לב, זו גרסה ראשנית. ייתכנו שינויים בין התצוגה הזו לתצוגה באתר.
                                 </td>
                             </tr>
                             <tr>
@@ -552,15 +551,6 @@
         <center>
             <div id="footercontent">             <table>
 <tbody><tr>
-<!--<td>
-                        <a href="https://fxpcontentgenerator.000webhostapp.com/Patch-Notes.html?dept=tech" class="footerlinks">&nbsp; Version 3.6.0 &nbsp;</a>
-                    </td>-->
-                   <!-- <td>
-                        <a class="footerrest" href="https://fxpcontentgenerator.000webhostapp.com/Secret.html"> || &nbsp;</a>
-                    </td>-->
-                   <!--  <td>
-                        <a href="https://fxpcontentgenerator.000webhostapp.com/Thanks.html?dept=tech" class="footerlinks">תודות</a>
-                    </td>-->
                     <td>
                         <a class="footerlinks">&nbsp; נבנה  על ידי  </a>
                         <a href="https://www.fxp.co.il/member.php?u=783379" class="footerlinks">טל</a>
@@ -578,11 +568,8 @@
                 </tr>
                 <tr>
                     <td colspan="5" style="text-align:center">
-                      <!--  <a href="https://fxpcontentgenerator.000webhostapp.com/Secret.html"><img src="./מחולל צוות תוכן_files/image.png" style="width:83%; right:-2%;position:relative"></a>-->
                     </td>
 </tr>
 </tbody></table></div>
         </center>
     </footer>
-
-

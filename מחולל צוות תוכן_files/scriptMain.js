@@ -1,13 +1,13 @@
 var deptColor, deptSecondColor, automation_wanted, BackgroundSource, toastLaunched, deptLogo, currentdept = ParseURLParameter("dept"), currentArticle = null, workspaceId = 0;
 
-const enableMediaDescription = false
+const enableMediaDescription = true
 
 function GenerateArticle(e) {
     console.log("Generating article")
 
     var t = $("#title").val().trim()
       , n = $("#img-address").val().trim()
-      , l = enableMediaDescription ? $("#img-desc").val().trim() : ""
+      //, l = enableMediaDescription ? $("#img-desc").val().trim() : ""
       , o = $("#select-forum").val()
       , i = $("#select-forum option[value='" + o + "']").text()
       , r = $("#content").val().trim() + "\n"
@@ -28,7 +28,7 @@ function GenerateArticle(e) {
     currentArticle = {
         mTitle: t,
         mImgAdress: n,
-        mImgDesc: l,
+        //mImgDesc: l,
         mForumID: o,
         mForumName: i,
         mContent: r,
@@ -38,14 +38,14 @@ function GenerateArticle(e) {
         mLinks: [s, p, g, v, y],
         mLinksDesc: [m, u, f, h, w]
     };
-    var k = putInTemplate(e, t, n, l, r, a, c, d, s, m, p, u, g, f, v, h, y, w, o, i);
+    var k = putInTemplate(e, t, n/*, l*/, r, a, c, d, s, m, p, u, g, f, v, h, y, w, o, i);
     $("#final-article-textarea").html(k),
     document.getElementById("relvF").innerHTML = "<a class='dept' href='https://www.fxp.co.il/forumdisplay.php?f=" + o + "'>" + i + "</a>"
 }
 function GenerateArticleRelv(e) {
     var t = $("#title").val().trim()
       , n = $("#img-address").val().trim()
-      , l = $("#img-desc").val().trim()
+      //, l = $("#img-desc").val().trim()
       , o = $("#content").val().trim() + "\n"
       , i = $("#relevant-link").val().trim()
       , r = $("#relevant-link-desc").val().trim();
@@ -61,13 +61,13 @@ function GenerateArticleRelv(e) {
       , f = $("#link-4-desc").val().trim()
       , v = $("#link-5").val().trim()
       , h = $("#link-5-desc").val().trim()
-      , y = e.replace("%ArticleTitle%", t).replace("%ImageLink%", n).replace("%ImageLinkDesc%", l).replace("%Content%", o).replace("%RelevantLinkDesc%", r).replace("%Source%", a).replace("%AdditionalLink1%", c).replace("%AdditionalLink1Desc%", d).replace("%AdditionalLink2%", s).replace("%AdditionalLink2Desc%", m).replace("%AdditionalLink3%", p).replace("%AdditionalLink3Desc%", u).replace("%AdditionalLink4%", g).replace("%AdditionalLink4Desc%", f).replace("%AdditionalLink5%", v).replace("%AdditionalLink5Desc%", h);
+      , y = e.replace("%ArticleTitle%", t).replace("%ImageLink%", n)/*.replace("%ImageLinkDesc%", l)*/.replace("%Content%", o).replace("%RelevantLinkDesc%", r).replace("%Source%", a).replace("%AdditionalLink1%", c).replace("%AdditionalLink1Desc%", d).replace("%AdditionalLink2%", s).replace("%AdditionalLink2Desc%", m).replace("%AdditionalLink3%", p).replace("%AdditionalLink3Desc%", u).replace("%AdditionalLink4%", g).replace("%AdditionalLink4Desc%", f).replace("%AdditionalLink5%", v).replace("%AdditionalLink5Desc%", h);
     y = null != i && null != i && "" != i ? y.replace("%RelevantLink%", i).replace("%RelevantLink%", i) : y.replace("%RelevantLink%", "").replace("%RelevantLink%", "[F"),
     $("#final-article-relv-textarea").html(y)
 }
 
-function putInTemplate(e, t, n, l, o, i, r, a, c, d, s, m, p, u, g, f, v, h, y, w) {
-    let k = e.replace("%ArticleTitle%", t).replace("%ImageLink%", n).replace("%ImageLinkDesc%", l).replace("%Content%", o).replace("%RelevantLinkDesc%", r).replace("%Source%", a).replace("%ForumID%", y).replace("%ForumName%", w).replace("%AdditionalLink1%", c).replace("%AdditionalLink1Desc%", d).replace("%AdditionalLink2%", s).replace("%AdditionalLink2Desc%", m).replace("%AdditionalLink3%", p).replace("%AdditionalLink3Desc%", u).replace("%AdditionalLink4%", g).replace("%AdditionalLink4Desc%", f).replace("%AdditionalLink5%", v).replace("%AdditionalLink5Desc%", h).replace("%deptColor%", deptColor).replace("%deptColor%", deptColor).replace("%deptColor%", deptColor).replace("%deptColor%", deptColor).replace("%deptImage%", deptLogo);
+function putInTemplate(e, t, n/*, l*/, o, i, r, a, c, d, s, m, p, u, g, f, v, h, y, w) {
+    let k = e.replace("%ArticleTitle%", t).replace("%ImageLink%", n)/*.replace("%ImageLinkDesc%", l)*/.replace("%Content%", o).replace("%RelevantLinkDesc%", r).replace("%Source%", a).replace("%ForumID%", y).replace("%ForumName%", w).replace("%AdditionalLink1%", c).replace("%AdditionalLink1Desc%", d).replace("%AdditionalLink2%", s).replace("%AdditionalLink2Desc%", m).replace("%AdditionalLink3%", p).replace("%AdditionalLink3Desc%", u).replace("%AdditionalLink4%", g).replace("%AdditionalLink4Desc%", f).replace("%AdditionalLink5%", v).replace("%AdditionalLink5Desc%", h).replace("%deptColor%", deptColor).replace("%deptColor%", deptColor).replace("%deptColor%", deptColor).replace("%deptColor%", deptColor).replace("%deptImage%", deptLogo);
     return k = null != i && null != i && "" != i ? k.replace("%RelevantLink%", i).replace("%RelevantLink%", i) : k.replace("%RelevantLink%", "").replace("%RelevantLink%", "\b")
 }
 function resetform() {
@@ -89,8 +89,8 @@ function submitForm() {
     var e = $("#title").val().trim().length
         , t = $("#img-address").val().trim()
         , n = t.length
-        , l = enableMediaDescription ? $("#img-desc").val().trim().length : 5
         , o = ($("#content").val().trim() + "\n").length
+        //, l = enableMediaDescription ? $("#img-desc").val().trim().length : 5
         , i = $("#relevant-link").val().trim().length
         , r = $("#relevant-link-desc").val().trim().length
         , a = $("#source").val().trim()
@@ -113,7 +113,7 @@ function submitForm() {
         , E = i > 1 && r > 1;
 
     console.log("Current department is " + currentdept)
-    e > 1 && n > 1 && l > 1 && o > 1 && c > 1 && s > 1 && m > 1 && u > 1 && g > 1 && v > 1 && h > 1 && w > 1 && k > 1 && b > 1 && I > 1 ? ValidURL(t) && ValidURL(a) && ValidURL(d) && ValidURL(p) && ValidURL(f) && ValidURL(y) && ValidURL(L) ? (E || showModal("שימו לב!", "<p>לא מילאתם את הקישור הרלוונטי ו/או את התיאור המתאים.</p><p>חלק זה מוסיף הרבה לכתבה ומומלץ מאוד להשתמש בו.</p>", "גם אתה פשוש!"),
+    e > 1 && n > 1 /*&& l > 1*/ && o > 1 && c > 1 && s > 1 && m > 1 && u > 1 && g > 1 && v > 1 && h > 1 && w > 1 && k > 1 && b > 1 && I > 1 ? ValidURL(t) && ValidURL(a) && ValidURL(d) && ValidURL(p) && ValidURL(f) && ValidURL(y) && ValidURL(L) ? (E || showModal("שימו לב!", "<p>לא מילאתם את הקישור הרלוונטי ו/או את התיאור המתאים.</p><p>חלק זה מוסיף הרבה לכתבה ומומלץ מאוד להשתמש בו.</p>", "גם אתה פשוש!"),
         $("#final-article").fadeIn("slow"),
     "gaming" == currentdept && $("#final-article-relv").fadeIn("slow"),
     "gaming" == currentdept && ($.get("assets/gaming/template00.bb", GenerateArticle, "text"),
@@ -284,7 +284,7 @@ function itsTech() {
                                         אנדרואיד,</a> <a href="https://www.fxp.co.il/forumdisplay.php?f=4602"
                                                          class="dept">עדכוני
                                         Apple,</a> <a href="https://www.fxp.co.il/forumdisplay.php?f=5073" class="dept">עדכוני
-                                        מחשבים וחומרה</a>:
+                                        מחשבים וחומרה</a>
 `
     //document.getElementById("dept-gaming").src = "images/dept-tech.png",
     //document.getElementById("dept-gaming").alt = "מחלקת טכנלוגיה",
@@ -297,7 +297,7 @@ function itsGaming() {
     assetsDir = 'assets/gaming/'
     loadAssets()
 
-    document.getElementById("updatesforums").innerHTML = 'מלאו את הכתבות האחרונות המוצגות <a href="https://www.fxp.co.il/forumdisplay.php?f=5071" class="dept" id="gamingOnly2">בעדכוני גיימינג</a>:'
+    document.getElementById("updatesforums").innerHTML = 'מלאו ידנית את הכתבות האחרונות המוצגות ב<a target="_blank" rel="noopener noreferrer" href="https://www.fxp.co.il/forumdisplay.php?f=5071" class="dept" id="gamingOnly2">עדכוני גיימינג</a>:'
     document.body.style.backgroundImage = "url(" + BackgroundSource + ")"
 
     document.title = 'מחולל מחלקת גיימינג'
@@ -456,7 +456,7 @@ function RestorePrompt(e) {
     let t = GetDraft(e);
     if (null != t) {
         let e = t[18].split(",");
-        showConfirmModal("שחזור טיוטה", "<p>שחזור הטיוטא השמורה מהתאריך ה־<span id='date'></span> יגרוס את נוסח הכתבה הנוכחי.</p><p>האם הינך בטוח/ה שאת/ה מעוניינ/ת לעשות זאת?</p>", deptColor, deptColor, deptSecondColor, acceptConfirm),
+        showConfirmModal("שחזור טיוטה", "<p>שחזור הטיוטה השמורה מתאריך <span id='date'></span> יגרוס את נוסח הכתבה הנוכחי.</p><p>האם את/ה בטוח/ה שאת/ה מעוניינ/ת לעשות זאת?</p>", deptColor, deptColor, deptSecondColor, acceptConfirm),
         document.getElementById("date").innerHTML = "<span class='restoreDate'>" + e[0] + "</span>, בשעה <span class='restoreDate'>" + e[1] + "</span>"
     } else
         alert("404 Data not found")
@@ -543,7 +543,7 @@ function openPreviewModal(e) {
     let n = currentArticle.mImgAdress;
     "error" != getId(n) ? n = '<iframe width="560" height="315" src="//www.youtube.com/embed/' + getId(n) + '" frameborder="0" allowfullscreen></iframe>' : isTwitter(n) ? n = '<iframe id="tweetIframe" border=0 frameborder=0 width=550 height=520             src = https://twitframe.com/show?url="' + encodeURI(n) + '" ></iframe>' : isInstagram(n) && (n = '<iframe src="' + n + 'embed" width="400" height="505" frameborder="0" scrolling="no" allowtransparency="true"></iframe>',
     console.log(n));
-    showConfirmModal("תצוגה מקדימה", putInTemplate(e, currentArticle.mTitle, n, currentArticle.mImgDesc, t, currentArticle.mRelevantLink, currentArticle.mRelevantLinkDesc, currentArticle.mSource, currentArticle.mLinks[0], currentArticle.mLinksDesc[0], currentArticle.mLinks[1], currentArticle.mLinksDesc[1], currentArticle.mLinks[2], currentArticle.mLinksDesc[2], currentArticle.mLinks[3], currentArticle.mLinksDesc[3], currentArticle.mLinks[4], currentArticle.mLinksDesc[4], currentArticle.mForumID, currentArticle.mForumName), deptColor, deptColor, deptSecondColor, "")
+    showConfirmModal("תצוגה מקדימה", putInTemplate(e, currentArticle.mTitle, n/*, currentArticle.mImgDesc*/, t, currentArticle.mRelevantLink, currentArticle.mRelevantLinkDesc, currentArticle.mSource, currentArticle.mLinks[0], currentArticle.mLinksDesc[0], currentArticle.mLinks[1], currentArticle.mLinksDesc[1], currentArticle.mLinks[2], currentArticle.mLinksDesc[2], currentArticle.mLinks[3], currentArticle.mLinksDesc[3], currentArticle.mLinks[4], currentArticle.mLinksDesc[4], currentArticle.mForumID, currentArticle.mForumName), deptColor, deptColor, deptSecondColor, "")
 }
 function isInstagram(e) {
     return e.match(/(https?:\/\/www\.)?instagram\.com(\/p\/\w+\/?)/)
