@@ -524,7 +524,8 @@ body { /*Background*/
     background-filter: blur(18px);
     background-repeat: no-repeat;
     background-size: cover;
-    background-color: #00b4b4;
+    /*background-color: #00b4b4;*/
+    background-color: #d9d9d9;
     overflow-x: hidden;
     background-position: center;
 }
