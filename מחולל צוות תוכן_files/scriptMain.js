@@ -1,5 +1,5 @@
 var deptColor, deptSecondColor, automation_wanted, BackgroundSource, toastLaunched, deptLogo, currentdept = ParseURLParameter("dept"), currentArticle = null, workspaceId = 0;
-
+//var BackgroundSource = "https://wallpapershome.com/images/pages/pic_h/20450.jpg";
 const enableMediaDescription = true
 
 function GenerateArticle(e) {
@@ -268,7 +268,7 @@ function itsTech() {
     assetsDir = 'assets/tech/'
     loadAssets()
 
-    document.body.style.backgroundImage = "url(" + BackgroundSource + ")",
+    //document.body.style.backgroundImage = "url(" + BackgroundSource + ")",
         $("#gamingOnly").hide(),
         $("#gamingOnly2").hide(),
         $("#onlygaming3").hide(),
@@ -298,7 +298,7 @@ function itsGaming() {
     loadAssets()
 
     document.getElementById("updatesforums").innerHTML = 'מלאו ידנית את הכתבות האחרונות המוצגות ב<a target="_blank" rel="noopener noreferrer" href="https://www.fxp.co.il/forumdisplay.php?f=5071" class="dept" id="gamingOnly2">עדכוני גיימינג</a>:'
-    document.body.style.backgroundImage = "url(" + BackgroundSource + ")"
+    //document.body.style.backgroundImage = "url(" + BackgroundSource + ")"
 
     document.title = 'מחולל מחלקת גיימינג'
 

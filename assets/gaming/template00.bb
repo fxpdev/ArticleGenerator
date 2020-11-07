@@ -2,7 +2,6 @@
 [/SIZE][/B][/U][/COLOR]
 [/CENTER]
 %ImageLink%
-[B][FONT=open sans hebrew][COLOR=#333333][SIZE=2]%ImageLinkDesc%[/SIZE][/COLOR][/FONT][/B]
 [SIZE=3]
 [FONT=open sans hebrew]%Content%
 [/FONT][B][FONT=open sans hebrew][COLOR=#333333]
