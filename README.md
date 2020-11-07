@@ -5,9 +5,7 @@
 ## New Features!
 
   - Add [gaming][gam] templete
-  - Create new interface pictures generator
-
-This text you see here is *actually* written in Markdown! To get a feel for Markdown's syntax, type some text into the left window and watch the results in the right.
+  - Create new [interface pictures generator][ipg]
 
 Tech
 ----
@@ -34,3 +32,4 @@ Apache License 2.0
    [CS]: <https://github.com/FxPTech/ArticleGenerator/blob/master/%D7%9E%D7%97%D7%95%D7%9C%D7%9C%20%D7%A6%D7%95%D7%95%D7%AA%20%D7%AA%D7%95%D7%9B%D7%9F_files/styleMain.css>
    [JavaScript]: <https://github.com/FxPTech/ArticleGenerator/blob/master/%D7%9E%D7%97%D7%95%D7%9C%D7%9C%20%D7%A6%D7%95%D7%95%D7%AA%20%D7%AA%D7%95%D7%9B%D7%9F_files/scriptMain.js>
    [gam]: <https://fxptech.github.io/ArticleGenerator/?dept=gaming>
+   [ipg]: <https://fxptech.github.io/InterfacePictureGenerator/>
