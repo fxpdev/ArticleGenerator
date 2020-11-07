@@ -1,5 +1,5 @@
-var deptColor, deptSecondColor, automation_wanted, BackgroundSource, toastLaunched, deptLogo, currentdept = ParseURLParameter("dept"), currentArticle = null, workspaceId = 0;
-
+var deptColor, deptSecondColor, automation_wanted, /*BackgroundSource,*/ toastLaunched, deptLogo, currentdept = ParseURLParameter("dept"), currentArticle = null, workspaceId = 0;
+var BackgroundSource = "https://wallpapershome.com/images/pages/pic_h/20450.jpg";
 const enableMediaDescription = true
 
 function GenerateArticle(e) {
