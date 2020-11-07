@@ -21,7 +21,7 @@ We uses a number of Languages to work properly:
 License
 ----
 
-Apache License 2.0
+[Apache License 2.0][lic]
 
 
 **Free Software, Hell Yeah!**
@@ -33,3 +33,4 @@ Apache License 2.0
    [JavaScript]: <https://github.com/FxPTech/ArticleGenerator/blob/master/%D7%9E%D7%97%D7%95%D7%9C%D7%9C%20%D7%A6%D7%95%D7%95%D7%AA%20%D7%AA%D7%95%D7%9B%D7%9F_files/scriptMain.js>
    [gam]: <https://fxptech.github.io/ArticleGenerator/?dept=gaming>
    [ipg]: <https://fxptech.github.io/InterfacePictureGenerator/>
+   [lic]: <https://github.com/FxPTech/ArticleGenerator/blob/master/LICENSE>
