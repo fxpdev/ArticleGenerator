@@ -7,7 +7,7 @@
   - Add [gaming][gam] templete
   - Create new [interface pictures generator][ipg]
 
-Tech
+Behind
 ----
 We uses a number of Languages to work properly:
 
