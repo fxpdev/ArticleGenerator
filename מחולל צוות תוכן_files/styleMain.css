@@ -517,6 +517,8 @@ body { /*Background*/
     background-size: cover;
     background-color: #d9d9d9;
     overflow-x: hidden;
+    width: 100%;
+    height: 100vh;
 }
 
 .second {
