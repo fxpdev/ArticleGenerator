@@ -511,7 +511,7 @@ li {
     }
 
 body { /*Background*/
-    background-image: url("https://wallpapershome.com/images/pages/pic_h/20450.jpg");
+    /*background-image: url("https://wallpapershome.com/images/pages/pic_h/20450.jpg");*/
     background-filter: blur(8px);
     background-position: center;
     background-size: cover;
