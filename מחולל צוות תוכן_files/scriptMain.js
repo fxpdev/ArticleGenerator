@@ -568,7 +568,8 @@ window.onbeforeunload = function() {
 ,
 document.documentElement.style.setProperty("--deptColor", "#" + deptColor),
 document.documentElement.style.setProperty("--deptSecondColor", "#" + deptSecondColor),
-document.documentElement.style.setProperty("--backgroundSource", BackgroundSource),
+//document.documentElement.style.setProperty("--backgroundSource", BackgroundSource),
+document.documentElement.style.setProperty("--backgroundColor", BackgroundColor),
 $(document).ready(function() {
     $("#notification").hide(),
     $("#final-article").hide(),
