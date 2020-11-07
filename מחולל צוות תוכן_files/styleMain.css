@@ -522,8 +522,8 @@ body { /*Background*/
     overflow-x: hidden;*/   
     background-image: url(https://i.imgur.com/JTW1H0Z.png);
     background-filter: blur(18px);
-    /*backdrop-filter: brightness(60%);
-    backdrop-filter: contrast(40%);*/
+    /*backdrop-filter: brightness(60%);*/
+    backdrop-filter: contrast(40%);
     background-repeat: no-repeat;
     background-size: cover;
     background-color: #00a1a1;
