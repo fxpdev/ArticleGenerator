@@ -14,8 +14,8 @@ This text you see here is *actually* written in Markdown! To get a feel for Mark
 We uses a number of Languages to work properly:
 
 * [HTML][HTM]
-* [CSS][CS]
 * [JavaScript][JavaScript]
+* [CSS][CS]
 * jQuery
 * Proxy
 * And some BitBake
