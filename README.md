@@ -1,4 +1,4 @@
-# מחולל הכתבות הרשמי של צוות תוכן – FXP
+# FXP – מחולל הכתבות הרשמי של צוות תוכן
 
 [![N|Solid](https://fxptech.github.io/InterfacePictureGenerator/images/Content.png)](https://nodesource.com/products/nsolid)
 
