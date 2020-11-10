@@ -511,16 +511,23 @@ li {
     }
 
 body { /*Background*/
-    background-image: url("https://i.imgur.com/JTW1H0Z.png");
-    background-repeat: no-repeat;
-    background-attachment:fixed;
+    /*background-image: url("https://wallpapershome.com/images/pages/pic_h/20450.jpg");*/
+    /*background-filter: blur(8px);
+    background-position: center;
     background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    background-color: #d9d9d9;
+    overflow-x: hidden;*/   
+    background-image: url(https://i.imgur.com/JTW1H0Z.png);
+    background-filter: blur(18px);
+    background-repeat: no-repeat;
+    background-size: cover;
+    /*background-color: #00b4b4;*/
     background-color: #d9d9d9;
     overflow-x: hidden;
-    width: 100%;
-    height: 100vh;
-    background-attachment: scroll;
-
+    background-position: center;
 }
 
 .second {

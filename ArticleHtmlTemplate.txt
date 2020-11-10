@@ -3,8 +3,6 @@
 <br><br>
 %ImageLink%
 <br>
-<span class="ArticleMediaDesc">%ImageLinkDesc%</span>
-<br><br>
 <span class="ArticleContent">%Content%</span>
 <br>
 <span class="ArticleGrey">%RelevantLinkDesc%</span>

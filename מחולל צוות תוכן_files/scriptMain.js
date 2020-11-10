@@ -1,5 +1,6 @@
 var deptColor, deptSecondColor, automation_wanted, BackgroundSource, toastLaunched, deptLogo, currentdept = ParseURLParameter("dept"), currentArticle = null, workspaceId = 0;
 //var BackgroundSource = "https://wallpapershome.com/images/pages/pic_h/20450.jpg";
+var BackgroundColor = ("#00cece")
 const enableMediaDescription = true
 
 function GenerateArticle(e) {
@@ -115,7 +116,7 @@ function submitForm() {
     console.log("Current department is " + currentdept)
     e > 1 && n > 1 /*&& l > 1*/ && o > 1 && c > 1 && s > 1 && m > 1 && u > 1 && g > 1 && v > 1 && h > 1 && w > 1 && k > 1 && b > 1 && I > 1 ? ValidURL(t) && ValidURL(a) && ValidURL(d) && ValidURL(p) && ValidURL(f) && ValidURL(y) && ValidURL(L) ? (E || showModal("שימו לב!", "<p>לא מילאתם את הקישור הרלוונטי ו/או את התיאור המתאים.</p><p>חלק זה מוסיף הרבה לכתבה ומומלץ מאוד להשתמש בו.</p>", "גם אתה פשוש!"),
         $("#final-article").fadeIn("slow"),
-    "gaming" == currentdept && $("#final-article-relv").fadeIn("slow"),
+    //"gaming" == currentdept && $("#final-article-relv").fadeIn("slow"),
     "gaming" == currentdept && ($.get("assets/gaming/template00.bb", GenerateArticle, "text"),
         $.get("‏‏template-gaming-relv.txt", GenerateArticleRelv, "text")),
     "tech" == currentdept && ($.get("assets/tech/template00.bb", GenerateArticle, "text"),
@@ -568,7 +569,8 @@ window.onbeforeunload = function() {
 ,
 document.documentElement.style.setProperty("--deptColor", "#" + deptColor),
 document.documentElement.style.setProperty("--deptSecondColor", "#" + deptSecondColor),
-document.documentElement.style.setProperty("--backgroundSource", BackgroundSource),
+//document.documentElement.style.setProperty("--backgroundSource", BackgroundSource),
+document.documentElement.style.setProperty("--backgroundColor", BackgroundColor),
 $(document).ready(function() {
     $("#notification").hide(),
     $("#final-article").hide(),
