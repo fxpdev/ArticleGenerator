@@ -599,10 +599,10 @@ $(document).ready(function() {
     e ? ("tech" == currentdept && itsTech(),
     "gaming" == currentdept && itsGaming()) : window.history.go(-1),
     $("#Subtitle").on("click", function() {
-        Styling(2, "", "", '[TABLE="width: 650, align: center"][TR="bgcolor: #FAFAFA"][TD="bgcolor: #008080, align: center"][SIZE=4][COLOR=#ffffff][FONT=open sans hebrew][B]כותרת ראשית לסיקור[/B][/FONT][/COLOR][/SIZE][/TD][/TR][/TABLE]', 145, 163)
+        Styling(2, "", "", '[TABLE="width: 650, align: center"][TR="bgcolor: #FAFAFA"][TD="bgcolor: #' + deptColor + ', align: center"][SIZE=4][COLOR=#ffffff][FONT=open sans hebrew][B]כותרת ראשית לסיקור[/B][/FONT][/COLOR][/SIZE][/TD][/TR][/TABLE]', 145, 163)
     }),
     $("#Subtitlein").on("click", function() {
-        Styling(2, "", "", '[TABLE="width: 450, align: center"][TR="bgcolor: #FAFAFA"][TD="bgcolor: #008080, align: center"][SIZE=4][COLOR=#ffffff][FONT=open sans hebrew][B]כותרת פנימית לסיקור[/B][/FONT][/COLOR][/SIZE][/TD][/TR][/TABLE]', 145, 164)
+        Styling(2, "", "", '[TABLE="width: 450, align: center"][TR="bgcolor: #FAFAFA"][TD="bgcolor: #' + deptColor + ', align: center"][SIZE=4][COLOR=#ffffff][FONT=open sans hebrew][B]כותרת פנימית לסיקור[/B][/FONT][/COLOR][/SIZE][/TD][/TR][/TABLE]', 145, 164)
     }),
     $("#mediaDesc").on("click", function() {
         Styling(2, "", "", '[SIZE=2][FONT=open sans hebrew][B][COLOR=#333333] Media Description [/COLOR][/B][/FONT][/SIZE]', 49, 68)
