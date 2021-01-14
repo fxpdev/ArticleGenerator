@@ -10,8 +10,8 @@
 [FONT=open sans hebrew][SIZE=1][B][URL="%Source%"][COLOR=#a9a9a9]מקור[/COLOR][/URL][/B][/SIZE][/FONT]
 [IMG]https://images.weserv.nl/?url=i.imgur.com%2FBP1U0yb.png[/IMG]
 [FONT=open sans hebrew][B][COLOR=#008b8b]יש לכם שאלות? רוצים לדעת עוד? היכנסו לפורום
-[/COLOR][URL="https://www.fxp.co.il/forumdisplay.php?f=%ForumID%"][SIZE=3][COLOR=#008b8b]%ForumName%[/COLOR][/SIZE][/URL][I][B][SIZE=6]
-[/SIZE][/B][/I][/B][/FONT][COLOR=#008b8b]
+[/COLOR][URL="https://www.fxp.co.il/forumdisplay.php?f=%ForumID%"][SIZE=3][COLOR=#008b8b]%ForumName%[/COLOR][/SIZE][/URL][I][B][/B][/I][/B][/FONT][COLOR=#008b8b]
+
 [FONT= open sans hebrew][SIZE=3][B]אולי יעניין אותך גם:[/B][/SIZE][/COLOR]
 [B][URL="%AdditionalLink1%"][COLOR=#0000cd]%AdditionalLink1Desc%[/COLOR][/URL]
 [URL="%AdditionalLink2%"][COLOR=#0000cd]%AdditionalLink2Desc%[/COLOR][/URL]
