@@ -19,9 +19,7 @@
 [URL="%AdditionalLink4%"][COLOR=#0000cd]%AdditionalLink4Desc%[/COLOR][/URL]
 [URL="%AdditionalLink5%"][COLOR=#0000cd]%AdditionalLink5Desc%[/COLOR][/URL][/B][/FONT]
 [IMG]https://images.weserv.nl/?url=i.imgur.com%2FBP1U0yb.png[/IMG][FONT=open sans hebrew][/FONT]
-
-[COLOR=#daa520][SIZE=4][FONT=open sans hebrew][B]בברכה, צוות גיימינג[/B][/FONT][/SIZE][/COLOR]
-
+[URL="https://www.fxp.co.il/showthread.php?t=726358&p=101038695#post101038695"][IMG]https://i.imgur.com/ies4euF.png[/IMG][/URL]
 [SIZE=2][FONT=open sans hebrew][B][URL="https://www.fxp.co.il/showthread.php?t=726358&p=101038695#post101038695"][COLOR=#33CCFF]תודה לצוות הגהה על הגהת הכתבה[/COLOR][/URL][/B][/FONT][/SIZE][B][SIZE=2][FONT=open sans hebrew][U][URL="https://www.fxp.co.il/private.php?do=newpm&u=679839"]
 [COLOR=#000000]מצאתם טעות בכתבה? ספרו לנו ונתקן בהקדם[/COLOR][/URL][/U][/FONT][/SIZE][/B]
 [/CENTER]
