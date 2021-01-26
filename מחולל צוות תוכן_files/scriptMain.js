@@ -517,20 +517,7 @@ function launch_toast(e) {
         }, 4300)
     }
 }
-function showHeader(e) {
-    let t, n;
-    if ("tech" == currentdept || "gaming" == currentdept) {
-        "gaming" == currentdept && (t = "מחולל צוות גיימינג",
-        n = "ברוכים הבאים למחולל צוות גיימינג!"),
-        "tech" == currentdept && (t = "מחולל צוות טכנולוגיה",
-        n = "ברוכים הבאים למחולל צוות טכנולוגיה!");
-        let l = "אם נתקלתם בתקלה במחולל,"
-          , o = "אתם מוזמנים לפנות לאחד העורכים על־מנת"
-          , i = "לדווח על התקלה, שתתוקן בהקדם האפשרי."
-          , r = e.replace("%title%", t).replace("%firstline%", n).replace("%secondline%", l).replace("%thirdline%", o).replace("%fourthline%", i);
-        document.getElementById("header").innerHTML = r
-    }
-}
+
 function showFooter(e) {
     var t = e.replace("%curdept%", currentdept).replace("%curdept%", currentdept).replace("%built%", "נבנה  על ידי").replace("%tal%", "טל").replace("%update%", "עודכן על ידי").replace("%ofek%", "אופק");
     document.getElementById("footercontent").innerHTML = t
@@ -578,11 +565,6 @@ $(document).ready(function() {
     setInterval(function() {
         IsEmpty() || SaveDraft("Auto Draft", (new Date).toLocaleString())
     }, 15e4),
-    $(function() {
-        $.get("Header.txt", function(e) {
-            showHeader(e)
-        }, "text")
-    }),
     $(function() {
         $.get("Footer.txt", function(e) {
             showFooter(e)
