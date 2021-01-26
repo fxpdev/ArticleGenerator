@@ -288,9 +288,9 @@ function itsTech() {
                                         מחשבים וחומרה</a>
 `
     //document.getElementById("dept-gaming").src = "images/dept-tech.png",
-    //document.getElementById("dept-gaming").alt = "מחלקת טכנלוגיה",
+    //document.getElementById("dept-gaming").alt = "צוות טכנלוגיה",
 
-    document.title = 'מחולל מחלקת טכנולוגיה'
+    document.title = 'מחולל צוות טכנולוגיה'
 
 }
 
@@ -301,7 +301,7 @@ function itsGaming() {
     document.getElementById("updatesforums").innerHTML = 'מלאו ידנית את הכתבות האחרונות המוצגות ב<a target="_blank" rel="noopener noreferrer" href="https://www.fxp.co.il/forumdisplay.php?f=5071" class="dept" id="gamingOnly2">עדכוני גיימינג</a>:'
     //document.body.style.backgroundImage = "url(" + BackgroundSource + ")"
 
-    document.title = 'מחולל מחלקת גיימינג'
+    document.title = 'מחולל צוות גיימינג'
 
 }
 
@@ -318,7 +318,7 @@ function loadAssets() {
 
     document.getElementById("dept-select").innerHTML = `
          <center>
-            <img src="` + assetsDir + `logo.png" alt="מחלקת טכנולוגיה" id="dept-gaming">
+            <img src="` + assetsDir + `logo.png" alt="צוות טכנולוגיה" id="dept-gaming">
         </center>
     `
 
@@ -520,10 +520,10 @@ function launch_toast(e) {
 function showHeader(e) {
     let t, n;
     if ("tech" == currentdept || "gaming" == currentdept) {
-        "gaming" == currentdept && (t = "מחולל מחלקת גיימינג",
-        n = "ברוכים הבאים למחולל מחלקת גיימינג!"),
-        "tech" == currentdept && (t = "מחולל מחלקת טכנולוגיה",
-        n = "ברוכים הבאים למחולל מחלקת טכנולוגיה!");
+        "gaming" == currentdept && (t = "מחולל צוות גיימינג",
+        n = "ברוכים הבאים למחולל צוות גיימינג!"),
+        "tech" == currentdept && (t = "מחולל צוות טכנולוגיה",
+        n = "ברוכים הבאים למחולל צוות טכנולוגיה!");
         let l = "אם נתקלתם בתקלה במחולל,"
           , o = "אתם מוזמנים לפנות לאחד העורכים על־מנת"
           , i = "לדווח על התקלה, שתתוקן בהקדם האפשרי."
