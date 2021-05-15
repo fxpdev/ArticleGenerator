@@ -1,5 +1,7 @@
 {
   "workspaceId": "4598",
+  "relevantLinkEnabled": true,
+  "relevantArticlesEnabled": true,
   "deptColor": "008080",
   "deptSecondColor": "006666"
 }
