@@ -269,6 +269,10 @@ function ValidURL(e) {
 
 var assetsDir;
 
+function itsSpecial2021() {
+
+}
+
 function itsTech() {
     assetsDir = 'assets/tech/'
     loadAssets()
@@ -583,7 +587,7 @@ $(document).ready(function() {
             break
         }
     e ? ("tech" == currentdept && itsTech(),
-    "gaming" == currentdept && itsGaming()) : window.history.go(-1),
+    "gaming" == currentdept && itsGaming() && "special2021" == currentdept && itsSpecial2021()) : window.history.go(-1),
     $("#Subtitle").on("click", function() {
         Styling(2, "", "", '[TABLE="width: 650, align: center"][TR="bgcolor: #FAFAFA"][TD="bgcolor: #' + deptColor + ', align: center"][SIZE=4][COLOR=#ffffff][FONT=open sans hebrew][B]כותרת ראשית לסיקור[/B][/FONT][/COLOR][/SIZE][/TD][/TR][/TABLE]', 145, 163)
     }),
