@@ -269,49 +269,6 @@ function ValidURL(e) {
 
 var assetsDir;
 
-function itsSpecial2021() {
-
-}
-
-function itsTech() {
-    assetsDir = 'assets/tech/'
-    loadAssets()
-
-    //document.body.style.backgroundImage = "url(" + BackgroundSource + ")",
-        $("#gamingOnly").hide(),
-        $("#gamingOnly2").hide(),
-        $("#onlygaming3").hide(),
-        document.getElementById("relvHelpBox").innerHTML = "קישור רלוונטי לכתבה, לדוגמה: אתר הנושא, קישור לקניית הפריט טכנולוגייה, בלוג על הנושא.<br />שימו לב שהמחולל מוסיף בעצמו נקודתיים בסוף התיאור!<br />בתיבה הימנית הכניסו את תיאור הכתבה ובתיבה השמאלית את הקישור עצמו.";
-
-    /*document.getElementById("updatesforums").innerHTML = ' מלאו את הכתבות האחרונות מאחד מפורומי העדכונים: ',
-        $.get("SelectTech.txt", EmbedSelect, "text")*/
-
-    document.getElementById("updatesforums2").innerHTML = `
-                                            <a href="https://www.fxp.co.il/forumdisplay.php?f=4607" class="dept">עדכוני
-                                        מולטימדיה,</a> <a href="https://www.fxp.co.il/forumdisplay.php?f=4603"
-                                                          class="dept">עדכוני
-                                        אנדרואיד,</a> <a href="https://www.fxp.co.il/forumdisplay.php?f=4602"
-                                                         class="dept">עדכוני
-                                        Apple,</a> <a href="https://www.fxp.co.il/forumdisplay.php?f=5073" class="dept">עדכוני
-                                        מחשבים וחומרה</a>
-`
-    //document.getElementById("dept-gaming").src = "images/dept-tech.png",
-    //document.getElementById("dept-gaming").alt = "צוות טכנלוגיה",
-
-    document.title = 'מחולל צוות טכנולוגיה'
-
-}
-
-function itsGaming() {
-    assetsDir = 'assets/gaming/'
-    loadAssets()
-
-    document.getElementById("updatesforums").innerHTML = 'מלאו ידנית את הכתבות האחרונות המוצגות ב<a target="_blank" rel="noopener noreferrer" href="https://www.fxp.co.il/forumdisplay.php?f=5071" class="dept" id="gamingOnly2">עדכוני גיימינג</a>:'
-    //document.body.style.backgroundImage = "url(" + BackgroundSource + ")"
-
-    document.title = 'מחולל צוות גיימינג'
-
-}
 
 function loadAssets() {
 
@@ -586,9 +543,10 @@ $(document).ready(function() {
             e = !0;
             break
         }
-    e ? ("tech" == currentdept && itsTech(),
-    "gaming" == currentdept && itsGaming() && "special2021" == currentdept && itsSpecial2021()) : window.history.go(-1),
-    $("#Subtitle").on("click", function() {
+
+    e ? loadDept() : window.history.go(-1),
+
+        $("#Subtitle").on("click", function() {
         Styling(2, "", "", '[TABLE="width: 650, align: center"][TR="bgcolor: #FAFAFA"][TD="bgcolor: #' + deptColor + ', align: center"][SIZE=4][COLOR=#ffffff][FONT=open sans hebrew][B]כותרת ראשית לסיקור[/B][/FONT][/COLOR][/SIZE][/TD][/TR][/TABLE]', 145, 163)
     }),
     $("#Subtitlein").on("click", function() {
@@ -672,3 +630,8 @@ $(window).scroll(function() {
     }),
     $("#top").fadeOut("fast"))
 });
+
+function loadDept() {
+    require("assets/" + currentdept + "load.js");
+    return true;
+}
