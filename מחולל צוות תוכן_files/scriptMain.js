@@ -339,7 +339,7 @@ function loadAssets() {
         if (!relevantLinkEnabled) {
             document.getElementById("relevant-link").outerHTML = ""
             document.getElementById("relevant-link-desc").outerHTML = ""
-
+            document.getElementById("relevant-link-qmark").outerHTML = ""
         }
 
         if (!relevantArticlesEnabled) {

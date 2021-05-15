@@ -13,6 +13,7 @@ document.getElementById("updatesforums").outerHTML = ""
 //document.getElementById("updatesforums2").empty()
 document.getElementById("select-forum").outerHTML = ""
 document.getElementById("relevant-forum-desc").outerHTML = ""
+document.getElementById("relevantForumQmark").outerHTML = ""
 document.getElementById("select-update-forum").outerHTML = ""
 
 
