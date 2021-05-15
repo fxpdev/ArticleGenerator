@@ -3,6 +3,8 @@ var deptColor, deptSecondColor, automation_wanted, BackgroundSource, toastLaunch
 var BackgroundColor = ("#00cece")
 const enableMediaDescription = true
 
+const deptList = ["tech", "gaming", "special2021"]
+
 function GenerateArticle(e) {
     console.log("Generating article")
 
@@ -538,7 +540,7 @@ $(document).ready(function() {
     $("#formtable").on("keypress change", function() {
         1 == $("#final-article").is(":visible") && hideFinal()
     });
-    for (var e = !1, t = ["gaming", "tech"], n = 0; n < t.length; n++)
+    for (var e = !1, t = deptList, n = 0; n < t.length; n++)
         if (currentdept == t[n]) {
             e = !0;
             break
@@ -632,6 +634,6 @@ $(window).scroll(function() {
 });
 
 function loadDept() {
-    require("assets/" + currentdept + "/load");
+    import("../assets/" + currentdept + "/load.js");
     return true;
 }

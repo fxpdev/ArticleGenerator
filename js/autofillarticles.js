@@ -123,8 +123,10 @@ function _optionFromEntry(entry) {
 function initializeUpdateForumSelection(selectElem, updateForums) {
     console.log(updateForums);
 
+    selectElem.empty()
     if (updateForums.size == 0) {
-        selectElem.hidden = true
+        selectElem.remove()
+        return
     }
 
     selectElem = jQuery(selectElem);
