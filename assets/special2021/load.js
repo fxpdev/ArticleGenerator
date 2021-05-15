@@ -15,21 +15,10 @@ document.getElementById("select-forum").outerHTML = ""
 document.getElementById("relevant-forum-desc").outerHTML = ""
 document.getElementById("select-update-forum").outerHTML = ""
 
-function removeLink(num) {
-    //document.getElementById("link-" + num).outerHTML = ""
-    //document.getElementById("link-" + num + "-desc").outerHTML = ""
-    document.getElementById("link-" + num + "-div").outerHTML = ""
 
-}
-
-for (let i = 1; i <= 5; i++) {
-    removeLink(i)
-}
 
 // For auto complete:
 document.getElementById("autocomplete-desc").outerHTML = ""
 document.getElementById("load-articles-button").outerHTML = ""
 
 // For relevant link:
-document.getElementById("relevant-link").outerHTML = ""
-document.getElementById("relevant-link-desc").outerHTML = ""

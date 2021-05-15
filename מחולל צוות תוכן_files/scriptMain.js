@@ -336,6 +336,18 @@ function loadAssets() {
         relevantLinkEnabled = data.relevantLinkEnabled
         relevantArticlesEnabled = data.relevantArticlesEnabled
 
+        if (!relevantLinkEnabled) {
+            document.getElementById("relevant-link").outerHTML = ""
+            document.getElementById("relevant-link-desc").outerHTML = ""
+
+        }
+
+        if (!relevantArticlesEnabled) {
+            for (let i = 1; i <= 5; i++) {
+                document.getElementById("link-" + i + "-div").outerHTML = ""
+            }
+        }
+
     });
 
 
