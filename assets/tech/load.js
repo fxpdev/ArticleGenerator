@@ -23,3 +23,4 @@ document.getElementById("updatesforums2").innerHTML = `
 //document.getElementById("dept-gaming").alt = "צוות טכנלוגיה",
 
 document.title = 'מחולל צוות טכנולוגיה'
+

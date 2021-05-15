@@ -1,4 +1,7 @@
-var deptColor, deptSecondColor, automation_wanted, BackgroundSource, toastLaunched, deptLogo, currentdept = ParseURLParameter("dept"), currentArticle = null, workspaceId = 0;
+var deptColor, deptSecondColor, automation_wanted, BackgroundSource, toastLaunched, deptLogo,
+    currentdept = ParseURLParameter("dept"), currentArticle = null,
+    workspaceId = 0, relevantLinkEnabled, relevantArticlesEnabled;
+
 //var BackgroundSource = "https://wallpapershome.com/images/pages/pic_h/20450.jpg";
 var BackgroundColor = ("#00cece")
 const enableMediaDescription = true
@@ -14,20 +17,20 @@ function GenerateArticle(e) {
       , o = $("#select-forum").val()
       , i = $("#select-forum option[value='" + o + "']").text()
       , r = $("#content").val().trim() + "\n"
-      , a = $("#relevant-link").val().trim()
-      , c = $("#relevant-link-desc").val().trim();
+      , a = relevantLinkEnabled ? $("#relevant-link").val().trim() : ""
+      , c = relevantLinkEnabled ? $("#relevant-link-desc").val().trim() : "";
     c.length > 0 && (c += ":");
     var d = $("#source").val().trim()
-      , s = $("#link-1").val().trim()
-      , m = $("#link-1-desc").val().trim()
-      , p = $("#link-2").val().trim()
-      , u = $("#link-2-desc").val().trim()
-      , g = $("#link-3").val().trim()
-      , f = $("#link-3-desc").val().trim()
-      , v = $("#link-4").val().trim()
-      , h = $("#link-4-desc").val().trim()
-      , y = $("#link-5").val().trim()
-      , w = $("#link-5-desc").val().trim();
+      , s = relevantArticlesEnabled ? $("#link-1").val().trim() : ""
+      , m = relevantArticlesEnabled ? $("#link-1-desc").val().trim() : ""
+      , p = relevantArticlesEnabled ? $("#link-2").val().trim() : ""
+      , u = relevantArticlesEnabled ? $("#link-2-desc").val().trim() : ""
+      , g = relevantArticlesEnabled ? $("#link-3").val().trim() : ""
+      , f = relevantArticlesEnabled ? $("#link-3-desc").val().trim() : ""
+      , v = relevantArticlesEnabled ? $("#link-4").val().trim() : ""
+      , h = relevantArticlesEnabled ? $("#link-4-desc").val().trim() : ""
+      , y = relevantArticlesEnabled ? $("#link-5").val().trim() : ""
+      , w = relevantArticlesEnabled ? $("#link-5-desc").val().trim() : "";
     currentArticle = {
         mTitle: t,
         mImgAdress: n,
@@ -87,6 +90,8 @@ function resetform() {
     launch_toast("המחולל אופס")
 }
 
+const urlIgnore = "IGNORE"
+
 function submitForm() {
     console.log("submitForm")
     var e = $("#title").val().trim().length
@@ -94,25 +99,25 @@ function submitForm() {
         , n = t.length
         , o = ($("#content").val().trim() + "\n").length
         //, l = enableMediaDescription ? $("#img-desc").val().trim().length : 5
-        , i = $("#relevant-link").val().trim().length
-        , r = $("#relevant-link-desc").val().trim().length
+        , i = relevantLinkEnabled ?  $("#relevant-link").val().trim().length : 17
+        , r = relevantLinkEnabled ? $("#relevant-link-desc").val().trim().length : 17
         , a = $("#source").val().trim()
         , c = a.length
-        , d = $("#link-1").val().trim()
-        , s = d.length
-        , m = $("#link-1-desc").val().trim().length
-        , p = $("#link-2").val().trim()
-        , u = p.length
-        , g = $("#link-2-desc").val().trim().length
-        , f = $("#link-3").val().trim()
-        , v = f.length
-        , h = $("#link-3-desc").val().trim().length
-        , y = $("#link-4").val().trim()
-        , w = y.length
-        , k = $("#link-4-desc").val().trim().length
-        , L = $("#link-5").val().trim()
-        , b = L.length
-        , I = $("#link-5-desc").val().trim().length
+        , d = relevantArticlesEnabled ? $("#link-1").val().trim() : 17
+        , s = relevantArticlesEnabled ? d.length : 17
+        , m = relevantArticlesEnabled ? $("#link-1-desc").val().trim().length : 17
+        , p = relevantArticlesEnabled ? $("#link-2").val().trim() : urlIgnore
+        , u = relevantArticlesEnabled ? p.length : 17
+        , g = relevantArticlesEnabled ? $("#link-2-desc").val().trim().length : 17
+        , f = relevantArticlesEnabled ? $("#link-3").val().trim() : urlIgnore
+        , v = relevantArticlesEnabled ? f.length : 17
+        , h = relevantArticlesEnabled ? $("#link-3-desc").val().trim().length : 17
+        , y = relevantArticlesEnabled ?  $("#link-4").val().trim() : urlIgnore
+        , w = relevantArticlesEnabled ?  y.length : 17
+        , k = relevantArticlesEnabled ? $("#link-4-desc").val().trim().length : 17
+        , L = relevantArticlesEnabled ? $("#link-5").val().trim() : urlIgnore
+        , b = relevantArticlesEnabled ? L.length : 17
+        , I = relevantArticlesEnabled ? $("#link-5-desc").val().trim().length : 17
         , E = i > 1 && r > 1;
 
     console.log("Current department is " + currentdept)
@@ -266,6 +271,9 @@ function detectmob() {
 }
 
 function ValidURL(e) {
+    if (!relevantLinkEnabled || !relevantArticlesEnabled)
+        return true;
+
     return /^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/.test(e)
 }
 
@@ -316,7 +324,18 @@ function loadAssets() {
 
     $.getJSON(assetsDir + "config.json", function( data ) {
         workspaceId = data.workspaceId
-        document.getElementById("Workspacelink").href = "https://www.fxp.co.il/forumdisplay.php?f=" + workspaceId
+
+        if (workspaceId === "0")
+            document.getElementById("final-article-copy-text").innerText = "לחץ עלי כדי להעתיק את הכתבה"
+        else
+            document.getElementById("Workspacelink").href = "https://www.fxp.co.il/forumdisplay.php?f=" + workspaceId
+
+        //deptColor = data.deptColor
+        //deptSecondColor = data.deptSecondColor
+
+        relevantLinkEnabled = data.relevantLinkEnabled
+        relevantArticlesEnabled = data.relevantArticlesEnabled
+
     });
 
 
@@ -510,12 +529,9 @@ function getId(e) {
     var t = e.match(/^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/);
     return t && 11 == t[2].length ? t[2] : "error"
 }
-"gaming" == currentdept && (deptColor = "daa520",
-deptSecondColor = "c8981e",
-deptLogo = "https://images.weserv.nl/?url=i.imgur.com%2FAR1nKCC.png"),
-"tech" == currentdept && (deptColor = "008080",
-deptSecondColor = "006666",
-deptLogo = "https://images.weserv.nl/?url=i.imgur.com/MmTQzif.png"),
+"gaming" == currentdept && (deptColor = "daa520", deptSecondColor = "c8981e", deptLogo = "https://images.weserv.nl/?url=i.imgur.com%2FAR1nKCC.png"),
+"tech" == currentdept && (deptColor = "008080", deptSecondColor = "006666", deptLogo = "https://images.weserv.nl/?url=i.imgur.com/MmTQzif.png"),
+"special2021" == currentdept && (deptColor = deptSecondColor = "db000b")
 window.onbeforeunload = function() {
     return SaveDraft("Auto Draft", (new Date).toLocaleString()),
     "All data will be lost. Are you sure you want to leave?"
@@ -601,7 +617,9 @@ $(document).ready(function() {
     }),
     $("#final-article-copy").on("click", function() {
         copyArticle("final-article-textarea", "copy-a-popup")
-        open ('https://www.fxp.co.il/newthread.php?do=newthread&f=' + workspaceId)
+        if (workspaceId > 0)
+            open ('https://www.fxp.co.il/newthread.php?do=newthread&f=' + workspaceId)
+
     }),
     $("#final-article-Relv-copy").on("click", function() {
         copyArticle("final-article-relv-textarea", "copy-a-popup-R")

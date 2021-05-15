@@ -1,3 +1,8 @@
 {
-  "workspaceId": "0"
+  "workspaceId": "0",
+  "relevantLinkEnabled": false,
+  "relevantArticlesEnabled": false,
+  "deptColor": "db000b",
+  "deptSecondColor": "db000b"
+
 }
