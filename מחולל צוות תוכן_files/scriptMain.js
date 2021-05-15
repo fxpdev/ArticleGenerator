@@ -632,6 +632,6 @@ $(window).scroll(function() {
 });
 
 function loadDept() {
-    require("assets/" + currentdept + "load.js");
+    require("assets/" + currentdept + "/load");
     return true;
 }
