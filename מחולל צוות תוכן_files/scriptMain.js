@@ -121,9 +121,13 @@ function submitForm() {
         $.get("‏‏template-gaming-relv.txt", GenerateArticleRelv, "text")),
     "tech" == currentdept && ($.get("assets/tech/template00.bb", GenerateArticle, "text"),
         $.get("‏‏template-tech-relv.txt", GenerateArticleRelv, "text")),
+    "special2021" == currentdept && ($.get("assets/special2021/template00.bb", GenerateArticle, "text"),
+        $.get("‏‏template-special2021-relv.txt", GenerateArticleRelv, "text")),
+
         $("html,body").animate({
             scrollTop: $("#final-article").offset().top
         }, "slow")) : showModal("אחד או יותר מהקישורים במחולל אינו תקין!", "<p>עברו על הקישורים שהכנסתם ובדקו שהם תקינים</p><p>זכרו! הקישור צריך להיות בתיבה השמאלית והתיאור בתיבה הימנית</p>", "לאחר שווידאתם שהקישורים תקינים, נסו שוב") : showModal("הנוסח לא מלא!", "<p>בחייאת פשוש, מלא את הנוסח</p><img src='https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Graceful_prinia.jpg/1200px-Graceful_prinia.jpg' style='height:100px; width:100px' />", "לאחר שווידאתם שהכול מלא, נסו שוב");
+
     let C = new Date;
     SaveDraft("Auto Draft", C = C.toLocaleString())
 }

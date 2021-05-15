@@ -2,7 +2,8 @@
 
 :root {
     --deptColor: #008b8b;
-    --gamingColor: #daa520
+    --gamingColor: #daa520;
+    --special2021Color: #db000b;
     --deptSecondColor: #006666;
     --modalColor: --deptColor;
     --modalAcceptColor: --deptColor;
