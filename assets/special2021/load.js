@@ -1,3 +1,7 @@
+assetsDir = 'assets/special2021/'
+loadAssets()
+
+
 $("#gamingOnly").hide(),
     $("#gamingOnly2").hide(),
     $("#onlygaming3").hide(),
@@ -12,8 +16,9 @@ document.getElementById("relevant-forum-desc").outerHTML = ""
 document.getElementById("select-update-forum").outerHTML = ""
 
 function removeLink(num) {
-    document.getElementById("link-" + num).outerHTML = ""
-    document.getElementById("link-" + num + "-desc").outerHTML = ""
+    //document.getElementById("link-" + num).outerHTML = ""
+    //document.getElementById("link-" + num + "-desc").outerHTML = ""
+    document.getElementById("link-" + num + "-div").outerHTML = ""
 
 }
 
