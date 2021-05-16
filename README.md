@@ -7,6 +7,13 @@
   - Add [gaming][gam] templete
   - Create new [interface pictures generator][ipg]
 
+How to add a new deprtment:
+----
+1. Create a directory under the assets folder with the content based of on one of the other directories
+2. Specifiy the department name in the `deptList` array in scriptMain.js
+3. Add to scriptMain.js#submitForm
+4. Add under scriptMain.js#getId (above window.onbeforeunload)
+
 Behind
 ----
 We uses a number of Languages to work properly:
