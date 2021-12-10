@@ -293,7 +293,7 @@ function loadAssets() {
 
     document.getElementById("dept-select").innerHTML = `
          <center>
-            <img src="` + assetsDir + `logo.png" alt="צוות טכנולוגיה" id="dept-gaming">
+            <img src="` + assetsDir + `logo.png" alt="צוות טכנולוגיה" id="dept-logo">
         </center>
     `
 
@@ -323,6 +323,9 @@ function loadAssets() {
     });
 
     $.getJSON(assetsDir + "config.json", function( data ) {
+        if (data.enabled === false)
+            window.location.href = "https://fxp.co.il"
+
         workspaceId = data.workspaceId
 
         if (workspaceId === "0")
@@ -347,6 +350,10 @@ function loadAssets() {
                 document.getElementById("link-" + i + "-div").outerHTML = ""
             }
         }
+
+        deptColor = data.deptColor;
+        deptSecondColor = data.deptSecondColor;
+        deptLogo = data.deptLogo;
 
     });
 
@@ -548,9 +555,6 @@ function getId(e) {
     var t = e.match(/^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/);
     return t && 11 == t[2].length ? t[2] : "error"
 }
-"gaming" == currentdept && (deptColor = "daa520", deptSecondColor = "c8981e", deptLogo = "https://images.weserv.nl/?url=i.imgur.com%2FAR1nKCC.png"),
-"tech" == currentdept && (deptColor = "008080", deptSecondColor = "006666", deptLogo = "https://images.weserv.nl/?url=i.imgur.com/MmTQzif.png"),
-"special2021" == currentdept && (deptColor = deptSecondColor = "db000b")
 window.onbeforeunload = function() {
     return SaveDraft("Auto Draft", (new Date).toLocaleString()),
     "All data will be lost. Are you sure you want to leave?"

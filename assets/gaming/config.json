@@ -3,6 +3,7 @@
     "relevantLinkEnabled": true,
     "relevantArticlesEnabled": true,
     "deptColor": "daa520",
-    "deptSecondColor": "c8981e"
-
+    "deptSecondColor": "c8981e",
+    "deptLogo": "https://images.weserv.nl/?url=i.imgur.com%2FAR1nKCC.png",
+    "enabled": true
 }
