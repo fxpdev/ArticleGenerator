@@ -6,17 +6,10 @@ document.getElementById("relvHelpBox").innerHTML = "קישור רלוונטי ל
 
 document.title = "מחולל מיוחד"
 
-document.getElementById("updatesforums").outerHTML = ""
 //document.getElementById("updatesforums2").empty()
-document.getElementById("select-forum").outerHTML = ""
-document.getElementById("relevant-forum-desc").outerHTML = ""
-document.getElementById("relevantForumQmark").outerHTML = ""
-document.getElementById("select-update-forum").outerHTML = ""
 
 
 
 // For auto complete:
-document.getElementById("autocomplete-desc").outerHTML = ""
-document.getElementById("load-articles-button").outerHTML = ""
 
 // For relevant link:

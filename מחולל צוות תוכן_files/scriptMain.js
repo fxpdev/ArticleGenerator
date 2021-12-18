@@ -1,6 +1,14 @@
-var deptColor, deptSecondColor, automation_wanted, BackgroundSource, toastLaunched, deptLogo,
-    currentdept = ParseURLParameter("dept"), currentArticle = null,
-    workspaceId = 0, relevantLinkEnabled, relevantArticlesEnabled;
+let deptColor, deptSecondColor, automation_wanted, BackgroundSource, toastLaunched, deptLogo,
+    currentdept = ParseURLParameter("dept"), currentArticle = null;
+
+// PER DEPARTMENT CONFIGURATION
+let
+    relevantLinkEnabled,
+    relevantArticlesEnabled,
+    relevantForumEnabled,
+    sourceEnabled,
+    mediaEnabled
+    workspaceId = 0;
 
 //var BackgroundSource = "https://wallpapershome.com/images/pages/pic_h/20450.jpg";
 var BackgroundColor = ("#00cece")
@@ -12,10 +20,10 @@ function GenerateArticle(e) {
     console.log("Generating article")
 
     var t = $("#title").val().trim()
-      , n = $("#img-address").val().trim()
+      , n = mediaEnabled ? $("#img-address").val().trim() : ""
       //, l = enableMediaDescription ? $("#img-desc").val().trim() : ""
-      , o = $("#select-forum").val()
-      , i = $("#select-forum option[value='" + o + "']").text()
+      , o = relevantForumEnabled ? $("#select-forum").val() : ""
+      , i = relevantForumEnabled ? $("#select-forum option[value='" + o + "']").text() : ""
       , r = $("#content").val().trim() + "\n"
       , a = relevantLinkEnabled ? $("#relevant-link").val().trim() : ""
       , c = relevantLinkEnabled ? $("#relevant-link-desc").val().trim() : "";
@@ -95,7 +103,7 @@ const urlIgnore = "IGNORE"
 function submitForm() {
     console.log("submitForm")
     var e = $("#title").val().trim().length
-        , t = $("#img-address").val().trim()
+        , t = mediaEnabled ? $("#img-address").val().trim() : urlIgnore
         , n = t.length
         , o = ($("#content").val().trim() + "\n").length
         //, l = enableMediaDescription ? $("#img-desc").val().trim().length : 5
@@ -273,14 +281,13 @@ function detectmob() {
 }
 
 function ValidURL(e) {
-    if (!relevantLinkEnabled || !relevantArticlesEnabled)
+    if (!relevantLinkEnabled || !relevantArticlesEnabled || !mediaEnabled)
         return true;
 
     return /^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/.test(e)
 }
 
 var assetsDir;
-
 
 function loadAssets() {
 
@@ -295,7 +302,7 @@ function loadAssets() {
 
     document.getElementById("dept-select").innerHTML = `
          <center>
-            <img src="` + assetsDir + `logo.png" alt="צוות טכנולוגיה" id="dept-logo">
+            <img src="` + assetsDir + `logo.png" alt="לוגו צוות " id="dept-logo">
         </center>
     `
 
@@ -340,6 +347,9 @@ function loadAssets() {
 
         relevantLinkEnabled = data.relevantLinkEnabled
         relevantArticlesEnabled = data.relevantArticlesEnabled
+        relevantForumEnabled = data.relevantForumEnabled
+        sourceEnabled = data.sourceEnabled;
+        mediaEnabled = data.mediaEnabled;
 
         if (!relevantLinkEnabled) {
             document.getElementById("relevant-link").outerHTML = ""
@@ -348,9 +358,35 @@ function loadAssets() {
         }
 
         if (!relevantArticlesEnabled) {
+            // Empty out relevant articles input
             for (let i = 1; i <= 5; i++) {
                 document.getElementById("link-" + i + "-div").outerHTML = ""
             }
+
+            // Also disable auto complete
+            document.getElementById("autocomplete-desc").outerHTML = ""
+            document.getElementById("load-articles-button").outerHTML = ""
+
+            // Empty out update forums selection
+            document.getElementById("select-update-forum").outerHTML = ""
+            document.getElementById("updatesforums").outerHTML = ""
+
+        }
+
+        if (!relevantForumEnabled) {
+            document.getElementById("select-forum").outerHTML = ""
+            document.getElementById("relevant-forum-desc").outerHTML = ""
+            document.getElementById("relevantForumQmark").outerHTML = ""
+        }
+
+        if (!sourceEnabled) {
+            document.getElementById("source").outerHTML = ""
+            document.getElementById("sourceQmark").outerHTML = ""
+        }
+
+        if (!mediaEnabled) {
+            document.getElementById("img-address").outerHTML = ""
+            document.getElementById("mediaQmark").outerHTML = ""
         }
 
         deptColor = data.deptColor;

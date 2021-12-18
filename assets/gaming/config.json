@@ -5,5 +5,8 @@
     "deptColor": "daa520",
     "deptSecondColor": "c8981e",
     "deptLogo": "https://images.weserv.nl/?url=i.imgur.com%2FAR1nKCC.png",
+    "relevantForumEnabled": true,
+    "sourceEnabled": true,
+    "mediaEnabled": true,
     "enabled": true
 }
