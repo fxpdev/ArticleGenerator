@@ -64,7 +64,7 @@ function GenerateArticleRelv(e) {
       , i = $("#relevant-link").val().trim()
       , r = $("#relevant-link-desc").val().trim();
     r.length > 0 && (r += ":");
-    var a = $("#source").val().trim()
+    var a = sourceEnabled ? $("#source").val().trim() : ""
       , c = $("#link-1").val().trim()
       , d = $("#link-1-desc").val().trim()
       , s = $("#link-2").val().trim()
@@ -109,7 +109,7 @@ function submitForm() {
         //, l = enableMediaDescription ? $("#img-desc").val().trim().length : 5
         , i = relevantLinkEnabled ?  $("#relevant-link").val().trim().length : 17
         , r = relevantLinkEnabled ? $("#relevant-link-desc").val().trim().length : 17
-        , a = $("#source").val().trim()
+        , a = sourceEnabled ? $("#source").val().trim() : ""
         , c = a.length
         , d = relevantArticlesEnabled ? $("#link-1").val().trim() : 17
         , s = relevantArticlesEnabled ? d.length : 17
