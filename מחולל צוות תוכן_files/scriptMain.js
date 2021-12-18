@@ -410,6 +410,11 @@ function loadAssets() {
         deptSecondColor = data.deptSecondColor;
         deptLogo = data.deptLogo;
 
+        document.documentElement.style.setProperty("--deptColor", "#" + deptColor);
+        document.documentElement.style.setProperty("--deptSecondColor", "#" + deptSecondColor);
+        //document.documentElement.style.setProperty("--backgroundSource", BackgroundSource),
+        document.documentElement.style.setProperty("--backgroundColor", BackgroundColor);
+
     });
 
 
@@ -619,11 +624,7 @@ window.onbeforeunload = function() {
     return SaveDraft("Auto Draft", (new Date).toLocaleString()),
     "All data will be lost. Are you sure you want to leave?"
 }
-,
-document.documentElement.style.setProperty("--deptColor", "#" + deptColor),
-document.documentElement.style.setProperty("--deptSecondColor", "#" + deptSecondColor),
-//document.documentElement.style.setProperty("--backgroundSource", BackgroundSource),
-document.documentElement.style.setProperty("--backgroundColor", BackgroundColor),
+
 $(document).ready(function() {
     $("#notification").hide(),
     $("#final-article").hide(),
