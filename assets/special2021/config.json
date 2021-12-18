@@ -4,5 +4,6 @@
   "relevantArticlesEnabled": false,
   "deptColor": "db000b",
   "deptSecondColor": "db000b",
-  "enabled": false
+  "relevantForumEnabled": false,
+  "enabled": true
 }
