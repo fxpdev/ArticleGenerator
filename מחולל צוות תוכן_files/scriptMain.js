@@ -99,37 +99,37 @@ function resetform() {
 }
 
 const urlIgnore = "IGNORE"
+const fullUrlLength = 17;
 
 function submitForm() {
     console.log("submitForm")
-    var e = $("#title").val().trim().length
-        , t = mediaEnabled ? $("#img-address").val().trim() : urlIgnore
-        , n = t.length
-        , o = ($("#content").val().trim() + "\n").length
+    var titleLength = $("#title").val().trim().length
+        , mediaUrl = mediaEnabled ? $("#img-address").val().trim() : urlIgnore
+        , mediaUrlLength = mediaEnabled ? mediaUrl.length : fullUrlLength
+        , contentLength = ($("#content").val().trim() + "\n").length
         //, l = enableMediaDescription ? $("#img-desc").val().trim().length : 5
-        , i = relevantLinkEnabled ?  $("#relevant-link").val().trim().length : 17
-        , r = relevantLinkEnabled ? $("#relevant-link-desc").val().trim().length : 17
-        , a = sourceEnabled ? $("#source").val().trim() : ""
-        , c = a.length
-        , d = relevantArticlesEnabled ? $("#link-1").val().trim() : 17
-        , s = relevantArticlesEnabled ? d.length : 17
-        , m = relevantArticlesEnabled ? $("#link-1-desc").val().trim().length : 17
+        , relevantLinkLength = relevantLinkEnabled ?  $("#relevant-link").val().trim().length : fullUrlLength
+        , relevantLinkDescLength = relevantLinkEnabled ? $("#relevant-link-desc").val().trim().length : fullUrlLength
+        , sourceUrl = sourceEnabled ? $("#source").val().trim() : ""
+        , sourceUrlLength = sourceEnabled ? sourceUrl.length : fullUrlLength
+        , d = relevantArticlesEnabled ? $("#link-1").val().trim() : fullUrlLength
+        , s = relevantArticlesEnabled ? d.length : fullUrlLength
+        , m = relevantArticlesEnabled ? $("#link-1-desc").val().trim().length : fullUrlLength
         , p = relevantArticlesEnabled ? $("#link-2").val().trim() : urlIgnore
-        , u = relevantArticlesEnabled ? p.length : 17
-        , g = relevantArticlesEnabled ? $("#link-2-desc").val().trim().length : 17
+        , u = relevantArticlesEnabled ? p.length : fullUrlLength
+        , g = relevantArticlesEnabled ? $("#link-2-desc").val().trim().length : fullUrlLength
         , f = relevantArticlesEnabled ? $("#link-3").val().trim() : urlIgnore
-        , v = relevantArticlesEnabled ? f.length : 17
-        , h = relevantArticlesEnabled ? $("#link-3-desc").val().trim().length : 17
+        , v = relevantArticlesEnabled ? f.length : fullUrlLength
+        , h = relevantArticlesEnabled ? $("#link-3-desc").val().trim().length : fullUrlLength
         , y = relevantArticlesEnabled ?  $("#link-4").val().trim() : urlIgnore
-        , w = relevantArticlesEnabled ?  y.length : 17
-        , k = relevantArticlesEnabled ? $("#link-4-desc").val().trim().length : 17
+        , w = relevantArticlesEnabled ?  y.length : fullUrlLength
+        , k = relevantArticlesEnabled ? $("#link-4-desc").val().trim().length : fullUrlLength
         , L = relevantArticlesEnabled ? $("#link-5").val().trim() : urlIgnore
-        , b = relevantArticlesEnabled ? L.length : 17
-        , I = relevantArticlesEnabled ? $("#link-5-desc").val().trim().length : 17
-        , E = i > 1 && r > 1;
+        , b = relevantArticlesEnabled ? L.length : fullUrlLength
+        , I = relevantArticlesEnabled ? $("#link-5-desc").val().trim().length : fullUrlLength
+        , E = relevantLinkLength > 1 && relevantLinkDescLength > 1;
 
-    console.log("Current department is " + currentdept)
-    e > 1 && n > 1 /*&& l > 1*/ && o > 1 && c > 1 && s > 1 && m > 1 && u > 1 && g > 1 && v > 1 && h > 1 && w > 1 && k > 1 && b > 1 && I > 1 ? ValidURL(t) && ValidURL(a) && ValidURL(d) && ValidURL(p) && ValidURL(f) && ValidURL(y) && ValidURL(L) ? (E || showModal("שימו לב!", "<p>לא מילאתם את הקישור הרלוונטי ו/או את התיאור המתאים.</p><p>חלק זה מוסיף הרבה לכתבה ומומלץ מאוד להשתמש בו.</p>", "גם אתה פשוש!"),
+    titleLength > 1 && mediaUrlLength > 1 /*&& l > 1*/ && contentLength > 1 && sourceUrlLength > 1 && s > 1 && m > 1 && u > 1 && g > 1 && v > 1 && h > 1 && w > 1 && k > 1 && b > 1 && I > 1 ? ValidURL(mediaUrl) && ValidURL(sourceUrl) && ValidURL(d) && ValidURL(p) && ValidURL(f) && ValidURL(y) && ValidURL(L) ? (E || showModal("שימו לב!", "<p>לא מילאתם את הקישור הרלוונטי ו/או את התיאור המתאים.</p><p>חלק זה מוסיף הרבה לכתבה ומומלץ מאוד להשתמש בו.</p>", "גם אתה פשוש!"),
         $("#final-article").fadeIn("slow"),
     //"gaming" == currentdept && $("#final-article-relv").fadeIn("slow"),
     "gaming" == currentdept && ($.get("assets/gaming/template00.bb", GenerateArticle, "text"),
