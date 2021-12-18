@@ -20,15 +20,17 @@ function GenerateArticle(e) {
     console.log("Generating article")
 
     var t = $("#title").val().trim()
-      , n = mediaEnabled ? $("#img-address").val().trim() : ""
+      , mediaUrl = mediaEnabled ? $("#img-address").val().trim() : ""
       //, l = enableMediaDescription ? $("#img-desc").val().trim() : ""
-      , o = relevantForumEnabled ? $("#select-forum").val() : ""
-      , i = relevantForumEnabled ? $("#select-forum option[value='" + o + "']").text() : ""
-      , r = $("#content").val().trim() + "\n"
-      , a = relevantLinkEnabled ? $("#relevant-link").val().trim() : ""
-      , c = relevantLinkEnabled ? $("#relevant-link-desc").val().trim() : "";
-    c.length > 0 && (c += ":");
-    var d = sourceEnabled ? $("#source").val().trim() : ""
+      , relevantForumId = relevantForumEnabled ? $("#select-forum").val() : ""
+      , relevantForumName = relevantForumEnabled ? $("#select-forum option[value='" + relevantForumId + "']").text() : ""
+      , content = $("#content").val().trim() + "\n"
+      , relevantLink = relevantLinkEnabled ? $("#relevant-link").val().trim() : ""
+      , relevantLinkDesc = relevantLinkEnabled ? $("#relevant-link-desc").val().trim() : "";
+
+    relevantLinkDesc.length > 0 && (relevantLinkDesc += ":");
+
+    var source = sourceEnabled ? $("#source").val().trim() : ""
       , s = relevantArticlesEnabled ? $("#link-1").val().trim() : ""
       , m = relevantArticlesEnabled ? $("#link-1-desc").val().trim() : ""
       , p = relevantArticlesEnabled ? $("#link-2").val().trim() : ""
@@ -39,22 +41,24 @@ function GenerateArticle(e) {
       , h = relevantArticlesEnabled ? $("#link-4-desc").val().trim() : ""
       , y = relevantArticlesEnabled ? $("#link-5").val().trim() : ""
       , w = relevantArticlesEnabled ? $("#link-5-desc").val().trim() : "";
+
     currentArticle = {
         mTitle: t,
-        mImgAdress: n,
+        mImgAdress: mediaUrl,
         //mImgDesc: l,
-        mForumID: o,
-        mForumName: i,
-        mContent: r,
-        mRelevantLink: a,
-        mRelevantLinkDesc: c,
-        mSource: d,
+        mForumID: relevantForumId,
+        mForumName: relevantForumName,
+        mContent: content,
+        mRelevantLink: relevantLink,
+        mRelevantLinkDesc: relevantLinkDesc,
+        mSource: source,
         mLinks: [s, p, g, v, y],
         mLinksDesc: [m, u, f, h, w]
     };
-    var k = putInTemplate(e, t, n/*, l*/, r, a, c, d, s, m, p, u, g, f, v, h, y, w, o, i);
+    
+    var k = putInTemplate(e, t, mediaUrl/*, l*/, content, relevantLink, relevantLinkDesc, source, s, m, p, u, g, f, v, h, y, w, relevantForumId, relevantForumName);
     $("#final-article-textarea").html(k),
-    document.getElementById("relvF").innerHTML = "<a class='dept' href='https://www.fxp.co.il/forumdisplay.php?f=" + o + "'>" + i + "</a>"
+    document.getElementById("relvF").innerHTML = "<a class='dept' href='https://www.fxp.co.il/forumdisplay.php?f=" + relevantForumId + "'>" + relevantForumName + "</a>"
 }
 function GenerateArticleRelv(e) {
     var t = $("#title").val().trim()
@@ -102,7 +106,7 @@ const urlIgnore = "IGNORE"
 const fullUrlLength = 17;
 
 function submitForm() {
-    console.log("submitForm")
+    // Validates article
     var titleLength = $("#title").val().trim().length
         , mediaUrl = mediaEnabled ? $("#img-address").val().trim() : urlIgnore
         , mediaUrlLength = mediaEnabled ? mediaUrl.length : fullUrlLength
@@ -110,7 +114,7 @@ function submitForm() {
         //, l = enableMediaDescription ? $("#img-desc").val().trim().length : 5
         , relevantLinkLength = relevantLinkEnabled ?  $("#relevant-link").val().trim().length : fullUrlLength
         , relevantLinkDescLength = relevantLinkEnabled ? $("#relevant-link-desc").val().trim().length : fullUrlLength
-        , sourceUrl = sourceEnabled ? $("#source").val().trim() : ""
+        , sourceUrl = sourceEnabled ? $("#source").val().trim() : urlIgnore
         , sourceUrlLength = sourceEnabled ? sourceUrl.length : fullUrlLength
         , d = relevantArticlesEnabled ? $("#link-1").val().trim() : fullUrlLength
         , s = relevantArticlesEnabled ? d.length : fullUrlLength
@@ -129,7 +133,13 @@ function submitForm() {
         , I = relevantArticlesEnabled ? $("#link-5-desc").val().trim().length : fullUrlLength
         , E = relevantLinkLength > 1 && relevantLinkDescLength > 1;
 
-    titleLength > 1 && mediaUrlLength > 1 /*&& l > 1*/ && contentLength > 1 && sourceUrlLength > 1 && s > 1 && m > 1 && u > 1 && g > 1 && v > 1 && h > 1 && w > 1 && k > 1 && b > 1 && I > 1 ? ValidURL(mediaUrl) && ValidURL(sourceUrl) && ValidURL(d) && ValidURL(p) && ValidURL(f) && ValidURL(y) && ValidURL(L) ? (E || showModal("שימו לב!", "<p>לא מילאתם את הקישור הרלוונטי ו/או את התיאור המתאים.</p><p>חלק זה מוסיף הרבה לכתבה ומומלץ מאוד להשתמש בו.</p>", "גם אתה פשוש!"),
+    (titleLength > 1 &&
+    mediaUrlLength > 1 /*&& l > 1*/ &&
+    contentLength > 1 &&
+    sourceUrlLength > 1 && s > 1 && m > 1 && u > 1 && g > 1 && v > 1 && h > 1 && w > 1 && k > 1 && b > 1 && I > 1) ?
+        (!mediaEnabled || ValidURL(mediaUrl)) && (!sourceEnabled || ValidURL(sourceUrl)) && ValidURL(d) && ValidURL(p) && ValidURL(f) && ValidURL(y) && ValidURL(L) ?
+            (E || showModal("שימו לב!", "<p>לא מילאתם את הקישור הרלוונטי ו/או את התיאור המתאים.</p><p>חלק זה מוסיף הרבה לכתבה ומומלץ מאוד להשתמש בו.</p>", "גם אתה פשוש!"),
+
         $("#final-article").fadeIn("slow"),
     //"gaming" == currentdept && $("#final-article-relv").fadeIn("slow"),
     "gaming" == currentdept && ($.get("assets/gaming/template00.bb", GenerateArticle, "text"),
@@ -145,10 +155,13 @@ function submitForm() {
 
         $("html,body").animate({
             scrollTop: $("#final-article").offset().top
-        }, "slow")) : showModal("אחד או יותר מהקישורים במחולל אינו תקין!", "<p>עברו על הקישורים שהכנסתם ובדקו שהם תקינים</p><p>זכרו! הקישור צריך להיות בתיבה השמאלית והתיאור בתיבה הימנית</p>", "לאחר שווידאתם שהקישורים תקינים, נסו שוב") : showModal("הנוסח לא מלא!", "<p>בחייאת פשוש, מלא את הנוסח</p><img src='https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Graceful_prinia.jpg/1200px-Graceful_prinia.jpg' style='height:100px; width:100px' />", "לאחר שווידאתם שהכול מלא, נסו שוב");
+        }, "slow")) : showModal("אחד או יותר מהקישורים במחולל אינו תקין!",
+        "<p>עברו על הקישורים שהכנסתם ובדקו שהם תקינים</p><p>זכרו! הקישור צריך להיות בתיבה השמאלית והתיאור בתיבה הימנית</p>",
+        "לאחר שווידאתם שהקישורים תקינים, נסו שוב") : showModal("הנוסח לא מלא!",
+        "<p>בחייאת פשוש, מלא את הנוסח</p><img src='https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Graceful_prinia.jpg/1200px-Graceful_prinia.jpg' style='height:100px; width:100px' />",
+        "לאחר שווידאתם שהכול מלא, נסו שוב");
 
-    let C = new Date;
-    SaveDraft("Auto Draft", C = C.toLocaleString())
+    SaveDraft("Auto Draft", new Date().toLocaleString())
 }
 
 function copyArticle(e, t) {
@@ -423,26 +436,31 @@ function loadUpdateForums(updateForums) {
 
 }
 
-function showModal(e, t, n) {
-    let l = document.getElementById("warningModal");
-    document.getElementById("modalHeader").innerHTML = e,
-    document.getElementById("modalBody").innerHTML = t,
-    document.getElementById("modalFooter").innerHTML = n,
-    l.style.display = "block",
+function showModal(header, description, footer) {
+    let warningModal = document.getElementById("warningModal");
+    document.getElementById("modalHeader").innerHTML = header;
+    document.getElementById("modalBody").innerHTML = description;
+    document.getElementById("modalFooter").innerHTML = footer;
+    warningModal.style.display = "block";
+
     $("#modalX").click(function() {
-        l.style.display = "none"
-    }),
-    window.onclick = function(e) {
-        e.target == l && (l.style.display = "none")
+        warningModal.style.display = "none"
+    });
+
+    window.onclick = function(event) {
+        if (event.target == warningModal)
+            warningModal.style.display = "none"
     }
 }
 
-function showConfirmModal(e, t, n, l, o, i) {
-    document.getElementById("confirmHeader").innerHTML = e,
-    document.getElementById("confirmBody").innerHTML = t,
-    document.documentElement.style.setProperty("--modalColor", "#" + n),
-    document.documentElement.style.setProperty("--modalAcceptColor", "#" + l),
-    document.documentElement.style.setProperty("--modalHover", "#" + o);
+function showConfirmModal(header, body, color, acceptColor, hoverColor, i) {
+    document.getElementById("confirmHeader").innerHTML = header;
+    document.getElementById("confirmBody").innerHTML = body;
+
+    document.documentElement.style.setProperty("--modalColor", "#" + color);
+    document.documentElement.style.setProperty("--modalAcceptColor", "#" + acceptColor);
+    document.documentElement.style.setProperty("--modalHover", "#" + hoverColor);
+
     let r = document.getElementById("ConfirmModal");
     r.style.display = "block",
     document.getElementsByClassName("close")[0].onclick = function() {
