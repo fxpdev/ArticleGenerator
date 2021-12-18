@@ -298,10 +298,6 @@ function loadAssets() {
 
     })
 
-    $.get(assetsDir + "relevant-forums.html", function (data) {
-        document.querySelector("#select-forum").innerHTML = data
-    })
-
     document.getElementById("dept-select").innerHTML = `
          <center>
             <img src="` + assetsDir + `logo.png" alt="לוגו צוות " id="dept-logo">
@@ -328,10 +324,6 @@ function loadAssets() {
             </section>
        `
     })
-
-    $.getJSON(assetsDir + "update-forums.json", function( data ) {
-        loadUpdateForums(data)
-    });
 
     $.getJSON(assetsDir + "config.json", function( data ) {
         if (data.enabled === false)
@@ -373,12 +365,22 @@ function loadAssets() {
             document.getElementById("select-update-forum").outerHTML = ""
             document.getElementById("updatesforums").outerHTML = ""
 
+        } else {
+            $.getJSON(assetsDir + "update-forums.json", function( data ) {
+                loadUpdateForums(data)
+            });
+
         }
 
         if (!relevantForumEnabled) {
             document.getElementById("select-forum").outerHTML = ""
             document.getElementById("relevant-forum-desc").outerHTML = ""
             document.getElementById("relevantForumQmark").outerHTML = ""
+        } else {
+            $.get(assetsDir + "relevant-forums.html", function (data) {
+                document.querySelector("#select-forum").innerHTML = data
+            })
+
         }
 
         if (!sourceEnabled) {
