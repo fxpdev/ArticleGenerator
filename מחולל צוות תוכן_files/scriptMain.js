@@ -28,7 +28,7 @@ function GenerateArticle(e) {
       , a = relevantLinkEnabled ? $("#relevant-link").val().trim() : ""
       , c = relevantLinkEnabled ? $("#relevant-link-desc").val().trim() : "";
     c.length > 0 && (c += ":");
-    var d = $("#source").val().trim()
+    var d = sourceEnabled ? $("#source").val().trim() : ""
       , s = relevantArticlesEnabled ? $("#link-1").val().trim() : ""
       , m = relevantArticlesEnabled ? $("#link-1-desc").val().trim() : ""
       , p = relevantArticlesEnabled ? $("#link-2").val().trim() : ""
