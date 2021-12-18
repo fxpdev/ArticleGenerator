@@ -1,4 +1,4 @@
-assetsDir = 'assets/tech/'
+assetsDir = 'assets/kos/'
 loadAssets()
 
 //document.body.style.backgroundImage = "url(" + BackgroundSource + ")",
@@ -8,16 +8,10 @@ document.getElementById("relvHelpBox").innerHTML = "קישור רלוונטי ל
     $.get("SelectTech.txt", EmbedSelect, "text")*/
 
 document.getElementById("updatesforums2").innerHTML = `
-                                            <a href="https://www.fxp.co.il/forumdisplay.php?f=4607" class="dept">עדכוני
-                                        מולטימדיה,</a> <a href="https://www.fxp.co.il/forumdisplay.php?f=4603"
-                                                          class="dept">עדכוני
-                                        אנדרואיד,</a> <a href="https://www.fxp.co.il/forumdisplay.php?f=4602"
-                                                         class="dept">עדכוני
-                                        Apple,</a> <a href="https://www.fxp.co.il/forumdisplay.php?f=5073" class="dept">עדכוני
-                                        מחשבים וחומרה</a>
+                                            <a href="https://www.fxp.co.il/forumdisplay.php?f=9745">חדשות קולנוע וסדרות</a> 
 `
 //document.getElementById("dept-gaming").src = "images/dept-tech.png",
 //document.getElementById("dept-gaming").alt = "צוות טכנלוגיה",
 
-document.title = 'מחולל צוות טכנולוגיה'
+document.title = 'מחולל צוות קולנוע וסדרות'
 

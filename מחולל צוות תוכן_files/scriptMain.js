@@ -6,7 +6,7 @@ var deptColor, deptSecondColor, automation_wanted, BackgroundSource, toastLaunch
 var BackgroundColor = ("#00cece")
 const enableMediaDescription = true
 
-const deptList = ["tech", "gaming", "special2021"]
+const deptList = ["tech", "gaming", "special2021", "kos"]
 
 function GenerateArticle(e) {
     console.log("Generating article")
@@ -130,6 +130,8 @@ function submitForm() {
         $.get("‏‏template-tech-relv.txt", GenerateArticleRelv, "text")),
     "special2021" == currentdept && ($.get("assets/special2021/template00.bb", GenerateArticle, "text"),
         $.get("‏‏template-special2021-relv.txt", GenerateArticleRelv, "text")),
+    "kos" == currentdept && ($.get("assets/kos/template00.bb", GenerateArticle, "text"),
+        $.get("‏‏template-kos-relv.txt", GenerateArticleRelv, "text")),
 
         $("html,body").animate({
             scrollTop: $("#final-article").offset().top
