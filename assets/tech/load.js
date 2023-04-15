@@ -9,12 +9,8 @@ document.getElementById("relvHelpBox").innerHTML = "קישור רלוונטי ל
 
 document.getElementById("updatesforums2").innerHTML = `
                                             <a href="https://www.fxp.co.il/forumdisplay.php?f=4607" class="dept">עדכוני
-                                        טכנולוגיה,</a> <a href="https://www.fxp.co.il/forumdisplay.php?f=4603"
-                                                          class="dept">חדשות
-                                        אנדרואיד,</a> <a href="https://www.fxp.co.il/forumdisplay.php?f=4602"
-                                                         class="dept">חדשות
-                                        Apple,</a> <a href="https://www.fxp.co.il/forumdisplay.php?f=5073" class="dept">חדשות
-                                        מחשבים וחומרה</a>
+    טכנולוגיה</a>, <a href="https://www.fxp.co.il/forumdisplay.php?f=5073" class="dept">חדשות
+    מחשבים וחומרה</a>
 `
 //document.getElementById("dept-gaming").src = "images/dept-tech.png",
 //document.getElementById("dept-gaming").alt = "צוות טכנלוגיה",
