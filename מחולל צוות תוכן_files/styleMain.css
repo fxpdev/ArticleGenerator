@@ -1273,3 +1273,26 @@ i {
     text-decoration-color: black;
     font-family: 'Assistant', sans-serif;
 }
+
+
+/* ------------------------------------------------------------------- 
+dark mode
+*/
+
+input.dark, select.dark, .BUI.dark, textarea.dark, .stylebuttons.dark {
+    background: #191919 !important;
+    color: white !important;
+    border-color: #5d5a5a;
+}
+
+body.dark {
+    background-color: #191919;
+}
+
+div.dark {
+    color: #5d5a5a;
+}
+
+.title.dark {
+    color: #578bcd;
+}
