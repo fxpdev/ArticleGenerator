@@ -14,7 +14,7 @@ let
 var BackgroundColor = ("#00cece")
 const enableMediaDescription = true
 
-const deptList = ["tech", "gaming", "special2021", "kos", "general"]
+const deptList = ["tech", "gaming", "special2021", "kos", "general", "feed"]
 
 function GenerateArticle(e) {
     console.log("Generating article")
@@ -151,6 +151,8 @@ function submitForm() {
     "kos" == currentdept && ($.get("assets/kos/template00.bb", GenerateArticle, "text"),
         $.get("‏‏template-kos-relv.txt", GenerateArticleRelv, "text")),
     "general" == currentdept && ($.get("assets/general/template00.bb", GenerateArticle, "text"),
+        $.get("‏‏template-general-relv.txt", GenerateArticleRelv, "text")),
+    "feed" == currentdept && ($.get("assets/feed/template00.bb", GenerateArticle, "text"),
         $.get("‏‏template-general-relv.txt", GenerateArticleRelv, "text")),
 
         $("html,body").animate({
