@@ -14,7 +14,7 @@ let
 var BackgroundColor = ("#00cece")
 const enableMediaDescription = true
 
-const deptList = ["tech", "gaming", "special2021", "kos", "general", "feed"]
+const deptList = ["tech", "gaming", "kos", "general", "feed"]
 
 function GenerateArticle(e) {
     console.log("Generating article")

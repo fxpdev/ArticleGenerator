@@ -10,8 +10,6 @@ document.getElementById("relvHelpBox").innerHTML = "קישור רלוונטי ל
 document.getElementById("updatesforums2").innerHTML = `
                                             <a href="https://www.fxp.co.il/forumdisplay.php?f=9745">חדשות קולנוע וסדרות</a> 
 `
-//document.getElementById("dept-gaming").src = "images/dept-tech.png",
-//document.getElementById("dept-gaming").alt = "צוות טכנלוגיה",
 
 document.title = 'מחולל צוות קולנוע וסדרות'
 

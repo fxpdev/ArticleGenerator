@@ -12,5 +12,4 @@
 [FONT=open sans hebrew][B][COLOR=#3366cc]יש לכם שאלות? רוצים לדעת עוד? היכנסו לפורום
 [/COLOR][URL="https://www.fxp.co.il/forumdisplay.php?f=%ForumID%"][SIZE=3][COLOR=#3366cc]%ForumName%[/COLOR][/URL][I][B][/SIZE][/B][/I][/B][/FONT][COLOR=#3366cc]
 
-
 [/CENTER]
