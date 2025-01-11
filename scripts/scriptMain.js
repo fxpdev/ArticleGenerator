@@ -44,7 +44,7 @@ function GenerateArticle(e) {
 
     currentArticle = {
         mTitle: t,
-        mImgAdress: mediaUrl,
+        mImgAddress: mediaUrl,
         //mImgDesc: l,
         mForumID: relevantForumId,
         mForumName: relevantForumName,
@@ -146,8 +146,8 @@ function submitForm() {
         $.get("‏‏template-gaming-relv.txt", GenerateArticleRelv, "text")),
     "tech" == currentdept && ($.get("assets/tech/template00.bb", GenerateArticle, "text"),
         $.get("‏‏template-tech-relv.txt", GenerateArticleRelv, "text")),
-    "special2021" == currentdept && ($.get("assets/special2021/template00.bb", GenerateArticle, "text"),
-        $.get("‏‏template-special2021-relv.txt", GenerateArticleRelv, "text")),
+    "special" == currentdept && ($.get("assets/special/template00.bb", GenerateArticle, "text"),
+        $.get("‏‏template-special-relv.txt", GenerateArticleRelv, "text")),
     "kos" == currentdept && ($.get("assets/kos/template00.bb", GenerateArticle, "text"),
         $.get("‏‏template-kos-relv.txt", GenerateArticleRelv, "text")),
     "general" == currentdept && ($.get("assets/general/template00.bb", GenerateArticle, "text"),
@@ -594,23 +594,53 @@ function showFooter(e) {
     var t = e
         .replace("%curdept%", currentdept)
         .replace("%curdept%", currentdept)
-        .replace("%built%", "נבנה  על ידי")
-        .replace("%tal%", "טל")
-        .replace("%update%", "עודכן על ידי")
-        .replace("%ofek%", "אופק")
-        .replace("%lior%", "וליאור")
+        .replace("%built%", "נבנה מחדש ועודכן  על ידי")
+        .replace("%liam%", "ליאם")
     document.getElementById("footercontent").innerHTML = t
 }
 function showPreview() {
     $.get("ArticleHtmlTemplate.txt", openPreviewModal, "text")
 }
 function openPreviewModal(e) {
-    let t = currentArticle.mContent;
-    t = t.split("\n").join("<br>");
-    let n = currentArticle.mImgAdress;
-    "error" != getId(n) ? n = '<iframe width="560" height="315" src="//www.youtube.com/embed/' + getId(n) + '" frameborder="0" allowfullscreen></iframe>' : isTwitter(n) ? n = '<iframe id="tweetIframe" border=0 frameborder=0 width=550 height=520             src = https://twitframe.com/show?url="' + encodeURI(n) + '" ></iframe>' : isInstagram(n) && (n = '<iframe src="' + n + 'embed" width="400" height="505" frameborder="0" scrolling="no" allowtransparency="true"></iframe>',
-    console.log(n));
-    showConfirmModal("תצוגה מקדימה", putInTemplate(e, currentArticle.mTitle, n/*, currentArticle.mImgDesc*/, t, currentArticle.mRelevantLink, currentArticle.mRelevantLinkDesc, currentArticle.mSource, currentArticle.mLinks[0], currentArticle.mLinksDesc[0], currentArticle.mLinks[1], currentArticle.mLinksDesc[1], currentArticle.mLinks[2], currentArticle.mLinksDesc[2], currentArticle.mLinks[3], currentArticle.mLinksDesc[3], currentArticle.mLinks[4], currentArticle.mLinksDesc[4], currentArticle.mForumID, currentArticle.mForumName), deptColor, deptColor, deptSecondColor, "")
+    let t = currentArticle.mContent.split("\n").join("<br>");
+    let n = currentArticle.mImgAddress;
+
+    if (getId(n) !== "error") {
+        n = `<iframe width="560" height="315" src="//www.youtube.com/embed/${getId(n)}" frameborder="0" allowfullscreen></iframe>`;
+    } else if (isTwitter(n)) {
+        n = `<iframe id="tweetIframe" border=0 frameborder=0 width=550 height=520 src="https://twitframe.com/show?url=${encodeURI(n)}"></iframe>`;
+    } else if (isInstagram(n)) {
+        n = `<iframe src="${n}embed" width="400" height="505" frameborder="0" scrolling="no" allowtransparency="true"></iframe>`;
+    }
+
+    showConfirmModal(
+        "תצוגה מקדימה",
+        putInTemplate(
+            e,
+            currentArticle.mTitle,
+            n,
+            t,
+            currentArticle.mRelevantLink,
+            currentArticle.mRelevantLinkDesc,
+            currentArticle.mSource,
+            currentArticle.mLinks[0],
+            currentArticle.mLinksDesc[0],
+            currentArticle.mLinks[1],
+            currentArticle.mLinksDesc[1],
+            currentArticle.mLinks[2],
+            currentArticle.mLinksDesc[2],
+            currentArticle.mLinks[3],
+            currentArticle.mLinksDesc[3],
+            currentArticle.mLinks[4],
+            currentArticle.mLinksDesc[4],
+            currentArticle.mForumID,
+            currentArticle.mForumName
+        ),
+        deptColor,
+        deptColor,
+        deptSecondColor,
+        ""
+    );
 }
 function isInstagram(e) {
     return e.match(/(https?:\/\/www\.)?instagram\.com(\/p\/\w+\/?)/)

@@ -2,16 +2,7 @@
 <tr>
                     <td>
                         <a class="footerlinks">&nbsp; %built%  </a>
-                        <a href="https://www.fxp.co.il/member.php?u=783379" class="footerlinks">%tal%</a>
-                    </td>
-                    <td>
-                        <a class="footerrest">&nbsp; || </a>
-                    </td>
-                    <td>
-                        <a class="footerlinks">&nbsp; %update%  </a>
-                        <a href="https://www.fxp.co.il/member.php?u=1035826" class="footerlinks">%ofek%</a>
-                        <a href="https://www.fxp.co.il/member.php?u=927738" class="footerlinks">%lior%</a>
-                        <a class="footersmiley"> :)</a>
+                        <a href="https://www.fxp.co.il/member.php?u=854000" class="footerlinks">%liam%</a>
                     </td>
                 </tr>
                 <tr>
