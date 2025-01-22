@@ -1,4 +1,4 @@
-assetsDir = 'assets/special2021/'
+assetsDir = 'assets/special/'
 loadAssets()
 
 

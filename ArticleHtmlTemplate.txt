@@ -20,7 +20,8 @@
 <br>
 <a href="https://www.fxp.co.il/forumdisplay.php?f=%ForumID%"><font color="#%deptColor%"><span class="ArticleForum"> %ForumName%</span></font></a>
 <br><br>
-<font color="#%deptColor%"><span style="font-size:1.1em;" class="ArticleDiv"> אולי יעניין אותך גם:</span></font>
+<!-- Comment out the RelevantArticles --->
+<!-- <font color="#%deptColor%"><span style="font-size:1.1em;" class="ArticleDiv"> אולי יעניין אותך גם:</span></font>
 <br>
 <b>
 <a href="%AdditionalLink1%"><font size="2" color="#0000cd">
@@ -51,22 +52,9 @@
 <span class="ArticleLink">
 %AdditionalLink5Desc%
 </span>
-</font></a>
+</font></a> --->
 <br>
 </b>
-<img src="https://images.weserv.nl/?url=i.imgur.com%2FBP1U0yb.png">
-<br>
-<a href="https://www.fxp.co.il/showthread.php?t=726358&p=101038695#post101038695">
-<br>
-<img src="%deptImage%"></a>
-<br>
-<b><a href="https://www.fxp.co.il/showthread.php?t=726358&p=101038695#post101038695">
-<span class="ArticleHagaha">
-<br>
-תודה למחלקת הגהה על הגהת הכתבה
-</span></a></b>
-<a href="https://www.fxp.co.il/private.php?do=newpm&u=228002">
-<br>
 <span class="ArticleMistake">
 מצאתם טעות בכתבה? ספרו לנו ונתקן בהקדם
 </span></a>

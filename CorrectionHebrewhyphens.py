@@ -3,7 +3,7 @@ s=input("Enter new content")
 l1=list(s)
 s1=string.ascii_letters
 print(s1)
-def ifIsEnglisLetter(s):
+def ifIsEnglishLetter(s):
     for i in s1:
         if s==i:
             return True
@@ -14,7 +14,7 @@ for i, v in enumerate(l1):
     if a in v:
         if l1[i-1]==' ' and l1[i+1]==' ':
             l1[i] = v.replace(a, b)
-        elif ifIsEnglisLetter(l1[i-1]) and ifIsEnglisLetter(l1[i+1]):
+        elif ifIsEnglishLetter(l1[i-1]) and ifIsEnglishLetter(l1[i+1]):
             l1[i] = v.replace(a, a)
         elif '' not in l1[i-1:i+1]:
             l1[i] = v.replace(a, c)

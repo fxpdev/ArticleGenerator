@@ -3,7 +3,7 @@
 :root {
     --deptColor: #008b8b;
     --gamingColor: #daa520;
-    --special2021Color: #db000b;
+    --specialColor: #db000b;
     --kosColor: #db000b;
     --generalColor: #5990ff;
     --deptSecondColor: #006666;
@@ -1250,15 +1250,6 @@ i {
 .ArticleLink {
     color: #0000cd;
     font-size: 1.05em;
-    font-weight: 700;
-    text-decoration: underline;
-    text-decoration-color: black;
-    font-family: 'Assistant', sans-serif;
-}
-
-.ArticleHagaha {
-    color: #33CCFF;
-    font-size: 0.89em;
     font-weight: 700;
     text-decoration: underline;
     text-decoration-color: black;
