@@ -21,7 +21,6 @@ function GenerateArticle(e) {
 
     var t = $("#title").val().trim()
       , mediaUrl = mediaEnabled ? $("#img-address").val().trim() : ""
-      //, l = enableMediaDescription ? $("#img-desc").val().trim() : ""
       , relevantForumId = relevantForumEnabled ? $("#select-forum").val() : ""
       , relevantForumName = relevantForumEnabled ? $("#select-forum option[value='" + relevantForumId + "']").text() : ""
       , content = $("#content").val().trim() + "\n"
@@ -45,7 +44,6 @@ function GenerateArticle(e) {
     currentArticle = {
         mTitle: t,
         mImgAddress: mediaUrl,
-        //mImgDesc: l,
         mForumID: relevantForumId,
         mForumName: relevantForumName,
         mContent: content,
@@ -55,15 +53,18 @@ function GenerateArticle(e) {
         mLinks: [s, p, g, v, y],
         mLinksDesc: [m, u, f, h, w]
     };
-    
-    var k = putInTemplate(e, t, mediaUrl/*, l*/, content, relevantLink, relevantLinkDesc, source, s, m, p, u, g, f, v, h, y, w, relevantForumId, relevantForumName);
+
+    // Set workspaceId to the selected forum's value
+    workspaceId = relevantForumId;
+
+    var k = putInTemplate(e, t, mediaUrl, content, relevantLink, relevantLinkDesc, source, s, m, p, u, g, f, v, h, y, w, relevantForumId, relevantForumName);
     $("#final-article-textarea").html(k),
     document.getElementById("relvF").innerHTML = "<a class='dept' href='https://www.fxp.co.il/forumdisplay.php?f=" + relevantForumId + "'>" + relevantForumName + "</a>"
 }
+
 function GenerateArticleRelv(e) {
     var t = $("#title").val().trim()
       , n = $("#img-address").val().trim()
-      //, l = $("#img-desc").val().trim()
       , o = $("#content").val().trim() + "\n"
       , i = $("#relevant-link").val().trim()
       , r = $("#relevant-link-desc").val().trim();
@@ -79,9 +80,12 @@ function GenerateArticleRelv(e) {
       , f = $("#link-4-desc").val().trim()
       , v = $("#link-5").val().trim()
       , h = $("#link-5-desc").val().trim()
-      , y = e.replace("%ArticleTitle%", t).replace("%ImageLink%", n)/*.replace("%ImageLinkDesc%", l)*/.replace("%Content%", o).replace("%RelevantLinkDesc%", r).replace("%Source%", a).replace("%AdditionalLink1%", c).replace("%AdditionalLink1Desc%", d).replace("%AdditionalLink2%", s).replace("%AdditionalLink2Desc%", m).replace("%AdditionalLink3%", p).replace("%AdditionalLink3Desc%", u).replace("%AdditionalLink4%", g).replace("%AdditionalLink4Desc%", f).replace("%AdditionalLink5%", v).replace("%AdditionalLink5Desc%", h);
+      , y = e.replace("%ArticleTitle%", t).replace("%ImageLink%", n).replace("%Content%", o).replace("%RelevantLinkDesc%", r).replace("%Source%", a).replace("%AdditionalLink1%", c).replace("%AdditionalLink1Desc%", d).replace("%AdditionalLink2%", s).replace("%AdditionalLink2Desc%", m).replace("%AdditionalLink3%", p).replace("%AdditionalLink3Desc%", u).replace("%AdditionalLink4%", g).replace("%AdditionalLink4Desc%", f).replace("%AdditionalLink5%", v).replace("%AdditionalLink5Desc%", h);
     y = null != i && null != i && "" != i ? y.replace("%RelevantLink%", i).replace("%RelevantLink%", i) : y.replace("%RelevantLink%", "").replace("%RelevantLink%", "[F"),
     $("#final-article-relv-textarea").html(y)
+
+    // Set workspaceId to the selected forum's value
+    workspaceId = $("#select-forum").val();
 }
 
 function putInTemplate(e, t, n/*, l*/, o, i, r, a, c, d, s, m, p, u, g, f, v, h, y, w) {
@@ -307,10 +311,8 @@ function ValidURL(e) {
 var assetsDir;
 
 function loadAssets() {
-
     $.get(assetsDir + "header.html", function (data) {
         document.getElementById("header").innerHTML = data
-
     })
 
     document.getElementById("dept-select").innerHTML = `
@@ -351,9 +353,6 @@ function loadAssets() {
         else
             document.getElementById("Workspacelink").href = "https://www.fxp.co.il/forumdisplay.php?f=" + workspaceId
 
-        //deptColor = data.deptColor
-        //deptSecondColor = data.deptSecondColor
-
         relevantLinkEnabled = data.relevantLinkEnabled
         relevantArticlesEnabled = data.relevantArticlesEnabled
         relevantForumEnabled = data.relevantForumEnabled
@@ -367,24 +366,17 @@ function loadAssets() {
         }
 
         if (!relevantArticlesEnabled) {
-            // Empty out relevant articles input
             for (let i = 1; i <= 5; i++) {
                 document.getElementById("link-" + i + "-div").outerHTML = ""
             }
-
-            // Also disable auto complete
             document.getElementById("autocomplete-desc").outerHTML = ""
             document.getElementById("load-articles-button").outerHTML = ""
-
-            // Empty out update forums selection
             document.getElementById("select-update-forum").outerHTML = ""
             document.getElementById("updatesforums").outerHTML = ""
-
         } else {
             $.getJSON(assetsDir + "update-forums.json", function( data ) {
                 loadUpdateForums(data)
             });
-
         }
 
         if (!relevantForumEnabled) {
@@ -395,7 +387,6 @@ function loadAssets() {
             $.get(assetsDir + "relevant-forums.html", function (data) {
                 document.querySelector("#select-forum").innerHTML = data
             })
-
         }
 
         if (!sourceEnabled) {
@@ -414,21 +405,13 @@ function loadAssets() {
 
         document.documentElement.style.setProperty("--deptColor", "#" + deptColor);
         document.documentElement.style.setProperty("--deptSecondColor", "#" + deptSecondColor);
-        //document.documentElement.style.setProperty("--backgroundSource", BackgroundSource),
         document.documentElement.style.setProperty("--backgroundColor", BackgroundColor);
-
     });
 
-
-    // Remove media description
     if (!enableMediaDescription) {
         //document.querySelector("#img-desc").outerHTML = ""
         //document.querySelector("#img-address").className = "wholeline"
-
     }
-
-    // //*[@id="select-forum"]
-
 }
 
 function loadUpdateForums(updateForums) {
