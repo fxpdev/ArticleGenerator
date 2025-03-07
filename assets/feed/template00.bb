@@ -3,7 +3,7 @@
 
 [IMG]https://i.imagesup.co/images2/ceb0a248f7a02c4c3acd0da5857f18930b16afb3.png[/IMG]
 [FONT=tahoma]
-[COLOR=#333333][COLOR=#3366cc][U][B][SIZE=5]כותרת הכתבה
+[COLOR=#333333][COLOR=#3366cc][U][B][SIZE=5]%ArticleTitle%
 [/FONT]
 [/SIZE][/B][/U][/COLOR][/COLOR]
 [/CENTER]
